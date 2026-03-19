@@ -1,0 +1,22 @@
+Function / Component,Primary Model (First Choice),Fallback / Escalation Model,Escalation Trigger
+Main Chat,anthropic/claude-sonnet-4.6,openai/gpt-5.4,Standard failover
+Help & Context Chatbot,qwen/qwen-3.5-7b-instruct:free,x-ai/grok-4.1-fast,ESCALATE_TO_WEB (answer not in local docs)
+Council: Security,anthropic/claude-opus-4.6,openai/gpt-5.4,Standard failover
+Council: Platform,anthropic/claude-opus-4.6,openai/gpt-5.4,Standard failover
+Council: Biz Meta,anthropic/claude-opus-4.6,openai/gpt-5.4,Standard failover
+Council: Innovation,anthropic/claude-opus-4.6,openai/gpt-5.4,Standard failover
+Council: Agent,anthropic/claude-sonnet-4.6,openai/gpt-5.4,Standard failover
+Coaches,anthropic/claude-sonnet-4.6,openai/gpt-5.4,Standard failover
+CRM & Triage,anthropic/claude-sonnet-4.6,openai/gpt-5.4,Standard failover
+Sponsor Inbox,anthropic/claude-sonnet-4.6,openai/gpt-5.4,Standard failover
+Summarizer,anthropic/claude-sonnet-4.6,openai/gpt-5.4,Standard failover
+Reranker,anthropic/claude-sonnet-4.6,openai/gpt-5.4,Standard failover
+Notif Classifier,anthropic/claude-sonnet-4.6,openai/gpt-5.4,Standard failover
+X / Grok Search,x-ai/grok-4.1-fast,,No fallback (unique capability)
+Video Processing,google/gemini-pro-3.1,,No fallback (unique capability)
+Deep Research,google/gemini-deep-research-pro,,No fallback (unique capability)
+Training Pipeline,openai/gpt-5.4-pro,,No fallback (unique capability)
+Frontier Scanner,anthropic/claude-opus-4.6,openai/gpt-5.4,Standard failover
+Github Sync,anthropic/claude-sonnet-4.6,openai/gpt-5.4,Standard failover
+Embeddings,nomic/nomic-embed-text-v1.5,,No fallback (unique capability)
+Local Models,qwen/qwen-3.5-72b-instruct,,Local only

@@ -1,0 +1,132 @@
+{
+    "category": "Admin Console",
+    "workflow_description": "Install Local LLM (Ollama) and Select LLMs for Workflow Tasks to link cloud billing and map specific models to distinct CYAM platform functions.",
+    "task_summary": "Guide the Admin through installing Ollama for local offloading and connecting OpenRouter for Cloud AI master models.",
+    "overview_description": "Use free, local models for simple tasks to save money, and powerful cloud models for complex tasks via OpenRouter.",
+    "ui_instructions": [
+        "Task 1, Step 1: Admin selects their OS (Windows or macOS) in the CYAM Admin Console.",
+        "Task 1, Step 2: UI displays a direct download button for the official Ollama installer and lists pre-flight System Requirements.",
+        "Task 1, Step 3: For macOS: Mount the .dmg, drag Ollama to Applications, open it, accept the Gatekeeper warning, and click Install for the CLI tool. For Windows: Run the setup wizard.",
+        "Task 1, Step 4: After installation, the new Ollama GUI Chat App will open and the background service will start.",
+        "Task 2, Step 1: Open the Ollama App. In the top right of the chat interface, click the Model Dropdown menu.",
+        "Task 2, Step 2: Search for a CYAM-approved model tag (e.g., llama3.2). Click the download icon next to the model name.",
+        "Task 2, Step 3: Wait for the download to complete within the Ollama App.",
+        "Task 3, Step 1: Return to the CYAM Admin Console. Click 'Authorize OpenRouter', log in, add a payment method (card, AliPay, or Crypto), and name the API key using a descriptive name (e.g., CYAM-App).",
+        "Task 4, Step 1: In the CYAM Admin Console Workflows table, use the 'Cloud AI Engine' dropdown to select a Master Cloud Model.",
+        "Task 4, Step 2: Configure offloading for background tasks: either toggle 'Local Offloading' ON (if you installed Ollama), OR select a free OpenRouter model ($0) to use 'Free Cloud Offloading'.",
+        "Task 4, Step 3: Click 'Save Configuration'. CYAM securely runs a client-side Test Connection protocol (avoiding Google Workspace external network scopes) to verify the OpenRouter key, displaying a 'Verified & Active' green badge."
+    ],
+    "carousel_items": [
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "src": "step3_win_installation.png",
+            "caption": "Task 1, Step 3: Windows Installation — Locate OllamaSetup.exe, handle SmartScreen, click Install, and verify via system tray icon."
+        },
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "src": "step3_mac_installation.png",
+            "caption": "Task 1, Step 3: macOS Installation — Mount the disk image, drag to Applications, accept Gatekeeper, and install CLI tool."
+        },
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "src": "step3b_mac_menubar.png",
+            "caption": "Task 1, Step 3: macOS Verification — The Ollama llama icon in the top menu bar confirms the service is running."
+        },
+        {
+            "task_number": 2,
+            "step_number": 2,
+            "type": "image",
+            "src": "step5_ollama_gui_dropdown.png",
+            "caption": "Task 2, Step 2: Inside the Ollama App, locate the model dropdown at the top of the chat interface."
+        },
+        {
+            "task_number": 2,
+            "step_number": 4,
+            "type": "image",
+            "src": "step6_ollama_download_model.png",
+            "caption": "Task 2, Step 4: Search for the CYAM-recommended model and click the download arrow icon."
+        },
+        {
+            "task_number": 2,
+            "step_number": 3,
+            "type": "image",
+            "src": "step6b_ollama_model_tags.png",
+            "caption": "Task 2, Step 3: Model Naming — Ollama models use a name:tag format (e.g., qwen3:4b)."
+        },
+        {
+            "task_number": 3,
+            "step_number": 4,
+            "type": "image",
+            "src": "openrouter_home.png",
+            "caption": "Task 3, Step 4: OpenRouter Home — Click the 'Get API Key' button."
+        },
+        {
+            "task_number": 3,
+            "step_number": 4,
+            "type": "image",
+            "src": "openrouter_create_key.png",
+            "caption": "Task 3, Step 4: Create API Key — Name your key and optionally set a credit limit and expiration."
+        },
+        {
+            "task_number": 3,
+            "step_number": 4,
+            "type": "image",
+            "src": "openrouter_key_created.png",
+            "caption": "Task 3, Step 4: Key Confirmation — Your new key is displayed once only. CYAM will securely capture it."
+        },
+        {
+            "task_number": 4,
+            "step_number": 1,
+            "type": "image",
+            "src": "step10_routing_table.png",
+            "caption": "Task 4, Step 1: The AI Model Routing Table shows each CYAM function mapped to its Primary and Fallback models."
+        },
+        {
+            "task_number": 4,
+            "step_number": 4,
+            "type": "image",
+            "src": "step10b_escalation_explainer.png",
+            "caption": "Task 4, Step 4: The Escalation Pattern — How the Chatbot checks local docs first (free) then escalates to web search."
+        },
+        {
+            "task_number": 4,
+            "step_number": 9,
+            "type": "image",
+            "src": "step13_test_connection_badge.png",
+            "caption": "Task 4, Step 9: Test Connection — A green 'Verified & Active' badge confirms routing is live."
+        }
+    ],
+    "relevant_links": [
+        {
+            "title": "Ollama Windows Resources",
+            "url": "https://docs.ollama.com/windows"
+        },
+        {
+            "title": "Ollama macOS Resources",
+            "url": "https://docs.ollama.com/macos"
+        },
+        {
+            "title": "OpenRouter Key Management",
+            "url": "https://openrouter.ai/settings/keys"
+        },
+        {
+            "title": "OpenRouter Pricing",
+            "url": "https://openrouter.ai/pricing"
+        }
+    ],
+    "INSTALL_CHATBOT": true,
+    "chatbot_context_urls": [
+        "https://docs.ollama.com/windows",
+        "https://docs.ollama.com/macos",
+        "https://docs.ollama.com/faq",
+        "https://openrouter.ai/docs/guides/overview/auth/oauth"
+    ],
+    "chatbot_context_file": "Admin_Console_AI_Engines_Context_Knowledge.md",
+    "chatbot_prompt_context": "Assist Admins with specific OS installation nuances for Ollama ensuring they mount .dmg on mac. Rely purely on visual instructions for downloading models within the new Ollama GUI. Assist with OpenRouter API key naming, payment methods, and cloud model testing."
+}

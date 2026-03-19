@@ -37,7 +37,10 @@ category: "CLI Setup and Authentication"
    * **macOS:** Open Terminal. Type `python3 -V` and press Enter.
 [/OS:macOS]
 [OS:Windows]
-   * **Windows:** Open PowerShell. Type `python -V` and press Enter.
+   * **Windows:** Open PowerShell (press `Win + X` and select "Windows PowerShell"). Type `python -V` and press Enter.
+   * If `python` opens the Microsoft Store instead of showing a version, Python is not installed. Download it from [python.org](https://www.python.org/downloads/).
+   * **CRITICAL (Windows):** During Python installation, on the very first screen check the box labelled **"Add Python to PATH"**. Without this, the `python` command won't work.
+   * After installing, **close and reopen PowerShell** before retrying `python -V`.
 [/OS:Windows]
    * If it prints a version number (like Python 3.x.x), you are ready. If you get an error, download Python from python.org.
 3. **Download the Installer**: Go to the [Google Cloud CLI Downloads](https://cloud.google.com/sdk/docs/install) page.
@@ -45,14 +48,14 @@ category: "CLI Setup and Authentication"
    * **macOS:** Check your chip type (Apple Silicon/M1/M2/M3 vs Intel) by clicking the Apple Logo > About This Mac. Download the matching macOS archive.
 [/OS:macOS]
 [OS:Windows]
-   * **Windows:** Download the standard Windows installer.
+   * **Windows:** Download the **Windows 64-bit (bundled Python)** `.exe` installer. This version includes Python and handles all dependencies automatically. Most modern Windows 10/11 systems are 64-bit.
 [/OS:Windows]
 4. **Extract the Download**:
 [OS:macOS]
    * **macOS:** Find the downloaded `.tar.gz` file in your Downloads folder and double-click it to extract a folder named `google-cloud-sdk`.
 [/OS:macOS]
 [OS:Windows]
-   * **Windows:** Double-click the downloaded `.exe` installer.
+   * **Windows:** Right-click the downloaded `.exe` file and select **"Run as administrator"**. If Windows Security shows "Windows protected your PC", click **"More info"** then **"Run anyway"** (this is normal for new installers).
 [/OS:Windows]
 5. **Run the Installer**:
 [OS:macOS]
@@ -63,7 +66,14 @@ category: "CLI Setup and Authentication"
      * **INVISIBLE PASSWORD PROMPT**: If the terminal says "Running Python 3.13 installer, you may be prompted for sudo password..." followed by a `Password:` prompt, it needs your Mac computer login password to install Python. Type your password and press Enter. **Crucial Note:** As you type, the keys will not show up on the screen (no asterisks). Just type it blindly and press Enter.
 [/OS:macOS]
 [OS:Windows]
-   * **Windows:** Follow the standard installation wizard prompts (Next, I Agree, Install). Ensure the checkbox for "Start Google Cloud CLI Shell" is checked at the end.
+   * **Windows:** Follow the installation wizard:
+     1. **Welcome Screen**: Click "Next".
+     2. **License Agreement**: Click "I Agree".
+     3. **Installation Type**: Choose "Install for all users" if you have admin rights.
+     4. **Component Selection**: Ensure **"Google Cloud CLI Core Libraries"** and **"Bundled Python"** are both checked.
+     5. **Installation Options**: **CRITICAL** — Check both **"Start Google Cloud CLI Shell"** and **"Run `gcloud init`"**.
+     6. Click "Install" and wait 2-5 minutes for completion.
+   * After installation, the **Google Cloud SDK Shell** should open automatically — keep it open for the next step.
 [/OS:Windows]
 6. **Log In and Initialize**: 
    * Open a fresh, new Terminal (macOS) or PowerShell (Windows).
@@ -76,6 +86,19 @@ category: "CLI Setup and Authentication"
    * The terminal will say **"The Google Cloud CLI is configured and ready to use!"** You are done with gcloud!
 
 ##### Level 5: Help & Context
+
+**Step 1 — Node.js:** Node.js is a software platform that the Workspace CLI runs on. You only need to install it once. Download the **LTS** version from [nodejs.org](https://nodejs.org/). After installing, open a **new** terminal and type `node -v` to verify.
+
+**Step 2 — Python Check:** Google Cloud CLI requires Python 3.8+. On macOS, type `python3 -V`. On Windows, type `python -V`. If Python isn't found or opens the Microsoft Store, install it from [python.org](https://www.python.org/downloads/) — **check "Add Python to PATH" during install**.
+
+**Step 3 — Download:** Go to the [Google Cloud CLI Downloads](https://cloud.google.com/sdk/docs/install) page. On macOS, check Apple Menu > About This Mac to determine if you need the Apple Silicon or Intel version. On Windows, choose the **bundled Python** `.exe` installer.
+
+**Step 4 — Extract:** On macOS, double-click the `.tar.gz` file in your Downloads folder to extract a `google-cloud-sdk` folder. On Windows, right-click the `.exe` and select "Run as administrator".
+
+**Step 5 — Run Installer:** On macOS, drag `install.sh` from the extracted folder into Terminal and press Enter. Answer N to usage stats, Y to PATH update, and just press Enter for the rc file path. On Windows, follow the wizard — ensure both "Start Cloud SDK Shell" and "Run gcloud init" are checked.
+
+**Step 6 — Initialize:** In a fresh terminal, run `gcloud init`. Choose "Re-initialize" (option 1), then "Sign in with a new Google Account" (avoids passkey issues). Log in via browser, then create a new project named `cyam-workspace-cli`.
+
 * **Carousel Item 1:** Download and install Node.js (required prerequisite).
   (Media: `install_nodejs.png`)
 * **Carousel Item 2:** Check Python version and download the correct Google Cloud CLI installer.
@@ -84,7 +107,7 @@ category: "CLI Setup and Authentication"
   (Media: `install_gcloud_cli_run.png`)
 * **Carousel Item 4:** Run 'gcloud init' in your terminal and log into your Google Account in the browser.
   (Media: `gcloud_init.png`)
-* **Chatbot Note:** Emphasize that choosing "Sign in with a new Google Account" is safer for passkey login. 
+* **Chatbot Note:** Emphasize that choosing "Sign in with a new Google Account" is safer for passkey login.
 
 ---
 
@@ -96,6 +119,13 @@ category: "CLI Setup and Authentication"
 3. Wait for the installation to complete.
 
 ##### Level 5: Help & Context
+
+**Step 1 — Open Terminal:** On macOS, press `Cmd + Space`, type "Terminal", and press Enter. On Windows, search for "PowerShell" in the Start menu, **right-click** it and select **"Run as administrator"**. Administrator privileges are required because global npm installations write to protected system directories.
+
+**Step 2 — npm install:** This command downloads and installs the Google Workspace CLI globally. The `-g` flag means it's available system-wide. On macOS, do **not** use `sudo`. Wait for it to say "added X packages" — this confirms success.
+
+**Step 3 — Verify:** After installation completes, type `gws --version` to confirm. If you see "command not found", **close and reopen your terminal** (the PATH needs to refresh).
+
 * **Carousel Item 1:** Run the npm install command in your terminal to get the Workspace CLI.
   (Media: `install_gws_cli.png`)
 
@@ -117,6 +147,13 @@ category: "CLI Setup and Authentication"
    * Go back to the **Library** page and repeat this exact search-and-enable process for the remaining four APIs: **Google Drive API**, **Gmail API**, **Google Calendar API**, and **Google Docs API**.
 
 ##### Level 5: Help & Context
+
+**Step 1 — Select Project:** Open [Google Cloud Console](https://console.cloud.google.com/) in your browser. Click the **Project Dropdown** at the top-left (next to the Google Cloud logo). Search for and select `cyam-workspace-cli`. The project name should now appear in the top navigation bar.
+
+**Step 2 — API Library:** Open the navigation menu (☰), go to **APIs & Services > Library**. This is the catalogue of all available Google APIs. Do not go to "Dashboard" — that shows already-enabled APIs.
+
+**Step 3 — Enable APIs:** Search for each API by name, click the result card, then click the blue **Enable** button. Wait for each to load before returning to the Library for the next one. You need all five: **Google Sheets API, Google Drive API, Gmail API, Google Calendar API, Google Docs API**.
+
 * **Carousel Item 1:** Click the Project Dropdown and select or create 'CYAM-Workspace-CLI'.
   (Media: `step6_create_new_project.png`)
 * **Carousel Item 2:** Use the search bar in the Library to find and enable each API one by one.
@@ -157,6 +194,17 @@ If you are doing this manually, do not manually look for the `.config` folder. S
 [/OS:Windows]
 
 ##### Level 5: Help & Context
+
+**Steps 1-3 — OAuth Setup:** Navigate to **APIs & Services > OAuth consent screen**. Click "Get started" if this is a new project. Set the app name to exactly **CYAM-Workspace-CLI** and enter your email in both contact fields. Click Save and Continue through each screen.
+
+**Steps 4-6 — Audience Config:** Click the **Audience** tab. Set user type to **External** and publishing status to **Testing**. Never select "In production" — that requires weeks of Google verification.
+
+**Step 7 — CRITICAL Test Users:** Scroll to "Test users" and click **Add users**. Enter your exact Google email address. **This is the #1 cause of errors** — skipping this causes "Access blocked: This app's request is invalid" later.
+
+**Steps 8-10 — Create Credentials:** Go to **Credentials > Create Credentials > OAuth client ID**. Select **Desktop app**. Click Create, then **Download JSON** from the success popup.
+
+**Steps 11-12 — Save Credentials:** The JSON file must be saved to a specific hidden folder. On macOS: `mkdir -p ~/.config/gws && mv ~/Downloads/client_secret*.json ~/.config/gws/client_secret.json`. On Windows, use the PowerShell command or ask your AntiGravity Agent to do it for you.
+
 * **Carousel Item 1:** Click 'Get started' on the OAuth screen, name the app 'CYAM-Workspace-CLI', and save.
   (Media: `oauth_get_started.png`)
 * **Carousel Item 2:** On the Audience tab, click 'Make external', select 'Testing', and add your email to 'Test users'.
@@ -196,6 +244,15 @@ If you are doing this manually, do not manually look for the `.config` folder. S
 7. If the terminal prints out names of your recent Google Drive files, your installation is fully verified and successful!
 
 ##### Level 5: Help & Context
+
+**Steps 1-2 — Auth Login:** Open a terminal and run `gws auth login --services drive,gmail,sheets`. The `--services` flag limits access to only what CYAM needs. On Windows, if you see "execution of scripts is disabled", run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` first.
+
+**Steps 3-4 — Browser Flow:** Your browser should open automatically. If it doesn't, look for a long URL in the terminal starting with `https://accounts.google.com/...` — copy the **entire** URL and paste it into your browser. Log in and click "Allow".
+
+**Step 5 — Safety Warning:** You may see "Google hasn't verified this app" — this is expected. Click **Advanced** then **Go to CYAM-Workspace-CLI (unsafe)**. It's safe because you created this app yourself.
+
+**Steps 6-7 — Verify:** Run `gws drive files list --params '{"pageSize": 5}'` to list your 5 most recent Drive files. On Windows PowerShell, you may need to use escaped quotes: `--params "{\`"pageSize\`": 5}"`. If files appear, your setup is complete!
+
 * **Carousel Item 1:** Run 'gws auth login' with limited scopes and approve the consent screen.
   (Media: `gws_auth_login.png`)
 * **Carousel Item 2:** Test your setup by listing your Google Drive files in the terminal.

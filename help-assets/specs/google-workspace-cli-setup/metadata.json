@@ -21,74 +21,88 @@
     ],
     "carousel_items": [
         {
+            "task_number": 0,
             "step_number": 0,
             "media_placeholder": "overview_animation.webp",
             "caption": "Overview: Connecting your computer to Google Cloud and Workspace for AI orchestration."
         },
         {
+            "task_number": 1,
             "step_number": 1,
             "media_placeholder": "install_nodejs.png",
-            "caption": "Download and install Node.js (required prerequisite)."
+            "caption": "Task 1, Step 1: Download and install Node.js (required prerequisite)."
         },
         {
+            "task_number": 1,
             "step_number": 2,
             "media_placeholder": "install_gcloud_cli_download.png",
-            "caption": "Check Python version and download the correct Google Cloud CLI installer."
+            "caption": "Task 1, Step 2: Check Python version and download the correct Google Cloud CLI installer."
         },
         {
+            "task_number": 1,
             "step_number": 3,
             "media_placeholder": "install_gcloud_cli_run.png",
-            "caption": "Run the installer or drag 'install.sh' into the macOS Terminal."
+            "caption": "Task 1, Step 3: Run the installer or drag 'install.sh' into the macOS Terminal."
         },
         {
+            "task_number": 1,
             "step_number": 4,
             "media_placeholder": "gcloud_init.png",
-            "caption": "Run 'gcloud init' in your terminal and log into your Google Account in the browser."
+            "caption": "Task 1, Step 4: Run 'gcloud init' in your terminal and log into your Google Account."
         },
         {
-            "step_number": 5,
+            "task_number": 2,
+            "step_number": 1,
             "media_placeholder": "install_gws_cli.png",
-            "caption": "Run the npm install command in your terminal to get the Workspace CLI."
+            "caption": "Task 2, Step 1: Run the npm install command in your terminal to get the Workspace CLI."
         },
         {
-            "step_number": 6,
+            "task_number": 3,
+            "step_number": 1,
             "media_placeholder": "step6_create_new_project.png",
-            "caption": "Click the Project Dropdown and select or create 'CYAM-Workspace-CLI'."
+            "caption": "Task 3, Step 1: Click the Project Dropdown and select or create 'CYAM-Workspace-CLI'."
         },
         {
-            "step_number": 7,
+            "task_number": 3,
+            "step_number": 2,
             "media_placeholder": "step7_enable_apis.png",
-            "caption": "Use the search bar in the Library to find and enable each API one by one."
+            "caption": "Task 3, Step 2: Use the search bar in the Library to find and enable each API one by one."
         },
         {
-            "step_number": 8,
+            "task_number": 4,
+            "step_number": 1,
             "media_placeholder": "oauth_get_started.png",
-            "caption": "Click 'Get started' on the OAuth screen, name the app 'CYAM-Workspace-CLI', and save."
+            "caption": "Task 4, Step 1: Click 'Get started' on the OAuth screen, name the app 'CYAM-Workspace-CLI', and save."
         },
         {
-            "step_number": 9,
+            "task_number": 4,
+            "step_number": 2,
             "media_placeholder": "oauth_audience.png",
-            "caption": "On the Audience tab, click 'Make external', select 'Testing', and add your email to 'Test users'."
+            "caption": "Task 4, Step 2: On the Audience tab, click 'Make external', select 'Testing', and add your email."
         },
         {
-            "step_number": 10,
+            "task_number": 4,
+            "step_number": 3,
             "media_placeholder": "step8_desktop_app.png",
-            "caption": "Create a Desktop OAuth client and download the JSON file."
+            "caption": "Task 4, Step 3: Create a Desktop OAuth client and download the JSON file."
         },
         {
-            "step_number": 11,
+            "task_number": 4,
+            "step_number": 4,
             "media_placeholder": "step9_save_client_secret.png",
-            "caption": "Save the JSON file to the required hidden .config folder."
+            "caption": "Task 4, Step 4: Save the JSON file to the required hidden .config folder."
         },
         {
-            "step_number": 12,
+            "task_number": 5,
+            "step_number": 1,
             "media_placeholder": "gws_auth_login.png",
-            "caption": "Run 'gws auth login' with limited scopes and approve the consent screen."
+            "caption": "Task 5, Step 1: Run 'gws auth login' with limited scopes and approve the consent screen."
         },
         {
-            "step_number": 13,
+            "task_number": 5,
+            "step_number": 2,
             "media_placeholder": "gws_drive_verify.png",
-            "caption": "Test your setup by listing your Google Drive files in the terminal."
+            "caption": "Task 5, Step 2: Test your setup by listing your Google Drive files in the terminal."
         }
     ],
     "chatbot_context_urls": [

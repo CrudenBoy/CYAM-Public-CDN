@@ -1,0 +1,111 @@
+{
+    "INSTALL_CHATBOT": true,
+    "category": "CLI Setup and Authentication",
+    "workflow_description": "Setting up the Google Cloud and Workspace command-line tools for local automation.",
+    "task_summary": "Install Google Cloud Command Line Interface (CLI) and Google Workspace CLI, set up a Google Cloud Project, and authenticate using Open Authorization (OAuth).",
+    "overview_description": "To allow the CYAM platform and AI agents to help manage your Google Workspace (Drive, Gmail, Calendar, Docs, etc.), we need to install two helper tools on your computer. First, we install the Google Cloud CLI to manage your Google Cloud account. Second, we install the Google Workspace CLI (gws) which acts as the bridge. We then create a dedicated 'CYAM-Workspace-CLI' project in Google Cloud, configure the Open Authorization (OAuth) security settings, and finally log in. This securely connects your tools without exposing your passwords.",
+    "ui_instructions": [
+        "Step 1: Install NodeJS. Node.js is a software platform required to run the Workspace CLI. If you don't have it, download and install it from the official Node.js website. (🤖 Agent Automation: Ask your AntiGravity Agent to install Node.js and Python for you!)",
+        "Step 2: Install Google Cloud CLI. Check your Python version in the terminal (macOS: python3 -V, Windows: python -V). Download the correct installer from the Google Cloud website (check Apple Silicon vs Intel for Macs).",
+        "Step 3: Run the Installer. On Windows, double-click the .exe. On macOS, drag 'install.sh' into the terminal and press Enter. Answer 'N' to usage stats, 'Y' to update PATH, and just press 'Enter' when asked for the rc file path. If prompted for a 'Password', type your Mac login password blindly (characters won't show) and press Enter.",
+        "Step 4: Authenticate gcloud. Open a new terminal or PowerShell and type 'gcloud init'. If asked to 'Pick configuration', type '1'. If asked to 'Choose the account', type the number next to your email or select 'Sign in with a new Google Account' (Note: always choose the 'Sign in with a new Google Account' option if your account uses Passkeys like Fingerprint/FaceID, as the terminal cannot process them). A browser will open; log in and click Allow. Back in the terminal, type the number for 'Create a new project', name it 'cyam-workspace-cli', and press Enter.",
+        "Step 5: Install Google Workspace CLI. Open your terminal or command prompt (as Administrator on Windows) and run 'npm install -g @googleworkspace/cli'.",
+        "Step 6: Select Your Project. Go to the Google Cloud Console in your browser. Click the 'Project Dropdown' at the top of the screen and select the 'cyam-workspace-cli' project you just created in the terminal.",
+        "Step 7: Enable APIs. Navigate to APIs & Services > Library. Use the top search bar to find 'Google Sheets API', click the card, and click the blue Enable button. Repeat this search-and-enable process for Drive, Gmail, Calendar, and Docs APIs.",
+        "Step 8: Initialize OAuth. Go to APIs & Services > OAuth consent screen. If you see 'Google auth platform not configured yet', click 'Get started'. Set the app name to 'CYAM-Workspace-CLI', enter your email, and save through the steps.",
+        "Step 9: Configure OAuth Audience. Go to the 'Audience' tab on the left. Under User type, click 'Make external'. When prompted for publishing status, choose 'Testing'. Crucially, under 'Test users', you must add your own Google account email. If you skip this, your login will be blocked.",
+        "Step 10: Create OAuth Credentials. Go to Credentials > Create Credentials > OAuth client ID. Select 'Desktop app'. Download the JSON file.",
+        "Step 11: Save the Credentials. Save the JSON file to exactly '~/.config/gws/client_secret.json'. (🤖 Agent Automation: Ask your AntiGravity Agent to find the most recent client secret file in your Downloads folder and move it to the hidden .config/gws folder automatically!)",
+        "Step 12: Authenticate the Workspace CLI. In your terminal, run 'gws auth login --services drive,gmail,sheets'. If the browser does not open automatically, copy the entire long URL from the terminal and paste it into your browser to log in. (🤖 Agent Automation: Ask your agent to run this command with the --services flag for you!)",
+        "Step 13: Verify the Connection. Run 'gws drive files list --params ''{\"pageSize\": 5}'''. If it lists your recent Google Drive files, you are successfully connected! (🤖 Agent Automation: Ask your agent to run the verification command and check your Drive files!)"
+    ],
+    "carousel_items": [
+        {
+            "step_number": 0,
+            "media_placeholder": "overview_animation.webp",
+            "caption": "Overview: Connecting your computer to Google Cloud and Workspace for AI orchestration."
+        },
+        {
+            "step_number": 1,
+            "media_placeholder": "install_nodejs.png",
+            "caption": "Download and install Node.js (required prerequisite)."
+        },
+        {
+            "step_number": 2,
+            "media_placeholder": "install_gcloud_cli_download.png",
+            "caption": "Check Python version and download the correct Google Cloud CLI installer."
+        },
+        {
+            "step_number": 3,
+            "media_placeholder": "install_gcloud_cli_run.png",
+            "caption": "Run the installer or drag 'install.sh' into the macOS Terminal."
+        },
+        {
+            "step_number": 4,
+            "media_placeholder": "gcloud_init.png",
+            "caption": "Run 'gcloud init' in your terminal and log into your Google Account in the browser."
+        },
+        {
+            "step_number": 5,
+            "media_placeholder": "install_gws_cli.png",
+            "caption": "Run the npm install command in your terminal to get the Workspace CLI."
+        },
+        {
+            "step_number": 6,
+            "media_placeholder": "step6_create_new_project.png",
+            "caption": "Click the Project Dropdown and select or create 'CYAM-Workspace-CLI'."
+        },
+        {
+            "step_number": 7,
+            "media_placeholder": "step7_enable_apis.png",
+            "caption": "Use the search bar in the Library to find and enable each API one by one."
+        },
+        {
+            "step_number": 8,
+            "media_placeholder": "oauth_get_started.png",
+            "caption": "Click 'Get started' on the OAuth screen, name the app 'CYAM-Workspace-CLI', and save."
+        },
+        {
+            "step_number": 9,
+            "media_placeholder": "oauth_audience.png",
+            "caption": "On the Audience tab, click 'Make external', select 'Testing', and add your email to 'Test users'."
+        },
+        {
+            "step_number": 10,
+            "media_placeholder": "step8_desktop_app.png",
+            "caption": "Create a Desktop OAuth client and download the JSON file."
+        },
+        {
+            "step_number": 11,
+            "media_placeholder": "step9_save_client_secret.png",
+            "caption": "Save the JSON file to the required hidden .config folder."
+        },
+        {
+            "step_number": 12,
+            "media_placeholder": "gws_auth_login.png",
+            "caption": "Run 'gws auth login' with limited scopes and approve the consent screen."
+        },
+        {
+            "step_number": 13,
+            "media_placeholder": "gws_drive_verify.png",
+            "caption": "Test your setup by listing your Google Drive files in the terminal."
+        }
+    ],
+    "chatbot_context_urls": [
+        "https://nodejs.org/en/learn/getting-started/how-to-install-nodejs",
+        "https://cloud.google.com/sdk/docs/install",
+        "https://github.com/googleworkspace/cli",
+        "https://developers.google.com/workspace/guides/configure-oauth-consent"
+    ],
+    "relevant_links": [
+        {
+            "title": "Google Cloud CLI Installation Guide",
+            "url": "https://cloud.google.com/sdk/docs/install"
+        },
+        {
+            "title": "Google Workspace CLI Documentation",
+            "url": "https://github.com/googleworkspace/cli"
+        }
+    ],
+    "chatbot_prompt_context": "When assisting a user with this setup, emphasize that they MUST add themselves as a 'Test user' in the OAuth consent screen. Also, remind them that 'gws auth login' might fail if they don't limit the scopes for an unverified app (e.g., using '-s drive,gmail,sheets'). Inform them that if they see a 'Google hasn't verified this app' warning, it is safe to click 'Advanced' and 'Go to CYAM-Workspace-CLI (unsafe)' since they created the app themselves."
+}

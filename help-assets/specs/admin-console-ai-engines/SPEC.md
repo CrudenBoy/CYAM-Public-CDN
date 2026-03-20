@@ -127,38 +127,27 @@ category: "Admin Console"
 
 #### Level 4: Steps
 
-1. In the CYAM Admin Console, click the **"Authorize OpenRouter"** OAuth button.
-2. CYAM's backend generates the necessary cryptographic PKCE challenges (a `code_verifier` and SHA-256 `code_challenge`) and safely redirects you to `openrouter.ai/auth`.
-   * **What is PKCE?** Proof Key for Code Exchange (PKCE) is a security extension to the standard OAuth 2.0 authorization flow. It ensures that only the CYAM application that initiated the request can exchange the returned authorization code for an API key — preventing interception attacks. [Read more at OpenRouter Docs](https://openrouter.ai/docs/guides/overview/auth/oauth).
-3. Log into your OpenRouter account (or create one — it's free).
-   * **No credit card is required at this stage.** You can immediately use OpenRouter's **free models** (like Llama 3.3 70B Instruct or GPT-4o-mini on select providers) without adding any payment method. Free models are rate-limited to **50 requests/day**.
-   * You can also use the special model ID `openrouter/free` which automatically routes your requests to currently available free models.
-4. After signing in, you will see a **"Get API Key"** button. Click it. You will be prompted to:
-   * **Name your key:** Use a descriptive, recognizable name (e.g., `CYAM-App`, `My-Business-AI`). This helps you identify CYAM charges later.
-   * **Credit limit (optional):** You may set a daily spending cap (e.g., `$1`). This only applies if you later add credits for paid models.
-   * **Expiration (optional):** You may set an expiry date for the key.
-   * Click **Create**. Your API key (starting with `sk-...`) will be shown **once only**. CYAM will securely capture and store it — you do not need to copy it manually.
-5. **(Optional — for Frontier Models):** If you want access to premium AI models (Claude, GPT-4, Gemini Pro), you need to add prepaid credits:
-   * Go to [openrouter.ai/settings](https://openrouter.ai/settings) and click **"Buy Credits"**.
-   * Minimum top-up is **$5**. OpenRouter accepts credit/debit cards, Google Pay, Amazon Pay, Cash App, and USDC crypto.
-   * **No subscriptions** — it's strictly pay-as-you-go. Credits last 365 days. Purchasing at least $10 in credits increases your rate limit from 50 to **1,000 requests/day**.
-   * Your single API key works for both free and paid models. OpenRouter deducts the per-token cost from your credit balance automatically.
+1. Open [openrouter.ai/settings/keys](https://openrouter.ai/settings/keys) in a new browser window and log in (or create a free account).
+   * **No credit card is required.** You can immediately use OpenRouter's free models with no payment method.
+2. Click the **Create Key** button. Name your key (e.g., `CYAM APP`), leave the credit limit blank, and click Create.
+3. Once generated, securely copy your new API key (it starts with `sk-or-v1-`).
+4. Return to this CYAM Admin Console, paste your copied key into the **OpenRouter API Key** field, and click **Save Key**.
 
 ##### Level 5: Help & Context
 
-**Steps 1-3 — Authorize & Create Account:** OpenRouter acts as a unified gateway to hundreds of cloud AI models. By clicking Authorize, CYAM initiates a highly secure PKCE (Proof Key for Code Exchange) OAuth flow, meaning no intermediate server can intercept your session. You can create a free account and immediately use $0/token models without adding a credit card.
+**Step 1 — Create a Free Account:** OpenRouter acts as a unified gateway to hundreds of cloud AI models. By heading to the platform autonomously, you maintain full control over your billing and usage. You can create a free account and immediately use $0/token models without adding a credit card.
 
-**Step 4 — Create API Key:** Your API key is the sensitive cryptographic token that allows CYAM to send prompts on your behalf. Naming your key helps you track usage later. As a security measure, the key is only displayed once; you do not even need to copy it, as CYAM captures it automatically and stores it encrypted.
+**Steps 2-3 — Generate & Copy Key:** Your API key is the sensitive cryptographic token that allows CYAM to send prompts on your behalf. Naming your key helps you track usage later. As a security measure, the key is only displayed once. 
 
-**Step 5 — Prepaid Credits (Optional):** If you wish to use frontier models like GPT-4o or Claude 3.5 Sonnet, you must add a minimum of $5 in prepaid credits. This strictly pay-as-you-go model ensures you can never be surprised by a massive monthly bill. **Use the '< >' arrows below to view the visual step-by-step guide for creating your OpenRouter key.**
+**Step 4 — Save Key:** If you wish to use frontier models like GPT-4o or Claude 3.5 Sonnet, you must add a minimum of $5 in prepaid credits at [openrouter.ai/settings](https://openrouter.ai/settings). This strictly pay-as-you-go model ensures you can never be surprised by a massive monthly bill. CYAM stores your API key encrypted. **Use the '< >' arrows below to view the visual step-by-step guide for creating your OpenRouter key.**
 
-* **Carousel Item 1:** Screenshot of the OpenRouter home page showing the "Get API Key" button.
+* **Carousel Item 1:** Screenshot of the OpenRouter home page showing the "Create Key" button.
   (Media: `openrouter_home.png`)
 * **Carousel Item 2:** Screenshot of the "Create API Key" dialog showing the Name, Credit Limit, and Expiration fields.
   (Media: `openrouter_create_key.png`)
 * **Carousel Item 3:** Screenshot of the "Your new key" confirmation dialog emphasizing "You will not be able to see it again."
   (Media: `openrouter_key_created.png`)
-* **Chatbot Note:** Assist with OpenRouter API key naming and payment methods. Note that if authorization fails, it might be due to pop-up blockers, not being logged into OpenRouter, or an expired session.
+* **Chatbot Note:** Assist with OpenRouter API key naming and payment methods.
 
 ---
 
@@ -172,11 +161,12 @@ category: "Admin Console"
 
 ##### Level 5: Help & Context
 
-**Steps 1-3 — AI Model Routing Table:** This table is the "brain" of CYAM's AI infrastructure, mapping distinct platform features (like Summarization vs Main Chat) to specific models. We ship default configurations that are tested for optimum performance, but you have full control to override them for cost or quality reasons.
+**Step 1 — Understanding the AI Model Routing Table:** This table is the "brain" of CYAM's AI infrastructure, mapping distinct platform features (like Summarization vs Main Chat) to specific models. We ship default configurations that are tested for optimum performance, but you have full control to override them for cost or quality reasons.
+* **The Escalation Pattern:** The true power of the CYAM Help Chatbot is its progressive escalation strategy. It will always attempt to answer user questions using local Markdown documents via a free, fast model. It is only when the local documents lack the answer that the chatbot triggers an `ESCALATE_TO_WEB` state, forcing a failover to a live web-search model (like Grok), thereby minimizing your paid API usage.
 
-**Step 4 — The Escalation Pattern:** The true power of the CYAM Help Chatbot is its progressive escalation strategy. It will always attempt to answer user questions using local Markdown documents via a free, fast model. It is only when the local documents lack the answer that the chatbot triggers an `ESCALATE_TO_WEB` state, forcing a failover to a live web-search model (like Grok), thereby minimizing your paid API usage.
+**Step 2 — Configure Simple Task Offloading:** Background tasks can rapidly consume premium tokens. By configuring "Local Offloading" (if you run Ollama) or "Free Cloud Offloading" (using OpenRouter $0 models), CYAM handles these invisible tasks for free. 
 
-**Steps 5-9 — Offloading & Configuration:** Background tasks can rapidly consume premium tokens. By configuring "Local Offloading" (if you run Ollama) or "Free Cloud Offloading" (using OpenRouter $0 models), CYAM handles these invisible tasks for free. When you save your configuration, CYAM executes a live test prompt directly from your browser to verify the API key is active without violating Google Workspace CASA Tier 1 security boundaries. **Use the '< >' arrows below to view the visual step-by-step routing configuration guide.**
+**Step 3 — Save and Verify Connection:** When you save your configuration, CYAM executes a live test prompt directly from your browser to verify the API key is active without violating Google Workspace CASA Tier 1 security boundaries. **Use the '< >' arrows below to view the visual step-by-step routing configuration guide.**
 
 * **Carousel Item 1:** The AI Model Routing Table in the Admin Console, showing each CYAM function mapped to its Primary and Fallback models.
   (Media: `step10_routing_table.png`)

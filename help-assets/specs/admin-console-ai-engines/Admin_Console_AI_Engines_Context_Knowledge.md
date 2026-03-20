@@ -58,7 +58,7 @@ If an Admin states their C: drive or immediate disk is full and they cannot pull
 Models are stored at `~/.ollama/models` by default. Add `OLLAMA_MODELS=/your/path` to the shell profile (`.zshrc` or `.bash_profile`) and restart Ollama.
 
 ## 4. OpenRouter API Keys & Credits
-CYAM routes heavy tasks to OpenRouter safely via OAuth PKCE. 
+CYAM routes heavy tasks to OpenRouter safely using your configured API key. 
 
 **CRITICAL: No credit card is required to get started.** 
 - Users can create an account and generate an API key completely free.

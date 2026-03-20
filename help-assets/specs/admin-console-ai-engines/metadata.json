@@ -152,45 +152,47 @@
         },
         {
             "task_number": 3,
-            "step_number": 4,
+            "step_number": 1,
             "type": "image",
             "src": "openrouter_home.png",
-            "caption": "Task 3, Step 4: OpenRouter Home — Click the 'Get API Key' button."
+            "caption": "Task 3, Step 1: OpenRouter Home — Navigate here to create a new key."
         },
         {
             "task_number": 3,
-            "step_number": 4,
+            "step_number": 2,
             "type": "image",
             "src": "openrouter_create_key.png",
-            "caption": "Task 3, Step 4: Create API Key — Name your key and optionally set a credit limit and expiration."
+            "caption": "Task 3, Step 2: Create API Key — Name your key and optionally set a limit."
         },
         {
             "task_number": 3,
-            "step_number": 4,
+            "step_number": 3,
             "type": "image",
             "src": "openrouter_key_created.png",
-            "caption": "Task 3, Step 4: Key Confirmation — Your new key is displayed once only. CYAM will securely capture it."
+            "caption": "Task 3, Step 3: Key Confirmation — Your new key is displayed once only."
         },
         {
             "task_number": 4,
             "step_number": 1,
+            "carousel_group": "Routing Table",
             "type": "image",
             "src": "step10_routing_table.png",
             "caption": "Task 4, Step 1: The AI Model Routing Table shows each CYAM function mapped to its Primary and Fallback models."
         },
         {
             "task_number": 4,
-            "step_number": 4,
+            "step_number": 1,
+            "carousel_group": "Escalation Logic",
             "type": "image",
             "src": "step10b_escalation_explainer.png",
-            "caption": "Task 4, Step 4: The Escalation Pattern — How the Chatbot checks local docs first (free) then escalates to web search."
+            "caption": "Task 4, Step 1: The Escalation Pattern — How the Chatbot checks local docs first (free) then escalates to web search."
         },
         {
             "task_number": 4,
-            "step_number": 9,
+            "step_number": 3,
             "type": "image",
             "src": "step13_test_connection_badge.png",
-            "caption": "Task 4, Step 9: Test Connection — A green 'Verified & Active' badge confirms routing is live."
+            "caption": "Task 4, Step 3: Test Connection — A green 'Verified & Active' badge confirms routing is live."
         }
     ],
     "relevant_links": [
@@ -216,7 +218,7 @@
         "https://docs.ollama.com/windows",
         "https://docs.ollama.com/macos",
         "https://docs.ollama.com/faq",
-        "https://openrouter.ai/docs/guides/overview/auth/oauth"
+        "https://openrouter.ai/settings/keys"
     ],
     "chatbot_context_file": "Admin_Console_AI_Engines_Context_Knowledge.md",
     "chatbot_prompt_context": "Assist Admins with specific OS installation nuances for Ollama ensuring they mount .dmg on mac. Rely purely on visual instructions for downloading models within the new Ollama GUI. Assist with OpenRouter API key naming, payment methods, and cloud model testing."

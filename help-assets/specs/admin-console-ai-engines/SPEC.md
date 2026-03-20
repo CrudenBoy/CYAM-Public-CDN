@@ -30,10 +30,8 @@ category: "Admin Console"
 
 #### Level 4: Steps
 
-1. In the **CYAM Admin Console**, select your operating system (Windows or macOS).
-2. The UI displays a direct download button for the official Ollama installer.
-   * **Pre-flight: System Requirements Check**
-     Before downloading, confirm your machine meets minimum requirements:
+1. **Verify AntiGravity Prerequisites:** Confirm that your system has the AntiGravity Agent installed and active, along with the `gemini-cli` and `clasp` packages available in your OS environment.
+2. **Select OS & Check Requirements:** The UI displays a direct download button for the official Ollama installer. Before downloading, confirm your machine meets minimum requirements:
      * **Windows:** Windows 10 version 22H2 or newer (Home or Pro). If you have a GPU: NVIDIA driver 452.39+ or AMD Radeon driver from [amd.com/en/support](https://www.amd.com/en/support).
      * **macOS:** macOS 14 Sonoma or newer. Apple M-series chip (CPU + GPU acceleration) or Intel x86 (CPU-only inference, slower).
      * **Disk Space (Both):** 4 GB minimum for the Ollama binary; an additional 2–100+ GB for models (varies by model size).
@@ -68,11 +66,11 @@ category: "Admin Console"
 
 ##### Level 5: Help & Context
 
-**Step 1 — OS Selection:** Choose your operating system (Windows or macOS) from the CYAM Admin Console to see the correct download link and installation steps.
+**Step 1 — AntiGravity Prerequisites:** The CYAM platform relies heavily on autonomous agents to synchronize local configurations and manage automated Cloud deployments. If the AntiGravity Agent, `gemini-cli`, or `clasp` are improperly configured, CYAM cannot bridge your local AI engine with the cloud interface. You must verify these dependencies are healthy inside your terminal environment before proceeding.
 
-**Step 2 — System Requirements:** Before downloading, verify your machine meets minimum requirements — Windows 10 22H2+ or macOS 14 Sonoma+, with at least 4 GB free disk space for the Ollama binary.
+**Step 2 — System Requirements:** AI models are highly resource-intensive. Running a local LLM ensures data privacy and zero cloud cost, but it requires capable hardware. Verify you have at least Windows 10 22H2+ or macOS 14 Sonoma+, and a minimum of 4 GB free disk space just for the Ollama binary. Depending on the models you pull later, you may need an additional 10-100 GB of storage.
 
-**Step 3 — Installation:** Follow the OS-specific installer steps. On Windows, handle SmartScreen warnings; on macOS, handle Gatekeeper prompts and CLI tool installation.
+**Step 3 — Installation Execution:** Operating systems enforce strict security protocols against unrecognized binaries. On Windows, Windows SmartScreen will flag the unsigned `.exe` (Click 'More info' -> 'Run anyway'). On macOS, Gatekeeper will issue a warning, and installing the necessary CLI companion tool will demand your Mac Password or Touch ID. Executing these steps installs Ollama as a background service, making it permanently available to CYAM silently.
 
 * **Carousel Item 1:** Task 1, Step 3: Windows Installation — Locate the downloaded OllamaSetup.exe, handle the SmartScreen warning, click Install, and verify via the system tray icon.
   (Media: `step3_win_installation.png`)
@@ -106,11 +104,11 @@ category: "Admin Console"
 
 ##### Level 5: Help & Context
 
-**Steps 1-2 — Open Ollama & Find Model:** Launch the Ollama App on your computer and click the Model Dropdown at the top of the chat interface to search for models.
+**Steps 1-2 — Open Ollama & Find Model:** The Ollama App acts as the local model registry. Unlike cloud interfaces, physical AI models must be downloaded entirely to your hard drive. By launching the app and interacting with the top model dropdown, you initiate a direct connection to the global Ollama library registry.
 
-**Step 3 — Model Selection:** Type the CYAM-recommended model tag (e.g., `qwen3:4b`). The recommended models only require 3–4 GB of RAM and run on virtually any modern computer.
+**Step 3 — Model Selection (qwen3:4b):** Selecting the right model size is essential to avoid system crashes. We strongly recommend `qwen3:4b` as it offers a 128K context window with high reasoning capabilities while remaining small enough (3-4 GB RAM) to run alongside your primary IDEs and web browsers transparently. Specifying the exact tag (e.g. `gemma3:4b`) ensures you do not accidentally pull an oversized 70B model that will choke your machine.
 
-**Steps 4-5 — Download & Wait:** Click the download arrow next to the model and wait for the progress bar to complete. The recommended `qwen3:4b` model is approximately 2.6 GB.
+**Steps 4-5 — Download & Wait:** The downloading process creates the model binary shards on your disk. You must wait for this 2.6 GB transfer to complete fully; interrupting it forces Ollama to resume from its last completed digest layer. Once downloaded, you can alternatively manage the model via your terminal using `ollama run qwen3:4b`.
 
 * **Carousel Item 1:** Task 2, Step 2: Inside the Ollama App, locate the model dropdown at the top of the chat interface.
   (Media: `step5_ollama_gui_dropdown.png`)

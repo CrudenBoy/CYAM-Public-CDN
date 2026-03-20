@@ -22,8 +22,56 @@
             "step_number": 3,
             "type": "image",
             "carousel_group": "Windows",
-            "src": "step3_win_installation.png",
-            "caption": "Task 1, Step 3: Windows Installation — Locate OllamaSetup.exe, handle SmartScreen, click Install, and verify via system tray icon."
+            "src": "step3_win_01_locate_exe.png",
+            "caption": "Task 1, Step 3: Locate OllamaSetup.exe in your Downloads folder and launch it"
+        },
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "carousel_group": "Windows",
+            "src": "step3_win_02_smartscreen.png",
+            "caption": "Task 1, Step 3: If SmartScreen appears, click 'More info' then 'Run anyway'"
+        },
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "carousel_group": "Windows",
+            "src": "step3_win_03_install_btn.png",
+            "caption": "Task 1, Step 3: Click 'Install' to begin (No Admin rights required)"
+        },
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "carousel_group": "Windows",
+            "src": "step3_win_04_progress.png",
+            "caption": "Task 1, Step 3: Wait for the installation to complete"
+        },
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "carousel_group": "Windows",
+            "src": "step3_win_05_app_launch.png",
+            "caption": "Task 1, Step 3: The Ollama App launches automatically"
+        },
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "carousel_group": "Windows",
+            "src": "step3_win_06_system_tray.png",
+            "caption": "Task 1, Step 3: A llama icon appears in the system tray, confirming the background service"
+        },
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "carousel_group": "Windows",
+            "src": "step3_win_07_verify_ps.png",
+            "caption": "Task 1, Step 3: Open PowerShell and type `ollama --version` to verify"
         },
         {
             "task_number": 1,

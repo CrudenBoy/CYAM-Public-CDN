@@ -100,7 +100,7 @@ category: "Admin Console"
 4. Locate the specific model in the results list and click the **Download icon** (↓ arrow) next to it to begin the download.
 5. Wait for the download to complete within the Ollama App. A progress indicator will show the download status. `qwen3:4b` is approximately 2.6 GB.
    * **CLI Alternative:** If you prefer or the GUI download fails, you can also pull a model via terminal: `ollama pull qwen3:4b`. This is equivalent to using the GUI download.
-6. Return to the **CYAM Admin Console** web browser window to configure your cloud routing.
+6. **Cloud routing setup is next.** Once your local model finishes downloading, scroll down to Task 3 to connect your cloud fallback models.
 
 ##### Level 5: Help & Context
 
@@ -166,7 +166,7 @@ category: "Admin Console"
 
 #### Level 4: Steps
 
-1. Return your attention to the CYAM Admin Console. You will see the **AI Model Routing Table** — a pre-configured table mapping every CYAM platform function to the best-suited AI model.
+1. **Review the AI Model Routing Table below.** This pre-configured routing matrix maps every internal CYAM capability to its best-suited AI engine.
    * This table ships with sensible **CYAM Defaults** so you do not need AI expertise. Advanced users can change any model via the dropdowns.
    * The table is sourced from a central CSV file (`AI Model Routing Table.csv`) that can be updated by CYAM Marketplace or locally by the Admin.
 

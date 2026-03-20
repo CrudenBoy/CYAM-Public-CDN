@@ -152,24 +152,24 @@
         },
         {
             "task_number": 3,
-            "step_number": 1,
+            "step_number": 5,
             "type": "image",
             "src": "openrouter_home.png",
-            "caption": "Task 3, Step 1: OpenRouter Home — Navigate here to create a new key."
+            "caption": "Task 3, Step 5: OpenRouter Home — Navigate here to configure your BYOK settings."
         },
         {
             "task_number": 3,
-            "step_number": 2,
+            "step_number": 5,
             "type": "image",
             "src": "openrouter_create_key.png",
-            "caption": "Task 3, Step 2: Create API Key — Name your key and optionally set a limit."
+            "caption": "Task 3, Step 5: Create BYOK Key — Generate the key you want OpenRouter to pass through."
         },
         {
             "task_number": 3,
-            "step_number": 3,
+            "step_number": 5,
             "type": "image",
             "src": "openrouter_key_created.png",
-            "caption": "Task 3, Step 3: Key Confirmation — Your new key is displayed once only."
+            "caption": "Task 3, Step 5: Key Confirmation — Securely copy your provider key before saving."
         },
         {
             "task_number": 4,
@@ -181,18 +181,18 @@
         },
         {
             "task_number": 4,
-            "step_number": 1,
+            "step_number": 4,
             "carousel_group": "Escalation Logic",
             "type": "image",
             "src": "step10b_escalation_explainer.png",
-            "caption": "Task 4, Step 1: The Escalation Pattern — How the Chatbot checks local docs first (free) then escalates to web search."
+            "caption": "Task 4, Step 4: The Escalation Pattern — How the Chatbot checks local docs first (free) then escalates to web search."
         },
         {
             "task_number": 4,
-            "step_number": 3,
+            "step_number": 6,
             "type": "image",
             "src": "step13_test_connection_badge.png",
-            "caption": "Task 4, Step 3: Test Connection — A green 'Verified & Active' badge confirms routing is live."
+            "caption": "Task 4, Step 6: Test Connection — A green 'Verified & Active' badge confirms routing is live."
         }
     ],
     "relevant_links": [

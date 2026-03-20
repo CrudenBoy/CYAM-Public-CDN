@@ -123,50 +123,67 @@ category: "Admin Console"
 ## Level 2: Select LLMs for Workflow Tasks
 **Goal:** Link cloud billing and map specific models (Local or Cloud) to distinct CYAM platform functions.
 
-### Level 3: Task 1 — Connect OpenRouter (Cloud BYOK)
+### Level 3: Task 3 — Connect OpenRouter (Cloud BYOK)
 
 #### Level 4: Steps
 
-1. Open [openrouter.ai/settings/keys](https://openrouter.ai/settings/keys) in a new browser window and log in (or create a free account).
-   * **No credit card is required.** You can immediately use OpenRouter's free models with no payment method.
-2. Click the **Create Key** button. Name your key (e.g., `CYAM APP`), leave the credit limit blank, and click Create.
-3. Once generated, securely copy your new API key (it starts with `sk-or-v1-`).
-4. Return to this CYAM Admin Console, paste your copied key into the **OpenRouter API Key** field, and click **Save Key**.
+1. **Step 3.1 — Initiate Authorization**
+   Click the **"Authorize OpenRouter"** button in the AI Engines panel. A secure OpenRouter authentication page opens at `openrouter.ai/auth`.
+2. **Step 3.2 — Sign In or Create an Account**
+   On the OpenRouter page, **sign in to your existing account**, or click **"Create Account"** to register for free. A free account is sufficient to access OpenRouter's catalogue of zero-cost models immediately.
+3. **Step 3.3 — Grant Access to CYAM**
+   Review the listed permissions on the OpenRouter authorization screen, then click **"Authorize App"** to confirm. This action securely binds your OpenRouter account to CYAM's backend.
+4. **Step 3.4 — Confirm the Connection in CYAM**
+   Once redirected, verify that the **"OpenRouter: Connected ✓"** status indicator is green in the AI Engines panel. If it remains pending, click **"Re-check Connection"** to trigger a manual handshake.
+5. **Step 3.5 — Choose Your Access Path** *(Select one option below)*
+   Your choice here determines which AI models will be available to CYAM:
+   * **Path A — Free Tier (No Payment Required):** If you plan to use free models only, no further action is needed on this step. Proceed directly to Task 4.
+   * **Path B — Premium Models via Credits:** In the OpenRouter billing portal, click **"Add Credits"** and deposit a minimum of $5. Premium models will become selectable in Task 4.
+   * **Path C — Bring Your Own Key (BYOK):** In OpenRouter's **"Settings → Keys"** page, paste your **OpenAI** or **Anthropic** API key into the BYOK field, then click **"Save Key."** CYAM will route applicable calls through it without OpenRouter's per-token markup.
 
 ##### Level 5: Help & Context
 
-**Step 1 — Create a Free Account:** OpenRouter acts as a unified gateway to hundreds of cloud AI models. By heading to the platform autonomously, you maintain full control over your billing and usage. You can create a free account and immediately use $0/token models without adding a credit card.
+**Why CYAM Uses OAuth Instead of Asking for Your API Key:** You may have noticed that CYAM never asks you to paste an API key directly into any field in the dashboard. This is intentional. Many tools ask you to copy-paste a raw secret into their frontend. The problem with that approach is that your key travels through a browser form submission, sits in frontend memory, and must be stored in the application's database — creating unnecessary exposure points. CYAM uses OpenRouter's **PKCE OAuth 2.0 flow** instead. When you click "Authorize", you log in securely. OpenRouter issues a short-lived authorization code. CYAM's backend exchanges that code for a long-lived, scoped access token in a server-to-server call. **At no point does CYAM's frontend see, store, or transmit your API key.** The token can be revoked from OpenRouter's dashboard at any time.
 
-**Steps 2-3 — Generate & Copy Key:** Your API key is the sensitive cryptographic token that allows CYAM to send prompts on your behalf. Naming your key helps you track usage later. As a security measure, the key is only displayed once. 
+**Understanding Your Three Funding Options:** 
+- **Free Tier:** OpenRouter maintains a catalogue of models at zero cost per token (e.g. Meta Llama variants). A free account is valid indefinitely.
+- **Prepaid Credits:** For commercial frontier models (GPT-4o, Claude 3.5 Sonnet), you fund your OpenRouter account with a prepaid balance (minimum $5). OpenRouter applies a small per-token markup.
+- **Bring Your Own Key (BYOK):** If you have direct API accounts with OpenAI or Anthropic, BYOK lets you attach your own API key *inside OpenRouter's settings* (not inside CYAM). OpenRouter passes the request using your own key, billing your provider natively with no markup. *Important distinction:* BYOK configuration lives entirely inside your OpenRouter account securely. **Use the '< >' arrows below to view the visual step-by-step guide for creating your OpenRouter key settings.**
 
-**Step 4 — Save Key:** If you wish to use frontier models like GPT-4o or Claude 3.5 Sonnet, you must add a minimum of $5 in prepaid credits at [openrouter.ai/settings](https://openrouter.ai/settings). This strictly pay-as-you-go model ensures you can never be surprised by a massive monthly bill. CYAM stores your API key encrypted. **Use the '< >' arrows below to view the visual step-by-step guide for creating your OpenRouter key.**
-
-* **Carousel Item 1:** Screenshot of the OpenRouter home page showing the "Create Key" button.
+* **Carousel Item 1:** Screenshot of the OpenRouter home page showing the "Get API Key" button.
   (Media: `openrouter_home.png`)
 * **Carousel Item 2:** Screenshot of the "Create API Key" dialog showing the Name, Credit Limit, and Expiration fields.
   (Media: `openrouter_create_key.png`)
 * **Carousel Item 3:** Screenshot of the "Your new key" confirmation dialog emphasizing "You will not be able to see it again."
   (Media: `openrouter_key_created.png`)
-* **Chatbot Note:** Assist with OpenRouter API key naming and payment methods.
+* **Chatbot Note:** Assist with OpenRouter OAuth connection concepts and the BYOK funding paths.
 
 ---
 
-### Level 3: Task 2 — Review & Customise AI Model Routing Table
+### Level 3: Task 4 — Configure CYAM Routing & Offloading
 
 #### Level 4: Steps
 
-1. **Review the AI Model Routing Table below.** Use the dropdowns to override any Primary or Fallback models if desired.
-2. **Configure Simple Task Offloading.** Below the table, toggle **Local Offloading** ON (if you use Ollama), or select a `$0` free OpenRouter model from the **Offloading Engine** dropdown to save premium credits on background tasks.
-3. Click **Save Configuration**. A secure test prompt will execute; wait for the green **Verified & Active** badge to confirm your OpenRouter key and routing table are live.
+1. **Step 4.1 — Open the Model Routing Table**
+   Click the **"Model Routing"** tab in the AI Engines panel. The routing table loads, displaying every CYAM function that requires an AI model assignment.
+2. **Step 4.2 — Review All Function Rows**
+   Scan each row in the table (e.g., **Main Chat**, **Summarizer**, **Code Assistant**). Confirm that the pre-filled default model shown in the **"Primary Model"** column is appropriate for your deployment.
+3. **Step 4.3 — Reassign a Primary Cloud Model (if needed)**
+   For any function whose default model you want to change, click the **dropdown in the "Primary Model" column** of that row and select a different OpenRouter model from the list.
+4. **Step 4.4 — Assign a Fallback Model (Recommended)**
+   For each critical function, click the **dropdown in the "Fallback Model" column** and select a backup model. This model activates automatically if the primary is unavailable.
+5. **Step 4.5 — Enable Local Offloading via Ollama (Conditional)**
+   For any function you want to run locally, flip the **"Local Offloading" toggle to ON** in that function's row. The row's Primary Model dropdown will update to display your locally available Ollama models instead of cloud options.
+6. **Step 4.6 — Save Your Configuration**
+   Click **"Save Configuration"** at the bottom of the routing table. CYAM validates the assignments, locks in your routing rules, and automatically verifies the connection.
 
 ##### Level 5: Help & Context
 
-**Step 1 — Understanding the AI Model Routing Table:** This table is the "brain" of CYAM's AI infrastructure, mapping distinct platform features (like Summarization vs Main Chat) to specific models. We ship default configurations that are tested for optimum performance, but you have full control to override them for cost or quality reasons.
-* **The Escalation Pattern:** The true power of the CYAM Help Chatbot is its progressive escalation strategy. It will always attempt to answer user questions using local Markdown documents via a free, fast model. It is only when the local documents lack the answer that the chatbot triggers an `ESCALATE_TO_WEB` state, forcing a failover to a live web-search model (like Grok), thereby minimizing your paid API usage.
+**What the Routing Table Does and Why It Exists:** Different AI tasks have radically different requirements. Running every single CYAM function through the same single model would be wasteful at best and produce noticeably poor results at worst. The Model Routing Table solves this by letting you assign the right model to the right job. Think of it as a dispatch board: you can run a lightweight, fast model for quick summarization while reserving a more capable frontier model exclusively for complex chat interactions. Your credit spend is directed precisely where it produces the most value.
 
-**Step 2 — Configure Simple Task Offloading:** Background tasks can rapidly consume premium tokens. By configuring "Local Offloading" (if you run Ollama) or "Free Cloud Offloading" (using OpenRouter $0 models), CYAM handles these invisible tasks for free. 
+**How Fallback Models Protect Your Workflows:** Provider outages and rate-limit exhaustion are real operational risks. When you assign a Fallback Model to a function row, CYAM implements automatic failover. If a call to the primary model returns an error, the engine immediately retries the identical request against the fallback model with no user-visible disruption. The CYAM Help Chatbot heavily relies on fallsbacks, aggressively attempting to answer questions via free local documentation first, and only triggering an `ESCALATE_TO_WEB` state when it natively decides to fallback to an expensive live web-search model.
 
-**Step 3 — Save and Verify Connection:** When you save your configuration, CYAM executes a live test prompt directly from your browser to verify the API key is active without violating Google Workspace CASA Tier 1 security boundaries. **Use the '< >' arrows below to view the visual step-by-step routing configuration guide.**
+**Local Offloading: Running AI on Your Own Hardware via Ollama:** When the Local Offloading toggle is enabled for a function, CYAM stops routing that function's AI calls through OpenRouter completely. Instead, it sends those requests to the Ollama runtime running on your local machine, consuming zero external API traffic. Enable Local Offloading for high-frequency, lower-stakes functions (like Embeddings) while keeping cloud models assigned to Main Chat. **Use the '< >' arrows below to view the visual step-by-step routing configuration guide.**
 
 * **Carousel Item 1:** The AI Model Routing Table in the Admin Console, showing each CYAM function mapped to its Primary and Fallback models.
   (Media: `step10_routing_table.png`)
@@ -174,7 +191,7 @@ category: "Admin Console"
   (Media: `step10b_escalation_explainer.png`)
 * **Carousel Item 3:** Test Connection: Once successfully configured, a green Verified & Active badge will appear next to the workflow.
   (Media: `step13_test_connection_badge.png`)
-* **Chatbot Note:** Assist with understanding the routing table, the escalation trigger pattern, and how to customise individual model assignments.
+* **Chatbot Note:** Assist with understanding the routing table dispatch logic, the escalation trigger pattern, and Ollama vs Cloud model trade-offs.
 
 ---
 

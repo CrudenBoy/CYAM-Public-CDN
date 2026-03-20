@@ -166,58 +166,9 @@ category: "Admin Console"
 
 #### Level 4: Steps
 
-1. **Review the AI Model Routing Table below.** This pre-configured routing matrix maps every internal CYAM capability to its best-suited AI engine.
-   * This table ships with sensible **CYAM Defaults** so you do not need AI expertise. Advanced users can change any model via the dropdowns.
-   * The table is sourced from a central CSV file (`AI Model Routing Table.csv`) that can be updated by CYAM Marketplace or locally by the Admin.
-
-2. **Understanding the Table Columns:**
-
-   | Column | Purpose |
-   |---|---|
-   | **Function / Component** | The specific CYAM feature (e.g., Main Chat, Summarizer, Help & Context Chatbot). |
-   | **Primary Model** | The first-choice model used for this function. May be free or paid. |
-   | **Fallback / Escalation Model** | A backup model used when the primary fails **or** when an escalation trigger fires. |
-   | **Escalation Trigger** | The condition that causes the system to switch from Primary to Fallback. |
-
-3. **Review the pre-configured defaults.** CYAM ships the following routing for key functions:
-
-   | Function | Primary Model | Fallback / Escalation | Trigger |
-   |---|---|---|---|
-   | Main Chat | `anthropic/claude-sonnet-4.6` | `openai/gpt-5.4` | Standard failover |
-   | Help & Context Chatbot | `qwen/qwen-3.5-7b-instruct:free` | `x-ai/grok-4.1-fast` | `ESCALATE_TO_WEB` |
-   | Council: Security | `anthropic/claude-opus-4.6` | `openai/gpt-5.4` | Standard failover |
-   | Summarizer | `anthropic/claude-sonnet-4.6` | `openai/gpt-5.4` | Standard failover |
-   | X / Grok Search | `x-ai/grok-4.1-fast` | — | Unique capability |
-   | Deep Research | `google/gemini-deep-research-pro` | — | Unique capability |
-   | Embeddings | `nomic/nomic-embed-text-v1.5` | — | Unique capability |
-
-   *(This is a summary excerpt. The full table containing all 21 functions is visible in the Admin Console and in the CSV file.)*
-
-4. **The Escalation Pattern (Help & Context Chatbot):**
-   * The Help & Context Chatbot reads local `Context_Knowledge.md` documents (1–4 pages) to answer user questions using the **free** `qwen/qwen-3.5-7b-instruct` model — costing nothing.
-   * If the answer is **not found** in the local documents, the model replies with a system trigger phrase: `ESCALATE_TO_WEB`.
-   * CYAM automatically intercepts this trigger and re-routes the **same question** to `x-ai/grok-4.1-fast` — a model purpose-built for real-time web and social media search — to fetch a live answer.
-   * **Result:** Users get accurate answers from local docs for free, and only consume paid credits when live web search is genuinely needed.
-
-5. **Customise any model (optional):** Click on any **Primary Model** or **Fallback Model** dropdown in the table to change it. The dropdown is populated live from your connected OpenRouter account, showing available models and their per-token pricing. [Browse all models at openrouter.ai](https://openrouter.ai/).
-
-6. **Configure Offloading for Simple Tasks:** To save your paid credits, simple background tasks can be offloaded from your premium models.
-   * **Option A (Local Offloading):** If you successfully installed Ollama, toggle the switch labeled **"Enable Local Offloading"** to **ON**. This routes simple prompts to your computer using zero cloud credits.
-   * **Option B (Free Cloud Offloading):** If your computer couldn't run Ollama, select from the **"Offloading Engine"** dropdown and choose a free model tagged with *$0* (e.g., `google/gemma-3-8b-it:free` or `openrouter/free`). This routes simple prompts securely to free cloud servers instead.
-
-7. Click **"Save Configuration"**.
-
-8. The CYAM WebApp will automatically execute a **Test Connection protocol** — sending a small test prompt (`"Say this is a test"`) securely from your web browser directly to OpenRouter to confirm routing is live.
-   * **Marketplace Tier 1 Security (CASA) Compliance:** By running this test directly in your browser (client-side `fetch`), CYAM avoids requesting invasive server-side external network permissions (`script.external_request`) from your Google Workspace, maintaining the strictest security posture.
-
-9. Wait for the test to complete.
-   * ✅ **Success:** HTTP 200 response → green **"Verified & Active"** badge appears next to the workflow.
-   * ❌ **Failure:** The exact HTTP error code is surfaced. Common errors:
-       * 401 Unauthorized — API key is invalid or was revoked.
-       * 402 Payment Required — Insufficient credits; add funds at [openrouter.ai/settings](https://openrouter.ai/settings).
-       * 404 Not Found — Selected model ID no longer exists; choose a different model.
-       * 429 Too Many Requests — Rate limit exceeded; wait and retry.
-   * **Key Security Reminder:** Your OpenRouter API key is stored encrypted on the CYAM backend and is never exposed in browser requests or logs. If you believe a key is compromised, delete it immediately from [openrouter.ai/settings/keys](https://openrouter.ai/settings/keys) and re-run the OAuth flow.
+1. **Review the AI Model Routing Table below.** Use the dropdowns to override any Primary or Fallback models if desired.
+2. **Configure Simple Task Offloading.** Below the table, toggle **Local Offloading** ON (if you use Ollama), or select a `$0` free OpenRouter model from the **Offloading Engine** dropdown to save premium credits on background tasks.
+3. Click **Save Configuration**. A secure test prompt will execute; wait for the green **Verified & Active** badge to confirm your OpenRouter key and routing table are live.
 
 ##### Level 5: Help & Context
 

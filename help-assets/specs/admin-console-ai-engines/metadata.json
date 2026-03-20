@@ -21,6 +21,7 @@
             "task_number": 1,
             "step_number": 3,
             "type": "image",
+            "carousel_group": "Windows",
             "src": "step3_win_installation.png",
             "caption": "Task 1, Step 3: Windows Installation — Locate OllamaSetup.exe, handle SmartScreen, click Install, and verify via system tray icon."
         },
@@ -28,15 +29,57 @@
             "task_number": 1,
             "step_number": 3,
             "type": "image",
-            "src": "step3_mac_installation.png",
-            "caption": "Task 1, Step 3: macOS Installation — Mount the disk image, drag to Applications, accept Gatekeeper, and install CLI tool."
+            "carousel_group": "macOS",
+            "src": "step3_mac_01_mount_dmg.png",
+            "caption": "Task 1, Step 3: Double-click Ollama.dmg to mount the disk image"
         },
         {
             "task_number": 1,
             "step_number": 3,
             "type": "image",
-            "src": "step3b_mac_menubar.png",
-            "caption": "Task 1, Step 3: macOS Verification — The Ollama llama icon in the top menu bar confirms the service is running."
+            "carousel_group": "macOS",
+            "src": "step3_mac_02_drag_to_apps.png",
+            "caption": "Task 1, Step 3: Drag the Ollama icon into the Applications folder"
+        },
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "carousel_group": "macOS",
+            "src": "step3_mac_03_open_app.png",
+            "caption": "Task 1, Step 3: Open Ollama from the Applications folder"
+        },
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "carousel_group": "macOS",
+            "src": "step3_mac_04_gatekeeper.png",
+            "caption": "Task 1, Step 3: Accept the macOS Gatekeeper security prompt"
+        },
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "carousel_group": "macOS",
+            "src": "step3_mac_05_cli_install.png",
+            "caption": "Task 1, Step 3: Click Install for the CLI tool + authenticate"
+        },
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "carousel_group": "macOS",
+            "src": "step3_mac_06_menubar_icon.png",
+            "caption": "Task 1, Step 3: Ollama llama icon appears in the macOS menu bar"
+        },
+        {
+            "task_number": 1,
+            "step_number": 3,
+            "type": "image",
+            "carousel_group": "macOS",
+            "src": "step3_mac_07_verify_terminal.png",
+            "caption": "Task 1, Step 3: Terminal: `ollama --version` confirms success"
         },
         {
             "task_number": 2,

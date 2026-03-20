@@ -30,7 +30,7 @@ category: "Admin Console"
 
 #### Level 4: Steps
 
-1. **Verify AntiGravity Prerequisites:** Confirm that your system has the AntiGravity Agent installed and active, along with the `gemini-cli` and `clasp` packages available in your OS environment.
+1. **Ollama Deployment Scope:** Ollama is a completely standalone local binary and daemon. You do not need the CYAM Web App, `gemini-cli`, or `clasp` installed to run it. However, installing it makes it permanently available to the CYAM environment.
 2. **Select OS & Check Requirements:** The UI displays a direct download button for the official Ollama installer. Before downloading, confirm your machine meets minimum requirements:
      * **Windows:** Windows 10 version 22H2 or newer (Home or Pro). If you have a GPU: NVIDIA driver 452.39+ or AMD Radeon driver from [amd.com/en/support](https://www.amd.com/en/support).
      * **macOS:** macOS 14 Sonoma or newer. Apple M-series chip (CPU + GPU acceleration) or Intel x86 (CPU-only inference, slower).
@@ -66,11 +66,11 @@ category: "Admin Console"
 
 ##### Level 5: Help & Context
 
-**Step 1 — AntiGravity Prerequisites:** The CYAM platform relies heavily on autonomous agents to synchronize local configurations and manage automated Cloud deployments. If the AntiGravity Agent, `gemini-cli`, or `clasp` are improperly configured, CYAM cannot bridge your local AI engine with the cloud interface. You must verify these dependencies are healthy inside your terminal environment before proceeding.
+**Step 1 — Ollama Deployment Scope:** AI models run as background daemons natively on your hardware. Unlike cloud deployments, you do not need the CYAM Web App, the AntiGravity Agent, or development packages like `gemini-cli` installed to operate Ollama. Once installed, it is permanently available to CYAM or any other local software silently in the background.
 
 **Step 2 — System Requirements:** AI models are highly resource-intensive. Running a local LLM ensures data privacy and zero cloud cost, but it requires capable hardware. Verify you have at least Windows 10 22H2+ or macOS 14 Sonoma+, and a minimum of 4 GB free disk space just for the Ollama binary. Depending on the models you pull later, you may need an additional 10-100 GB of storage.
 
-**Step 3 — Installation Execution:** Operating systems enforce strict security protocols against unrecognized binaries. On Windows, Windows SmartScreen will flag the unsigned `.exe` (Click 'More info' -> 'Run anyway'). On macOS, Gatekeeper will issue a warning, and installing the necessary CLI companion tool will demand your Mac Password or Touch ID. Executing these steps installs Ollama as a background service, making it permanently available to CYAM silently.
+**Step 3 — Installation Execution:** Operating systems enforce strict security protocols against unrecognized binaries. On Windows, Windows SmartScreen will flag the unsigned `.exe` (Click 'More info' -> 'Run anyway'). On macOS, Gatekeeper will issue a warning, and installing the necessary CLI companion tool will demand your Mac Password or Touch ID. **Use the operating system buttons below and the '< >' arrows to view the visual step-by-step installation guide.**
 
 * **Carousel Item 1:** Task 1, Step 3: Windows Installation — Locate the downloaded OllamaSetup.exe, handle the SmartScreen warning, click Install, and verify via the system tray icon.
   (Media: `step3_win_installation.png`)
@@ -108,7 +108,7 @@ category: "Admin Console"
 
 **Step 3 — Model Selection (qwen3:4b):** Selecting the right model size is essential to avoid system crashes. We strongly recommend `qwen3:4b` as it offers a 128K context window with high reasoning capabilities while remaining small enough (3-4 GB RAM) to run alongside your primary IDEs and web browsers transparently. Specifying the exact tag (e.g. `gemma3:4b`) ensures you do not accidentally pull an oversized 70B model that will choke your machine.
 
-**Steps 4-5 — Download & Wait:** The downloading process creates the model binary shards on your disk. You must wait for this 2.6 GB transfer to complete fully; interrupting it forces Ollama to resume from its last completed digest layer. Once downloaded, you can alternatively manage the model via your terminal using `ollama run qwen3:4b`.
+**Steps 4-5 — Download & Wait:** The downloading process creates the model binary shards on your disk. You must wait for this 2.6 GB transfer to complete fully; interrupting it forces Ollama to resume from its last completed digest layer. **Use the '< >' arrows below to view the visual step-by-step guide for pulling models via the GUI.**
 
 * **Carousel Item 1:** Task 2, Step 2: Inside the Ollama App, locate the model dropdown at the top of the chat interface.
   (Media: `step5_ollama_gui_dropdown.png`)
@@ -145,6 +145,13 @@ category: "Admin Console"
    * Your single API key works for both free and paid models. OpenRouter deducts the per-token cost from your credit balance automatically.
 
 ##### Level 5: Help & Context
+
+**Steps 1-3 — Authorize & Create Account:** OpenRouter acts as a unified gateway to hundreds of cloud AI models. By clicking Authorize, CYAM initiates a highly secure PKCE (Proof Key for Code Exchange) OAuth flow, meaning no intermediate server can intercept your session. You can create a free account and immediately use $0/token models without adding a credit card.
+
+**Step 4 — Create API Key:** Your API key is the sensitive cryptographic token that allows CYAM to send prompts on your behalf. Naming your key helps you track usage later. As a security measure, the key is only displayed once; you do not even need to copy it, as CYAM captures it automatically and stores it encrypted.
+
+**Step 5 — Prepaid Credits (Optional):** If you wish to use frontier models like GPT-4o or Claude 3.5 Sonnet, you must add a minimum of $5 in prepaid credits. This strictly pay-as-you-go model ensures you can never be surprised by a massive monthly bill. **Use the '< >' arrows below to view the visual step-by-step guide for creating your OpenRouter key.**
+
 * **Carousel Item 1:** Screenshot of the OpenRouter home page showing the "Get API Key" button.
   (Media: `openrouter_home.png`)
 * **Carousel Item 2:** Screenshot of the "Create API Key" dialog showing the Name, Credit Limit, and Expiration fields.
@@ -213,6 +220,13 @@ category: "Admin Console"
    * **Key Security Reminder:** Your OpenRouter API key is stored encrypted on the CYAM backend and is never exposed in browser requests or logs. If you believe a key is compromised, delete it immediately from [openrouter.ai/settings/keys](https://openrouter.ai/settings/keys) and re-run the OAuth flow.
 
 ##### Level 5: Help & Context
+
+**Steps 1-3 — AI Model Routing Table:** This table is the "brain" of CYAM's AI infrastructure, mapping distinct platform features (like Summarization vs Main Chat) to specific models. We ship default configurations that are tested for optimum performance, but you have full control to override them for cost or quality reasons.
+
+**Step 4 — The Escalation Pattern:** The true power of the CYAM Help Chatbot is its progressive escalation strategy. It will always attempt to answer user questions using local Markdown documents via a free, fast model. It is only when the local documents lack the answer that the chatbot triggers an `ESCALATE_TO_WEB` state, forcing a failover to a live web-search model (like Grok), thereby minimizing your paid API usage.
+
+**Steps 5-9 — Offloading & Configuration:** Background tasks can rapidly consume premium tokens. By configuring "Local Offloading" (if you run Ollama) or "Free Cloud Offloading" (using OpenRouter $0 models), CYAM handles these invisible tasks for free. When you save your configuration, CYAM executes a live test prompt directly from your browser to verify the API key is active without violating Google Workspace CASA Tier 1 security boundaries. **Use the '< >' arrows below to view the visual step-by-step routing configuration guide.**
+
 * **Carousel Item 1:** The AI Model Routing Table in the Admin Console, showing each CYAM function mapped to its Primary and Fallback models.
   (Media: `step10_routing_table.png`)
 * **Carousel Item 2:** The Escalation Pattern: How the Help & Context Chatbot checks local documents first (free) and only escalates to a paid web-search model when the answer is missing.

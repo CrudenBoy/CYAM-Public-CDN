@@ -182,6 +182,10 @@ category: "Admin Console"
 
 **Step 5 — Local Offloading with Ollama:** When the Local Offloading toggle is enabled for a function, CYAM stops routing that function's AI calls through OpenRouter completely. Instead, it sends those requests to the Ollama runtime running on your local machine, consuming zero external API traffic. Enable Local Offloading for high-frequency, lower-stakes functions (like Embeddings) while keeping cloud models assigned to Main Chat. **Use the '< >' arrows below to view the visual step-by-step routing configuration guide.**
 
+**Step 6 — Understanding BYOK in the Routing Table:** If you configured a Bring Your Own Key (BYOK) in Task 3 Step 5, your Routing Table works exactly the same — you still select models using standard names like `openai/gpt-4o`. OpenRouter automatically routes matching requests through your personal key at direct provider pricing with zero markup. BYOK takes priority over credits automatically, so your OpenRouter credits are preserved for providers where you haven't configured BYOK. BYOK-compatible providers include OpenAI, Anthropic, Google, Mistral, and Cohere. Look for the 🔑 icon next to model providers in the dropdowns.
+
+**Step 7 — BYOK Cost Tracking:** BYOK requests are billed directly by the provider and may not appear in OpenRouter's usage dashboard. To track BYOK costs, check your provider dashboards directly: OpenAI at `platform.openai.com/usage`, Anthropic at `console.anthropic.com/settings/usage`, or Google in the Cloud Console. If a BYOK model suddenly stops working, the issue typically originates with the provider (expired payment, rate limits, key expiration) — resolve it through their dashboard, not CYAM's. **Ask the Help Chatbot for more details on BYOK troubleshooting.**
+
 * **Carousel Item 1:** The AI Model Routing Table in the Admin Console, showing each CYAM function mapped to its Primary and Fallback models.
   (Media: `step10_routing_table.png`)
 * **Carousel Item 2:** The Escalation Pattern: How the Help & Context Chatbot checks local documents first (free) and only escalates to a paid web-search model when the answer is missing.

@@ -118,3 +118,35 @@ During Task 3, the Admin must work simultaneously in the CYAM Dashboard (left) a
 - **API Key Settings:** `https://openrouter.ai/settings/keys`
 - **Add Credits:** `https://openrouter.ai/settings/credits`
 - **BYOK:** `https://openrouter.ai/workspaces/default/byok`
+
+## 8. Bring Your Own Key (BYOK) in OpenRouter
+
+BYOK allows Admins to attach their own API keys from providers like OpenAI, Anthropic, Google, Mistral, or Cohere directly inside OpenRouter's workspace — **not inside CYAM**. This creates a direct billing relationship with the provider at zero OpenRouter markup.
+
+### Key Facts:
+- **Model slugs are IDENTICAL.** `openai/gpt-4o` is the same slug whether funded via BYOK, credits, or free tier. No special prefixes or changes needed in the CYAM Routing Table.
+- **BYOK takes automatic priority.** When a BYOK key is configured for a provider, OpenRouter uses it for matching models automatically. No CYAM configuration change needed.
+- **Credits remain as fallback.** If a BYOK key has issues (expired, rate-limited), credits are preserved for non-BYOK providers. The admin may need to resolve issues directly with the provider.
+- **API does NOT expose BYOK status.** The `GET /api/v1/models` endpoint returns the global model catalog with standard pricing. It does not indicate which models are BYOK-enabled for a specific user. This is intentional for privacy/security.
+- **BYOK-Compatible Providers (as of March 2026):** OpenAI, Anthropic, Google, Mistral, Cohere.
+
+### BYOK Cost Tracking:
+BYOK requests bypass OpenRouter's usage dashboard. Admins must track costs directly:
+- **OpenAI:** Check usage at `https://platform.openai.com/usage`
+- **Anthropic:** Check usage at `https://console.anthropic.com/settings/usage`
+- **Google:** Check usage in Google Cloud Console
+- OpenRouter credits are only consumed for non-BYOK providers
+
+### BYOK Setup Steps:
+1. Visit `https://openrouter.ai/workspaces/default/byok`
+2. Add API keys for desired providers (each key added separately)
+3. Return to CYAM — the Routing Table automatically benefits from BYOK routing
+4. Monitor usage through each provider's own dashboard
+
+### Common Troubleshooting:
+| Symptom | Cause | Resolution |
+|---|---|---|
+| BYOK model suddenly fails | Expired payment method on provider account | Update billing at provider dashboard |
+| Requests using credits despite BYOK | BYOK key for that provider removed or expired | Re-add key at OpenRouter BYOK page |
+| Model not available | Provider may have deprecated the model | Check provider documentation for current model names |
+| Rate limit errors | Hit provider-specific rate limits | Upgrade plan with provider or add rate limit in BYOK settings |

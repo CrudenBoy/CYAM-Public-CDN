@@ -150,3 +150,15 @@ BYOK requests bypass OpenRouter's usage dashboard. Admins must track costs direc
 | Requests using credits despite BYOK | BYOK key for that provider removed or expired | Re-add key at OpenRouter BYOK page |
 | Model not available | Provider may have deprecated the model | Check provider documentation for current model names |
 | Rate limit errors | Hit provider-specific rate limits | Upgrade plan with provider or add rate limit in BYOK settings |
+
+## 9. Access Path Comparison (Task 3, Step 3.5)
+
+| Criterion | Path A (Free) | Path B (Credits) | Path C (BYOK) |
+|---|---|---|---|
+| **Cost** | Free — no payment required | Prepaid credits min $5, consumed per-token with 10-20% markup | Direct provider billing at standard rates, zero markup |
+| **Model Quality** | Community/open-source (Llama 3.1 8B, Mistral 7B) — testing and lightweight apps | Full frontier access (GPT-4o, Claude 3.5 Sonnet, Gemini Pro) | Identical premium models as Path B |
+| **Setup Effort** | Minimal — no config beyond OAuth | Low — credit card payment, 2-3 minutes | Moderate — obtain and configure keys from each provider |
+| **Billing** | None | Single prepaid balance to monitor | Separate invoices from each provider |
+| **Best For** | Development, testing, POC, education | Production apps with moderate usage, simplified billing | High-volume apps, existing provider contracts, enterprise compliance |
+
+**Guidance:** Start with Path A to validate integration. Upgrade to Path B or C when deploying premium models. You can switch paths at any time — Task 4's routing table automatically reflects available models.

@@ -137,15 +137,29 @@ category: "Admin Console"
    Once redirected, verify that the **"OpenRouter: Connected ✓"** status indicator is green in the AI Engines panel. If it remains pending, click **"Re-check Connection"** to trigger a manual handshake.
 5. **Step 3.5 — Choose Your Access Path** *(Select one option below)*
    Your choice here determines which AI models will be available to CYAM:
-   * **Path A — Free Tier (No Payment Required):** If you plan to use free models only, no further action is needed on this step. Proceed directly to Task 4.
-   * **Path B — Premium Models via Credits:** In the OpenRouter billing portal, click **"Add Credits"** and deposit a minimum of $5. Premium models will become selectable in Task 4.
-   * **Path C — Bring Your Own Key (BYOK):** In OpenRouter's **"Settings → Keys"** page, paste your **OpenAI** or **Anthropic** API key into the BYOK field, then click **"Save Key."** CYAM will route applicable calls through it without OpenRouter's per-token markup.
+
+   **Path A — Free Tier (No Payment Required):**
+   - Verify the "Connected to OpenRouter" status from Steps 3.1-3.4. No payment configuration is required — OpenRouter provides immediate access to community and open-source models.
+   - Available free models include: `meta-llama/llama-3.1-8b-instruct:free`, `google/gemma-2-9b-it:free`, `mistralai/mistral-7b-instruct:free` (availability may vary).
+   - Free-tier accounts remain valid indefinitely. Click **"Continue with Free Models"** to proceed to Task 4.
+
+   **Path B — Premium Models via Credits:**
+   - Click the **"Open Credits Settings ↗"** button to open `https://openrouter.ai/settings/credits` in a new tab.
+   - Click **"Add Credits"** and deposit a minimum of **$5.00 USD**. Credits are prepaid and consumed per-token with a 10-20% OpenRouter markup over base provider pricing.
+   - Adding credits unlocks frontier models: `openai/gpt-4o`, `anthropic/claude-3.5-sonnet`, `google/gemini-pro-1.5`. Return to CYAM — premium models are immediately available in Task 4.
+
+   **Path C — Bring Your Own Key (BYOK):**
+   - Click the **"Open BYOK Settings ↗"** button to open `https://openrouter.ai/workspaces/default/byok` in a new tab.
+   - Add your API keys from providers: **OpenAI** (`platform.openai.com/api-keys`), **Anthropic** (`console.anthropic.com/settings/keys`), or others listed on the BYOK page.
+   - **⚠️ CRITICAL:** Configure keys in OpenRouter's BYOK page ONLY. Do NOT paste provider API keys into the CYAM Dashboard. CYAM communicates exclusively with OpenRouter.
+   - If using multiple providers (e.g., both OpenAI AND Anthropic), each key must be added separately in OpenRouter's BYOK settings.
+   - BYOK routes requests through your personal keys at direct provider rates with **zero OpenRouter markup**. Return to CYAM — provider models are available in Task 4.
 
 ##### Level 5: Help & Context
 
 **Step 1 — Secure OAuth Authorization:** You may have noticed that CYAM never asks you to paste an API key directly into any field in the dashboard. This is intentional. CYAM uses OpenRouter's **PKCE OAuth 2.0 flow** which means no API key is ever visible in your browser. When you click "Authorize", you log in securely on OpenRouter's own site. OpenRouter issues a short-lived authorization code and CYAM's backend exchanges it for a scoped token in a server-to-server call. **At no point does CYAM's frontend see, store, or transmit your API key.** The token can be revoked from OpenRouter's dashboard at any time. **💡 Tip:** For the best experience, use **Chrome's Split-Screen** to place the CYAM Dashboard on the left and OpenRouter on the right — right-click a tab and choose "New split view" or drag a tab to the edge. After clicking "Authorize" in Step 3.1, follow Steps 3.2 to 3.4 in the OpenRouter UI on the right side. **Use the '< >' arrows below to view the visual step-by-step guide, and ask the Help Chatbot below for personalized assistance at any time.**
 
-**Step 5 — Choose Your Access Path:** Your choice here determines which AI models will be available to CYAM and how they are billed. **Free Tier** uses OpenRouter's catalogue of zero-cost models (e.g. Meta Llama variants) — a free account is valid indefinitely. **Prepaid Credits** unlocks commercial frontier models (GPT-4o, Claude 3.5 Sonnet) by funding your OpenRouter account with a prepaid balance (minimum $5) — OpenRouter applies a small per-token markup. **Bring Your Own Key (BYOK)** lets you attach your own API key *inside OpenRouter's settings* (not inside CYAM) — OpenRouter passes the request using your own key with no markup. *Important:* BYOK configuration lives entirely inside your OpenRouter account securely. **Use the '< >' arrows below to view the visual step-by-step guide for creating your OpenRouter key settings.**
+**Step 5 — Choose Your Access Path:** This step determines your funding mechanism and directly controls which AI models become available in Task 4's routing table. **Path A (Free Tier)** provides immediate access to community models without payment setup — ideal for development, testing, and proof-of-concept work. **Path B (Credits)** unlocks frontier models like GPT-4o and Claude 3.5 Sonnet through OpenRouter's unified prepaid system with a 10-20% markup. **Path C (BYOK)** offers the same premium models at direct provider rates with zero markup by using your own API keys configured inside OpenRouter. You can change paths at any time by returning to this step — your Task 4 routing table will automatically reflect the models available under your current access configuration. If uncertain, start with Path A to validate your CYAM integration, then upgrade when ready for production.
 
 * **Carousel Item 1:** Screenshot of the OpenRouter home page showing the "Get API Key" button.
   (Media: `openrouter_home.png`)

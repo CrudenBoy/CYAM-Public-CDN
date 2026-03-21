@@ -99,3 +99,22 @@ To comply with strict Google Workspace Marketplace security standards (Tier 1 CA
 
 **OpenRouter Verification:** CYAM automatically executes a **Test Connection protocol** by sending a tiny test generation (`"Say this is a test"`) to the selected cloud model. 
 *CRITICAL TIER 1 DETAIL:* This test is executed securely **client-side directly from the user's web browser**. This ensures CYAM avoids requesting invasive server-side external network permissions (`script.external_request`) from the user's Google Workspace! A green "Verified & Active" badge only appears upon an HTTP 200 success response. If it fails, they will see the direct HTTP error code to debug.
+
+## 7. Chrome Split-Screen for CYAM + OpenRouter (Task 3)
+
+During Task 3, the Admin must work simultaneously in the CYAM Dashboard (left) and the OpenRouter platform (right). Chrome's built-in **Split View** makes this seamless.
+
+### Step-by-Step Instructions:
+1. **Open two tabs:** Keep the CYAM Dashboard open in one tab. Open a second tab and navigate to `https://openrouter.ai/settings/keys`. If not signed in, OpenRouter will redirect to its sign-in page first.
+2. **Start Split View** using one of two methods:
+   - **Right-click method:** Right-click the OpenRouter tab and choose **"New split view with current tab"** (if CYAM is the current tab), or right-click the current tab and choose **"Add tab to new split view"**.
+   - **Drag method:** Drag the OpenRouter tab toward the left or right edge of the Chrome window until Chrome shows the split target line, then drop it.
+3. **Position:** Place the CYAM Dashboard on the **left** and OpenRouter on the **right**. If Chrome puts them in the wrong order, use Chrome's split-view controls to swap, or separate and restart with CYAM active first. The active panel has a thicker border.
+4. **Resize if needed:** Drag the divider between the two panels left or right until both the CYAM fields and OpenRouter tools are easy to read. This is especially helpful if buttons, tables, or forms look cut off.
+5. **Exit Split View:** When done, use Chrome's split-view controls to separate the two views back into normal tabs. You can also close just the left or right side individually.
+
+### Key OpenRouter Pages the Admin will visit:
+- **Authorization:** `https://openrouter.ai/auth`
+- **API Key Settings:** `https://openrouter.ai/settings/keys`
+- **Add Credits:** `https://openrouter.ai/settings/credits`
+- **BYOK:** `https://openrouter.ai/workspaces/default/byok`

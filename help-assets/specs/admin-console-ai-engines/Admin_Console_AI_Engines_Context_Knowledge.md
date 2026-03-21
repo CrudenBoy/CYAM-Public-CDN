@@ -102,16 +102,20 @@ To comply with strict Google Workspace Marketplace security standards (Tier 1 CA
 
 ## 7. Chrome Split-Screen for CYAM + OpenRouter (Task 3)
 
-During Task 3, the Admin must work simultaneously in the CYAM Dashboard (left) and the OpenRouter platform (right). Chrome's built-in **Split View** makes this seamless.
+During Task 3, the Admin must work simultaneously in the CYAM Dashboard (left) and the OpenRouter platform (right). Chrome's built-in **Split View** makes this seamless. The Help Carousel in the CYAM Dashboard includes 7 annotated screenshots walking through this process.
 
-### Step-by-Step Instructions:
-1. **Open two tabs:** Keep the CYAM Dashboard open in one tab. Open a second tab and navigate to `https://openrouter.ai/settings/keys`. If not signed in, OpenRouter will redirect to its sign-in page first.
-2. **Start Split View** using one of two methods:
-   - **Right-click method:** Right-click the OpenRouter tab and choose **"New split view with current tab"** (if CYAM is the current tab), or right-click the current tab and choose **"Add tab to new split view"**.
-   - **Drag method:** Drag the OpenRouter tab toward the left or right edge of the Chrome window until Chrome shows the split target line, then drop it.
-3. **Position:** Place the CYAM Dashboard on the **left** and OpenRouter on the **right**. If Chrome puts them in the wrong order, use Chrome's split-view controls to swap, or separate and restart with CYAM active first. The active panel has a thicker border.
-4. **Resize if needed:** Drag the divider between the two panels left or right until both the CYAM fields and OpenRouter tools are easy to read. This is especially helpful if buttons, tables, or forms look cut off.
-5. **Exit Split View:** When done, use Chrome's split-view controls to separate the two views back into normal tabs. You can also close just the left or right side individually.
+### Part 1: Add "Open in Split View" to the Chrome toolbar
+
+1. **Customize Chrome:** Open Chrome's menu (⋮), go to **More Tools → Customize Chrome**. This opens the Chrome customization panel where toolbar buttons can be turned on or off.
+2. **Open Toolbar settings:** Inside the Customize Chrome panel, click **Toolbar**. This takes you to the list of buttons that can appear in Chrome's toolbar.
+3. **Enable Split View:** In the Toolbar section, turn on the toggle for **Open In Split View**. Once enabled, Chrome shows the Split View control directly in the toolbar for quick access.
+
+### Part 2: Use Chrome Split View with CYAM + OpenRouter
+
+4. **Open two tabs:** Keep the CYAM Dashboard open in one tab. Open a second tab and navigate to `https://openrouter.ai/settings/keys`. If not signed in, OpenRouter will redirect to its sign-in page first.
+5. **Start Split View:** Right-click the OpenRouter tab and choose **"New split view with current tab"**. Alternatively, click the Split View button you just added to the toolbar, or drag a tab toward the edge of the Chrome window until the split target line appears.
+6. **Position the panels:** Place the CYAM Dashboard on the **left** and OpenRouter on the **right**. If Chrome puts them in the wrong order, use Chrome's split-view controls to swap, or separate and restart with CYAM active first. The active panel has a thicker border.
+7. **Resize and exit:** Drag the center divider left or right until both CYAM and OpenRouter are easy to read. When finished, exit Split View by separating the views back into regular tabs or closing one side.
 
 ### Key OpenRouter Pages the Admin will visit:
 - **Authorization:** `https://openrouter.ai/auth`

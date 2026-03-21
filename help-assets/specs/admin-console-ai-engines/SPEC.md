@@ -161,13 +161,21 @@ category: "Admin Console"
 
 **Step 3.5 — Choose Your Access Path:** This step determines your funding mechanism and directly controls which AI models become available in Task 4's routing table. **Path A (Free Tier)** provides immediate access to community models without payment setup — ideal for development, testing, and proof-of-concept work. **Path B (Credits)** unlocks frontier models like GPT-4o and Claude 3.5 Sonnet through OpenRouter's unified prepaid system with a 10-20% markup. **Path C (BYOK)** offers the same premium models at direct provider rates with zero markup by using your own API keys configured inside OpenRouter. You can change paths at any time by returning to this step — your Task 4 routing table will automatically reflect the models available under your current access configuration. If uncertain, start with Path A to validate your CYAM integration, then upgrade when ready for production.
 
-* **Carousel Item 1:** Screenshot of the OpenRouter home page showing the "Get API Key" button.
-  (Media: `openrouter_home.png`)
-* **Carousel Item 2:** Screenshot of the "Create API Key" dialog showing the Name, Credit Limit, and Expiration fields.
-  (Media: `openrouter_create_key.png`)
-* **Carousel Item 3:** Screenshot of the "Your new key" confirmation dialog emphasizing "You will not be able to see it again."
-  (Media: `openrouter_key_created.png`)
-* **Chatbot Note:** Assist with OpenRouter OAuth connection concepts and the BYOK funding paths.
+* **Carousel Item 1:** Part 1 — Open Chrome's menu → More Tools → Customize Chrome to access toolbar settings.
+  (Media: `step3_chrome_split_01.png`)
+* **Carousel Item 2:** Part 1 — Inside Customize Chrome, click the **Toolbar** section to manage toolbar buttons.
+  (Media: `step3_chrome_split_02.png`)
+* **Carousel Item 3:** Part 1 — Turn on the **Open In Split View** toggle to enable Split View in the toolbar.
+  (Media: `step3_chrome_split_03.png`)
+* **Carousel Item 4:** Part 2 — Open the CYAM Dashboard in one tab and OpenRouter (`openrouter.ai/settings/keys`) in a second tab.
+  (Media: `step3_chrome_split_04.png`)
+* **Carousel Item 5:** Part 2 — Right-click the OpenRouter tab and choose **"New split view with current tab"** to start Split View.
+  (Media: `step3_chrome_split_05.png`)
+* **Carousel Item 6:** Part 2 — Place CYAM Dashboard on the **left** and OpenRouter on the **right**. Swap if needed.
+  (Media: `step3_chrome_split_06.png`)
+* **Carousel Item 7:** Part 2 — Drag the center divider to resize. Exit Split View by separating views back into regular tabs.
+  (Media: `step3_chrome_split_07.png`)
+* **Chatbot Note:** Assist with OpenRouter OAuth connection concepts, Chrome Split-Screen setup, and the BYOK funding paths.
 
 ---
 

@@ -30,39 +30,18 @@ category: "Admin Console"
 
 #### Level 4: Steps
 
-1. **Ollama Deployment Scope:** Ollama is a completely standalone local binary and daemon. You do not need the CYAM Web App, `gemini-cli`, or `clasp` installed to run it. However, installing it makes it permanently available to the CYAM environment.
-2. **Select OS & Check Requirements:** The UI displays a direct download button for the official Ollama installer. Before downloading, confirm your machine meets minimum requirements:
-     * **Windows:** Windows 10 version 22H2 or newer (Home or Pro). If you have a GPU: NVIDIA driver 452.39+ or AMD Radeon driver from [amd.com/en/support](https://www.amd.com/en/support).
-     * **macOS:** macOS 14 Sonoma or newer. Apple M-series chip (CPU + GPU acceleration) or Intel x86 (CPU-only inference, slower).
-     * **Disk Space (Both):** 4 GB minimum for the Ollama binary; an additional 2–100+ GB for models (varies by model size).
-3. Perform the OS-specific installation.
-[OS:Windows]
-   * **Windows:**
-     1. Locate the downloaded `OllamaSetup.exe` file in your Downloads folder and double-click it to launch the installer.
-     2. Windows SmartScreen may display a warning: *"Windows protected your PC."* Click **"More info"** and then **"Run anyway"**.
-     3. Click **"Install"** to begin the setup wizard. *(No Administrator rights are required — Ollama installs into your user account by default.)*
-     4. Wait for the installation progress bar to complete. This typically takes 30–60 seconds.
-     5. The new **Ollama App** (chat GUI) will launch automatically when setup completes. It also starts as a background service, making the `ollama` command available in PowerShell, CMD, and Windows Terminal.
-     6. A small **Ollama icon** will appear in the Windows system tray (bottom-right corner by the clock), confirming the background service is running.
-     7. **Verify the install:** Open PowerShell and type `ollama --version`. A version string confirms a successful install.
-
-   > **🤖 Agent Automation**:
-   > "Download the official Ollama Windows installer from https://ollama.com/download/OllamaSetup.exe and silence the install."
-[/OS:Windows]
-
-[OS:macOS]
-   * **macOS:**
-     1. Double-click the downloaded **Ollama.dmg** file to mount the disk image. A Finder window will open showing the Ollama app icon.
-     2. In the Finder window that opens, drag the **Ollama** app icon into the **Applications** folder shortcut shown alongside it.
-     3. Go to your **Applications** folder and double-click **Ollama** to open it.
-     4. macOS Gatekeeper may display a warning: *"Ollama is an app downloaded from the Internet. Are you sure you want to open it?"* Click **Open**.
-     5. On first launch, Ollama checks whether the `ollama` command-line tool exists in your PATH. If not found, it will prompt: *"Ollama requires a command-line tool to be installed in /usr/local/bin."* Click **Install** and authenticate with your **Mac Password** or **Touch ID** when prompted.
-     6. The new **Ollama App** (GUI chat interface) will appear in your menu bar and desktop. *(A llama icon appears in the macOS menu bar to confirm it is running.)*
-     7. **Verify the install:** Open Terminal and type `ollama --version`. A version string confirms a successful install.
-
-   > **🤖 Agent Automation**:
-   > "Download the Ollama macOS disk image from https://ollama.com/download/Ollama.dmg, mount it, copy Ollama.app to /Applications, and launch it."
-[/OS:macOS]
+1. **Step 1 — Download Ollama for Desktop**
+   - Click the **"Download Ollama"** button in the AI Engines panel to open `https://ollama.com/download` in a new tab.
+   - Choose the installer matching your computer's operating system (Windows or macOS).
+   - 📖 *See Help & Context panel for detailed guidance*
+2. **Step 2 — Run the Installer**
+   - Locate the downloaded file (`OllamaSetup.exe` on Windows or `Ollama.zip` on macOS) and run it.
+   - Follow the on-screen prompts to complete the installation. On macOS, drag the Ollama icon into your Applications folder.
+   - 📖 *See Help & Context panel for detailed guidance*
+3. **Step 3 — Launch the Ollama App**
+   - Open Ollama from your Start menu (Windows) or Applications folder (macOS).
+   - Verify that the Ollama icon appears in your system tray (Windows) or menu bar (macOS). This indicates the local AI server is active and ready to accept CYAM's requests.
+   - 📖 *See Help & Context panel for detailed guidance*
 
 ##### Level 5: Help & Context
 
@@ -86,37 +65,46 @@ category: "Admin Console"
 
 #### Level 4: Steps
 
-1. Open the **Ollama App** on your computer. You will see a chat interface with a text input area.
-2. In the top area of the app, click the **Model Dropdown menu** (it may say `Find model...` or display the name of a currently loaded model, such as a default cloud model).
-3. In the search bar that appears, type the CYAM-recommended model tag.
-   * **🏆 CYAM Recommended Models (March 2026):**
-     * **TOP PICK: `qwen3:4b`** — Best all-round local model. Only ~3–4 GB RAM needed. 128K token context window. Built-in "Thinking" mode for deep reasoning. 119 languages supported. Excellent instruction-following. [ollama.com/library/qwen3:4b](https://ollama.com/library/qwen3:4b)
-     * **RUNNER-UP: `gemma3:4b`** — Best if your documents contain images or diagrams (multimodal). 128K context window. Strong document understanding (82.3% DocVQA score). [ollama.com/library/gemma3:4b](https://ollama.com/library/gemma3:4b)
-   * **Hardware Sizing Guide:** Both recommended models run on virtually any modern computer:
-     * **8 GB RAM:** ✅ Both `qwen3:4b` and `gemma3:4b` run smoothly (only ~3–4 GB needed).
-     * **16 GB RAM:** ✅ Plenty of headroom. Can also try larger 7B–9B models if desired.
-     * **24 GB+ RAM:** ✅ Can handle 12B–32B parameter models for maximum quality.
-     Browse the full model library at [ollama.com/library](https://ollama.com/library).
-4. Locate the specific model in the results list and click the **Download icon** (↓ arrow) next to it to begin the download.
-5. Wait for the download to complete within the Ollama App. A progress indicator will show the download status. `qwen3:4b` is approximately 2.6 GB.
-   * **CLI Alternative:** If you prefer or the GUI download fails, you can also pull a model via terminal: `ollama pull qwen3:4b`. This is equivalent to using the GUI download.
-6. **Cloud routing setup is next.** Once your local model finishes downloading, scroll down to Task 3 to connect your cloud fallback models.
+1. **Step 1 — Open the Ollama Terminal/Command Prompt**
+   - **Windows:** Search for "cmd" or "PowerShell" in your Start menu and open it.
+   - **macOS:** Open "Terminal" from your Applications > Utilities folder.
+   - 📖 *See Help & Context panel for detailed guidance*
+2. **Step 2 — Pull the Llama 3.1 8B Model**
+   - Type `ollama run llama3.1` (or click the command in the Guidance panel to copy it).
+   - Wait for the download and checksum verification to complete. This is the primary model for local reasoning.
+   - 📖 *See Help & Context panel for detailed guidance*
+3. **Step 3 — Pull the Nomic Embeddings Model**
+   - Type `ollama pull nomic-embed-text`.
+   - This tiny model allows CYAM to perform local document search and memory management without sending data to the cloud.
+   - 📖 *See Help & Context panel for detailed guidance*
+4. **Step 4 — Pull the Phi-3 Mini Model (Optional)**
+   - Type `ollama pull phi3` to download a ultra-fast, lightweight fallback model.
+   - Phi-3 is recommended for lower-powered laptops where Llama 3.1 may run slowly.
+   - 📖 *See Help & Context panel for detailed guidance*
+5. **Step 5 — List Downloaded Models**
+   - Type `ollama list` to confirm all models are correctly installed on your local machine.
+   - Ensure the `STATUS` column shows them as ready.
+   - 📖 *See Help & Context panel for detailed guidance*
+6. **Step 6 — Verify Connection in CYAM**
+   - Return to the CYAM Dashboard and check the status indicator.
+   - It should now display **"Ollama: Active ✓"** in green.
+   - 📖 *See Help & Context panel for detailed guidance*
 
 ##### Level 5: Help & Context
 
-**Steps 1-2 — Open Ollama & Find Model:** The Ollama App acts as the local model registry. Unlike cloud interfaces, physical AI models must be downloaded entirely to your hard drive. By launching the app and interacting with the top model dropdown, you initiate a direct connection to the global Ollama library registry.
+**Steps 1-2 — Terminal Setup & Primary Model:** Open a terminal (PowerShell on Windows, Terminal on macOS) and pull the primary reasoning model with `ollama run llama3.1`. The Ollama App acts as the local model registry. Unlike cloud interfaces, physical AI models must be downloaded entirely to your hard drive. We strongly recommend starting with `llama3.1` (8B parameters) as it offers strong reasoning capabilities while remaining small enough (4-5 GB) to run alongside your primary IDEs and browsers.
 
-**Step 3 — Model Selection (qwen3:4b):** Selecting the right model size is essential to avoid system crashes. We strongly recommend `qwen3:4b` as it offers a 128K context window with high reasoning capabilities while remaining small enough (3-4 GB RAM) to run alongside your primary IDEs and web browsers transparently. Specifying the exact tag (e.g. `gemma3:4b`) ensures you do not accidentally pull an oversized 70B model that will choke your machine.
+**Step 3 — Embeddings Model:** The `nomic-embed-text` model is a lightweight embedding model that powers CYAM's local document search and memory management. It consumes minimal resources and enables privacy-preserving semantic search without sending any data to the cloud.
 
-**Steps 4-5 — Download & Wait:** The downloading process creates the model binary shards on your disk. You must wait for this 2.6 GB transfer to complete fully; interrupting it forces Ollama to resume from its last completed digest layer. **Use the '< >' arrows below to view the visual step-by-step guide for pulling models via the GUI.**
+**Steps 4-6 — Optional Models & Verification:** Phi-3 is an ultra-fast fallback model for lower-powered machines. After pulling your models, run `ollama list` to verify they are installed correctly, then return to the CYAM Dashboard to confirm the **"Ollama: Active ✓"** status indicator turns green. **Use the '< >' arrows below to view the visual step-by-step guide for pulling models.**
 
-* **Carousel Item 1:** Task 2, Step 2: Inside the Ollama App, locate the model dropdown at the top of the chat interface.
-  (Media: `step5_ollama_gui_dropdown.png`)
-* **Carousel Item 2:** Task 2, Step 4: Search for your desired CYAM-approved model and click the download arrow icon directly in the UI.
-  (Media: `step6_ollama_download_model.png`)
-* **Carousel Item 3:** Task 2, Step 3: Model Naming — Ollama models use a name:tag format. If you enter a name without a tag, Ollama defaults to the recommended parameter count.
-  (Media: `step6b_ollama_model_tags.png`)
-* **Chatbot Note:** Rely purely on visual instructions for downloading models within the new Ollama GUI. Guidance on how to change the default storage drive using the `OLLAMA_MODELS` environment variable can be provided.
+*   **Carousel Item 1:** Task 2, Step 2: Inside the Ollama App, locate the model dropdown at the top of the chat interface.
+    (Media: `step5_ollama_gui_dropdown.png`)
+*   **Carousel Item 2:** Task 2, Step 4: Search for your desired CYAM-approved model and click the download arrow icon directly in the UI.
+    (Media: `step6_ollama_download_model.png`)
+*   **Carousel Item 3:** Task 2, Step 3: Model Naming — Ollama models use a name:tag format. If you enter a name without a tag, Ollama defaults to the recommended parameter count.
+    (Media: `step6b_ollama_model_tags.png`)
+*   **Chatbot Note:** Rely purely on visual instructions for downloading models within the new Ollama GUI. Guidance on how to change the default storage drive using the `OLLAMA_MODELS` environment variable can be provided.
 
 ---
 
@@ -127,19 +115,29 @@ category: "Admin Console"
 
 #### Level 4: Steps
 
-1. **Step 3.1 — Initiate Authorization**
-   Click the **"Authorize OpenRouter"** button in the AI Engines panel. A secure **OpenRouter** authentication page will open in a new browser tab. **💡 Optional (Recommended):** Before clicking, set up **Chrome Split-Screen** so you can see the CYAM Dashboard on the left and **OpenRouter** on the right — right-click a tab and choose "New split view" or drag a tab to the screen edge. See the Help & Context panel for a visual guide.
-2. **Step 3.2 — Sign In or Create an Account**
-   In the **OpenRouter** tab that just opened, **sign in to your existing OpenRouter account**, or click **"Create Account"** to register for free. This step is done entirely inside **OpenRouter** — not inside the CYAM Dashboard. A free account provides immediate access to zero-cost models.
-3. **Step 3.3 — Grant Access to CYAM**
-   Still in **OpenRouter**, review the listed permissions on the authorization screen, then click **"Authorize App"** to confirm. This securely binds your **OpenRouter** account to CYAM's backend.
-4. **Step 3.4 — Confirm the Connection in CYAM**
-   You will be redirected back to the CYAM Dashboard. Verify that the **"OpenRouter: Connected ✓"** status indicator is green in the AI Engines panel. If it remains pending, click **"Re-check Connection"** to trigger a manual handshake.
-5. **Step 3.5 — Choose Your Access Path** *(Select one option below)*
-   Your choice here determines which AI models will be available to CYAM:
+1. **Step 1 — Initiate Authorization**
+   - Click the **"Authorize OpenRouter"** button in the AI Engines panel.
+   - A secure **OpenRouter** authentication page will open in a new browser tab.
+   - 📖 *See Help & Context panel for detailed guidance*
+2. **Step 2 — Sign In or Create an Account**
+   - In the **OpenRouter** tab that just opened, **sign in to your existing OpenRouter account**, or click **"Create Account"** to register for free.
+   - This step is done entirely inside **OpenRouter** — not inside the CYAM Dashboard.
+   - 📖 *See Help & Context panel for detailed guidance*
+3. **Step 3 — Grant Access to CYAM**
+   - Still in **OpenRouter**, review the listed permissions on the authorization screen, then click **"Authorize App"** to confirm.
+   - This securely binds your **OpenRouter** account to CYAM's backend.
+   - 📖 *See Help & Context panel for detailed guidance*
+4. **Step 4 — Confirm the Connection in CYAM**
+   - You will be redirected back to the CYAM Dashboard.
+   - Verify that the **"OpenRouter: Connected ✓"** status indicator is green in the AI Engines panel.
+   - 📖 *See Help & Context panel for detailed guidance*
+5. **Step 5 — Choose Your Access Path** *(Select one option below)*
+   - Your choice here determines which AI models will be available to CYAM:
+   - 📖 *See Help & Context panel for detailed guidance*
+
 
    **Path A — Free Tier (No Payment Required):**
-   - Verify the "Connected to OpenRouter" status from Steps 3.1-3.4. No payment configuration is required — OpenRouter provides immediate access to community and open-source models.
+   - Verify the "Connected to OpenRouter" status from Steps 1-4. No payment configuration is required — OpenRouter provides immediate access to community and open-source models.
    - Available free models include: `meta-llama/llama-3.1-8b-instruct:free`, `google/gemma-2-9b-it:free`, `mistralai/mistral-7b-instruct:free` (availability may vary).
    - Free-tier accounts remain valid indefinitely. Click **"Continue with Free Models"** to proceed to Task 4.
 
@@ -157,9 +155,9 @@ category: "Admin Console"
 
 ##### Level 5: Help & Context
 
-**Steps 3.1–3.4 — Secure OAuth Authorization:** You may have noticed that CYAM never asks you to paste an API key directly into any field in the dashboard. This is intentional. CYAM uses OpenRouter's **PKCE OAuth 2.0 flow** which means no API key is ever visible in your browser. When you click "Authorize", you log in securely on OpenRouter's own site. OpenRouter issues a short-lived authorization code and CYAM's backend exchanges it for a scoped token in a server-to-server call. **At no point does CYAM's frontend see, store, or transmit your API key.** The token can be revoked from OpenRouter's dashboard at any time. **💡 Tip:** For the best experience, use **Chrome's Split-Screen** to place the CYAM Dashboard on the left and OpenRouter on the right — right-click a tab and choose "New split view" or drag a tab to the edge. After clicking "Authorize" in Step 3.1, follow Steps 3.2 to 3.4 in the OpenRouter UI on the right side. **Use the '< >' arrows below to view the visual step-by-step guide, and ask the Help Chatbot below for personalized assistance at any time.**
+**Steps 1-4 — Secure OAuth Authorization:** You may have noticed that CYAM never asks you to paste an API key directly into any field in the dashboard. This is intentional. CYAM uses OpenRouter's **PKCE OAuth 2.0 flow** which means no API key is ever visible in your browser. When you click "Authorize", you log in securely on OpenRouter's own site. OpenRouter issues a short-lived authorization code and CYAM's backend exchanges it for a scoped token in a server-to-server call. **At no point does CYAM's frontend see, store, or transmit your API key.** The token can be revoked from OpenRouter's dashboard at any time. **💡 Tip:** For the best experience, use **Chrome's Split-Screen** to place the CYAM Dashboard on the left and OpenRouter on the right — right-click a tab and choose "New split view" or drag a tab to the screen edge. After clicking "Authorize" in Step 1, follow Steps 2 to 4 in the OpenRouter UI on the right side. **Use the '< >' arrows below to view the visual step-by-step guide, and ask the Help Chatbot below for personalized assistance at any time.**
 
-**Step 3.5 — Choose Your Access Path:** This step determines your funding mechanism and directly controls which AI models become available in Task 4's routing table. **Path A (Free Tier)** provides immediate access to community models without payment setup — ideal for development, testing, and proof-of-concept work. **Path B (Credits)** unlocks frontier models like GPT-4o and Claude 3.5 Sonnet through OpenRouter's unified prepaid system with a 10-20% markup. **Path C (BYOK)** offers the same premium models at direct provider rates with zero markup by using your own API keys configured inside OpenRouter. You can change paths at any time by returning to this step — your Task 4 routing table will automatically reflect the models available under your current access configuration. If uncertain, start with Path A to validate your CYAM integration, then upgrade when ready for production.
+**Step 5 — Choose Your Access Path:** This step determines your funding mechanism and directly controls which AI models become available in Task 4's routing table. **Path A (Free Tier)** provides immediate access to community models without payment setup — ideal for development, testing, and proof-of-concept work. **Path B (Credits)** unlocks frontier models like GPT-4o and Claude 3.5 Sonnet through OpenRouter's unified prepaid system with a 10-20% markup. **Path C (BYOK)** offers the same premium models at direct provider rates with zero markup by using your own API keys configured inside OpenRouter. You can change paths at any time by returning to this step — your Task 4 routing table will automatically reflect the models available under your current access configuration. If uncertain, start with Path A to validate your CYAM integration, then upgrade when ready for production.
 
 * **Carousel Item 1:** Part 1 — Open Chrome's menu → More Tools → Customize Chrome to access toolbar settings.
   (Media: `step3_chrome_split_01.png`)
@@ -183,18 +181,28 @@ category: "Admin Console"
 
 #### Level 4: Steps
 
-1. **Step 4.1 — Open the Model Routing Table**
-   Click the **"Model Routing"** tab in the AI Engines panel. The routing table loads, displaying every CYAM function that requires an AI model assignment.
-2. **Step 4.2 — Review All Function Rows**
-   Scan each row in the table (e.g., **Main Chat**, **Summarizer**, **Code Assistant**). Confirm that the pre-filled default model shown in the **"Primary Model"** column is appropriate for your deployment.
-3. **Step 4.3 — Reassign a Primary Cloud Model (if needed)**
-   For any function whose default model you want to change, click the **dropdown in the "Primary Model" column** of that row and select a different OpenRouter model from the list.
-4. **Step 4.4 — Assign a Fallback Model (Recommended)**
-   For each critical function, click the **dropdown in the "Fallback Model" column** and select a backup model. This model activates automatically if the primary is unavailable.
-5. **Step 4.5 — Enable Local Offloading via Ollama (Conditional)**
-   For any function you want to run locally, flip the **"Local Offloading" toggle to ON** in that function's row. The row's Primary Model dropdown will update to display your locally available Ollama models instead of cloud options.
-6. **Step 4.6 — Save Your Configuration**
-   Click **"Save Configuration"** at the bottom of the routing table. CYAM validates the assignments, locks in your routing rules, and automatically verifies the connection.
+1. **Step 1 — Open the Model Routing Table**
+   - Click the **"Model Routing"** tab in the AI Engines panel.
+   - The routing table loads, displaying every CYAM function that requires an AI model assignment.
+   - 📖 *See Help & Context panel for detailed guidance*
+2. **Step 2 — Review All Function Rows**
+   - Scan each row in the table (e.g., **Main Chat**, **Summarizer**, **Code Assistant**).
+   - Confirm that the pre-filled default model shown in the **"Primary Model"** column is appropriate for your deployment.
+   - 📖 *See Help & Context panel for detailed guidance*
+3. **Step 3 — Reassign a Primary Cloud Model (if needed)**
+   - For any function whose default model you want to change, click the **dropdown in the "Primary Model" column** of that row and select a different OpenRouter model from the list.
+   - 📖 *See Help & Context panel for detailed guidance*
+4. **Step 4 — Assign a Fallback Model (Recommended)**
+   - For each critical function, click the **dropdown in the "Fallback Model" column** and select a backup model.
+   - 📖 *See Help & Context panel for detailed guidance*
+5. **Step 5 — Enable Local Offloading via Ollama (Conditional)**
+   - For any function you want to run locally, flip the **"Local Offloading" toggle to ON** in that function's row.
+   - The row's Primary Model dropdown will update to display your locally available Ollama models instead of cloud options.
+   - 📖 *See Help & Context panel for detailed guidance*
+6. **Step 6 — Save Your Configuration**
+   - Click **"Save Configuration"** at the bottom of the routing table.
+   - CYAM validates the assignments, locks in your routing rules, and automatically verifies the connection.
+   - 📖 *See Help & Context panel for detailed guidance*
 
 ##### Level 5: Help & Context
 

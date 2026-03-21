@@ -118,6 +118,7 @@ category: "Admin Console"
 1. **Step 1 — Initiate Authorization**
    - Click the **"Authorize OpenRouter"** button in the AI Engines panel.
    - A secure **OpenRouter** authentication page will open in a new browser tab.
+   - 💡 **Tip:** For the best experience, use Chrome's **Split-Screen** to place CYAM on the left and OpenRouter on the right — see the Help Carousel for a visual guide.
    - 📖 *See Help & Context panel for detailed guidance*
 2. **Step 2 — Sign In or Create an Account**
    - In the **OpenRouter** tab that just opened, **sign in to your existing OpenRouter account**, or click **"Create Account"** to register for free.
@@ -145,9 +146,43 @@ category: "Admin Console"
 
 ##### Level 5: Help & Context
 
-**Steps 1-4 — Secure OAuth Authorization:** You may have noticed that CYAM never asks you to paste an API key directly into any field in the dashboard. This is intentional. CYAM uses OpenRouter's **PKCE OAuth 2.0 flow** which means no API key is ever visible in your browser. When you click "Authorize", you log in securely on OpenRouter's own site. OpenRouter issues a short-lived authorization code and CYAM's backend exchanges it for a scoped token in a server-to-server call. **At no point does CYAM's frontend see, store, or transmit your API key.** The token can be revoked from OpenRouter's dashboard at any time. **💡 Tip:** For the best experience, use **Chrome's Split-Screen** to place the CYAM Dashboard on the left and OpenRouter on the right — right-click a tab and choose "New split view" or drag a tab to the screen edge. After clicking "Authorize" in Step 1, follow Steps 2 to 4 in the OpenRouter UI on the right side. **Use the '< >' arrows below to view the visual step-by-step guide, and ask the Help Chatbot below for personalized assistance at any time.**
+**Steps 1-4 — Secure OAuth Authorization:**
 
-**Step 5 — Choose Your Access Path:** This step determines your funding mechanism and directly controls which AI models become available in Task 4's routing table. **Path A (Free Tier)** provides immediate access to community models without payment setup — ideal for development, testing, and proof-of-concept work. **Path B (Credits)** unlocks frontier models like GPT-4o and Claude 3.5 Sonnet through OpenRouter's unified prepaid system with a 10-20% markup. **Path C (BYOK)** offers the same premium models at direct provider rates with zero markup by using your own API keys configured inside OpenRouter. You can change paths at any time by returning to this step — your Task 4 routing table will automatically reflect the models available under your current access configuration. If uncertain, start with Path A to validate your CYAM integration, then upgrade when ready for production.
+- **Why no API key field?** CYAM uses OpenRouter's **PKCE OAuth 2.0 flow** — no API key is ever visible in your browser.
+- When you click "Authorize", you log in securely on OpenRouter's own site.
+- OpenRouter issues a short-lived authorization code; CYAM's backend exchanges it for a scoped token in a **server-to-server call**.
+- **At no point does CYAM's frontend see, store, or transmit your API key.**
+- The token can be revoked from OpenRouter's dashboard at any time.
+
+💡 **Chrome Split-Screen Tip:**
+
+- Right-click a tab → choose **"New split view with current tab"** (or drag a tab to the screen edge).
+- Place CYAM Dashboard on the **left** and OpenRouter on the **right**.
+- After clicking "Authorize" in Step 1, follow Steps 2-4 in the OpenRouter UI on the right side.
+- Use the **'< >' carousel arrows** below for a visual step-by-step guide.
+
+**Step 5 — Choose Your Access Path:**
+
+This determines your funding mechanism and controls which models appear in Task 4's Routing Table.
+
+- **Path A (Free Tier):**
+  - No payment needed — immediate access to community models.
+  - Ideal for development, testing, and proof-of-concept.
+  - Rate limit: 50 requests/day (1,000/day after purchasing $10+ in credits).
+
+- **Path B (Premium Credits):**
+  - Buy prepaid credits at [openrouter.ai/settings/credits](https://openrouter.ai/settings/credits) — minimum $5.
+  - Unlocks frontier models: GPT-4o, Claude 3.5 Sonnet, Gemini Pro.
+  - Model prices match provider rates. A **5.5% fee** is applied when purchasing credits (not per-token).
+  - Credits expire after 365 days. Pay-as-you-go, no subscription.
+
+- **Path C (BYOK — Bring Your Own Key):**
+  - Configure your own API keys at [openrouter.ai/workspaces/default/byok](https://openrouter.ai/workspaces/default/byok).
+  - Same premium models as Path B, billed directly by each provider.
+  - 1 million free BYOK requests/month; 5% fee on requests beyond that threshold.
+  - Supported providers: OpenAI, Anthropic, Google, Mistral, Cohere.
+
+- **You can switch paths at any time** — Task 4's routing table automatically reflects your available models.
 
 * **Carousel Item 1:** Part 1 — Open Chrome's menu → More Tools → Customize Chrome to access toolbar settings.
   (Media: `step3_chrome_split_01.png`)
@@ -196,15 +231,51 @@ category: "Admin Console"
 
 ##### Level 5: Help & Context
 
-**Steps 1-2 — Routing Table Overview:** Different AI tasks have radically different requirements. Running every single CYAM function through the same single model would be wasteful at best and produce noticeably poor results at worst. The Model Routing Table solves this by letting you assign the right model to the right job. Think of it as a dispatch board: you can run a lightweight, fast model for quick summarization while reserving a more capable frontier model exclusively for complex chat interactions. Your credit spend is directed precisely where it produces the most value. Open the Model Routing tab in the interactive panel below to see every CYAM function that requires an AI model assignment.
+**Steps 1-2 — Routing Table Overview:**
 
-**Steps 3-4 — Fallback Model Strategy:** Provider outages and rate-limit exhaustion are real operational risks. When you assign a Fallback Model to a function row, CYAM implements automatic failover. If a call to the primary model returns an error, the engine immediately retries the identical request against the fallback model with no user-visible disruption. The CYAM Help Chatbot heavily relies on fallbacks, aggressively attempting to answer questions via free local documentation first, and only triggering an `ESCALATE_TO_WEB` state when it natively decides to fallback to an expensive live web-search model.
+- Different AI tasks have **radically different requirements** — running everything through one model wastes credits and produces poor results.
+- The Routing Table is a **dispatch board** — assign the right model to the right job:
+  - Lightweight, fast model → quick summarization tasks
+  - Capable frontier model → complex chat interactions
+- Your credit spend is directed **precisely where it produces the most value**.
+- Open the Model Routing tab in the interactive panel below to see every function.
 
-**Step 5 — Local Offloading with Ollama:** When the Local Offloading toggle is enabled for a function, CYAM stops routing that function's AI calls through OpenRouter completely. Instead, it sends those requests to the Ollama runtime running on your local machine, consuming zero external API traffic. Enable Local Offloading for high-frequency, lower-stakes functions (like Embeddings) while keeping cloud models assigned to Main Chat. **Use the '< >' arrows below to view the visual step-by-step routing configuration guide.**
+**Steps 3-4 — Fallback Model Strategy:**
 
-**Step 6 — Understanding BYOK in the Routing Table:** If you configured a Bring Your Own Key (BYOK) in Task 3 Step 5, your Routing Table works exactly the same — you still select models using standard names like `openai/gpt-4o`. OpenRouter automatically routes matching requests through your personal key at direct provider pricing with zero markup. BYOK takes priority over credits automatically, so your OpenRouter credits are preserved for providers where you haven't configured BYOK. BYOK-compatible providers include OpenAI, Anthropic, Google, Mistral, and Cohere. Look for the 🔑 icon next to model providers in the dropdowns.
+- Provider outages and rate-limit exhaustion are **real operational risks**.
+- When you assign a **Fallback Model**, CYAM implements automatic failover:
+  - Primary model returns an error → engine immediately retries with the fallback.
+  - **No user-visible disruption** — the switch is seamless.
+- The **Help Chatbot** uses a special fallback pattern:
+  - First attempts to answer via free local documentation.
+  - Only triggers `ESCALATE_TO_WEB` when local docs don't have the answer.
+  - This escalation uses a paid web-search model (e.g., Grok) only when necessary.
 
-**Step 7 — BYOK Cost Tracking:** BYOK requests are billed directly by the provider and may not appear in OpenRouter's usage dashboard. To track BYOK costs, check your provider dashboards directly: OpenAI at `platform.openai.com/usage`, Anthropic at `console.anthropic.com/settings/usage`, or Google in the Cloud Console. If a BYOK model suddenly stops working, the issue typically originates with the provider (expired payment, rate limits, key expiration) — resolve it through their dashboard, not CYAM's. **Ask the Help Chatbot for more details on BYOK troubleshooting.**
+**Step 5 — Local Offloading with Ollama:**
+
+- When enabled for a function, CYAM **stops routing through OpenRouter entirely**.
+- Requests go to the **Ollama runtime on your local machine** — zero API traffic.
+- **Recommended for:** High-frequency, lower-stakes functions (e.g., Embeddings).
+- **Keep cloud models for:** Main Chat, complex reasoning, and web-search tasks.
+- Use the **'< >' carousel arrows** below for the visual routing configuration guide.
+
+**Step 6 — BYOK in the Routing Table:**
+
+- If you configured BYOK in Task 3, your Routing Table **works exactly the same**.
+- You still select models using standard names like `openai/gpt-4o`.
+- OpenRouter **automatically routes** matching requests through your personal key.
+- **BYOK takes priority over credits** — your prepaid balance is preserved for non-BYOK providers.
+- Compatible providers: OpenAI, Anthropic, Google, Mistral, Cohere.
+
+**Step 7 — BYOK Cost Tracking:**
+
+- BYOK requests are billed **directly by the provider** — they may not appear in OpenRouter's dashboard.
+- Track BYOK costs at each provider:
+  - **OpenAI:** `platform.openai.com/usage`
+  - **Anthropic:** `console.anthropic.com/settings/usage`
+  - **Google:** Google Cloud Console
+- If a BYOK model suddenly fails, the issue is typically with the **provider** (expired payment, rate limits, key expiration) — resolve it through their dashboard, not CYAM's.
+- Ask the **Help Chatbot** for BYOK troubleshooting assistance.
 
 * **Carousel Item 1:** The AI Model Routing Table in the Admin Console, showing each CYAM function mapped to its Primary and Fallback models.
   (Media: `step10_routing_table.png`)

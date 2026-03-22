@@ -152,24 +152,91 @@
         },
         {
             "task_number": 3,
-            "step_number": 5,
+            "step_number": 1,
+            "carousel_group": "Chrome Split-Screen Guide",
             "type": "image",
-            "src": "openrouter_home.png",
-            "caption": "Task 3, Step 5: OpenRouter Home — Navigate here to configure your BYOK settings."
+            "src": "step3_chrome_split_01.png",
+            "caption": "Task 3, Step 1: Open Chrome's menu → More Tools → Customize Chrome to access toolbar settings."
         },
         {
             "task_number": 3,
-            "step_number": 5,
+            "step_number": 1,
+            "carousel_group": "Chrome Split-Screen Guide",
             "type": "image",
-            "src": "openrouter_create_key.png",
-            "caption": "Task 3, Step 5: Create BYOK Key — Generate the key you want OpenRouter to pass through."
+            "src": "step3_chrome_split_02.png",
+            "caption": "Task 3, Step 1: Inside Customize Chrome, click the Toolbar section to manage toolbar buttons."
         },
         {
             "task_number": 3,
-            "step_number": 5,
+            "step_number": 1,
+            "carousel_group": "Chrome Split-Screen Guide",
             "type": "image",
-            "src": "openrouter_key_created.png",
-            "caption": "Task 3, Step 5: Key Confirmation — Securely copy your provider key before saving."
+            "src": "step3_chrome_split_03.png",
+            "caption": "Task 3, Step 1: Turn on the 'Open In Split View' toggle to enable Split View in the toolbar."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "carousel_group": "Chrome Split-Screen Guide",
+            "type": "image",
+            "src": "step3_chrome_split_04.png",
+            "caption": "Task 3, Step 1: Open the CYAM Dashboard in one tab and OpenRouter in a second tab."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "carousel_group": "Chrome Split-Screen Guide",
+            "type": "image",
+            "src": "step3_chrome_split_05.png",
+            "caption": "Task 3, Step 1: Right-click the OpenRouter tab and choose 'New split view with current tab'."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "carousel_group": "Chrome Split-Screen Guide",
+            "type": "image",
+            "src": "step3_chrome_split_06.png",
+            "caption": "Task 3, Step 1: Place CYAM Dashboard on the left and OpenRouter on the right. Swap if needed."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "carousel_group": "Chrome Split-Screen Guide",
+            "type": "image",
+            "src": "step3_chrome_split_07.png",
+            "caption": "Task 3, Step 1: Drag the center divider to resize. Exit Split View by separating views back into regular tabs."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "carousel_group": "OAuth Connection Flow",
+            "type": "image",
+            "src": "step1_connect_openrouter.png",
+            "caption": "Task 3: Click Authorize OpenRouter to begin the secure OAuth connection."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "carousel_group": "OAuth Connection Flow",
+            "type": "image",
+            "src": "step2_or_signin.png",
+            "caption": "Task 3: Log in or create an account on OpenRouter's secure OAuth portal."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "carousel_group": "OAuth Connection Flow",
+            "type": "image",
+            "src": "step3_or_authorize.png",
+            "caption": "Task 3: Review and approve CYAM Platform's request to connect."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "carousel_group": "OAuth Connection Flow",
+            "type": "image",
+            "src": "step4_authorization_successful.png",
+            "caption": "Task 3: Authorization Successful — Close the securely connected OpenRouter tab."
         },
         {
             "task_number": 4,

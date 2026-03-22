@@ -128,11 +128,15 @@ category: "Admin Console"
    - Still in **OpenRouter**, review the listed permissions on the authorization screen, then click **"Authorize App"** to confirm.
    - This securely binds your **OpenRouter** account to CYAM's backend.
    - 📖 *See Help & Context panel for detailed guidance*
-4. **Step 4 — Confirm the Connection in CYAM**
-   - You will be redirected back to the CYAM Dashboard.
-   - Verify that the **"OpenRouter: Connected ✓"** status indicator is green in the AI Engines panel.
+4. **Step 4 — Authorization Successful (Cross-Tab)**
+   - A new browser tab will display "✅ Authorization Successful!" confirming your OpenRouter account is connected.
+   - Close this tab safely and return to your original CYAM Dashboard tab.
    - 📖 *See Help & Context panel for detailed guidance*
-5. **Step 5 — Choose Your Access Path** *(Select one option below)*
+5. **Step 5 — Verify the Connection in CYAM**
+   - Click the **"Verify Connection"** button right next to the Authorize button.
+   - The UI will check the server and display a green **"OpenRouter: Connected ✓"** status badge.
+   - 📖 *See Help & Context panel for detailed guidance*
+6. **Step 6 — Choose Your Access Path** *(Select one option below)*
    - Your choice determines which AI models will be available to CYAM.
    - Use the action cards below to select your path.
    - 📖 *See Help & Context panel for detailed guidance*
@@ -161,7 +165,7 @@ category: "Admin Console"
 - After clicking "Authorize" in Step 1, follow Steps 2-4 in the OpenRouter UI on the right side.
 - Use the **'< >' carousel arrows** below for a visual step-by-step guide.
 
-**Step 5 — Choose Your Access Path:**
+**Step 6 — Choose Your Access Path:**
 
 This determines your funding mechanism and controls which models appear in Task 4's Routing Table.
 

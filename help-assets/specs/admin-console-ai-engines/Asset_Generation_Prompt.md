@@ -44,29 +44,30 @@
 * **Target Filename**: `step6_ollama_download_model.png`
 
 ### Task 3: Connect OpenRouter (Cloud BYOK)
-#### Step 4a: OpenRouter Dashboard
-* **Source**: `[User-Provided Screenshot / AI Generation]`
-* **Trigger Moment**: `Capture the OpenRouter dashboard (openrouter.ai/settings/keys) showing the dark theme UI with the "Create Key" button visible.`
-* **Post-Processing Instruction**: `Must provide an appropriately cropped 1200x675 image. NO TEXT OVERLAYS.`
-* **Target Filename**: `openrouter_home.png`
 
-#### Step 4b: Create Key Modal
+#### Step 2: OpenRouter Sign In
 * **Source**: `[User-Provided Screenshot / AI Generation]`
-* **Trigger Moment**: `Capture the OpenRouter "Create Key" modal dialog, showing blank form fields for "Name", "Credit limit", and "Expiration".`
+* **Trigger Moment**: `Capture the standard OpenRouter Sign In / Create Account screen that appears when an OAuth request is initiated. It features Google and Discord login buttons on a dark theme.`
 * **Post-Processing Instruction**: `Must provide an appropriately cropped 1200x675 image. NO TEXT OVERLAYS.`
-* **Target Filename**: `openrouter_create_key.png`
+* **Target Filename**: `step2_or_signin.png`
 
-#### Step 4c: Key Confirmation
+#### Step 3: Grant Access (OAuth Consent)
 * **Source**: `[User-Provided Screenshot / AI Generation]`
-* **Trigger Moment**: `Capture the "Key Created" success modal, showing a blurred/asterisk API key string (sk-or-v1-***) and a warning message that the key will not be shown again.`
+* **Trigger Moment**: `Capture the OpenRouter OAuth App Authorization screen. This screen displays "CYAM Platform desires access to your account" with an "Approve" button at the bottom.`
 * **Post-Processing Instruction**: `Must provide an appropriately cropped 1200x675 image. NO TEXT OVERLAYS.`
-* **Target Filename**: `openrouter_key_created.png`
+* **Target Filename**: `step3_or_authorize.png`
 
-#### Step 5: Choose Your Path (Action Cards)
+#### Step 5: Authorization Successful (Cross-Tab)
+* **Source**: `[User-Provided Screenshot / AI Generation]`
+* **Trigger Moment**: `Capture the standalone "✅ Authorization Successful!" browser tab that appears after the user approves the CYAM connection on OpenRouter. The screen should display a green checkmark telling the user to securely close the tab.`
+* **Post-Processing Instruction**: `Must provide an appropriately cropped 1200x675 image. NO TEXT OVERLAYS.`
+* **Target Filename**: `step5_authorization_successful.png`
+
+#### Step 6: Choose Your Path (Action Cards)
 * **Source**: `[User-Provided Screenshot / AI Generation]`
 * **Trigger Moment**: `Capture the three Path cards (Free Tier, Premium Credits, BYOK) displayed in a grid with lucide icons and styled action buttons.`
 * **Post-Processing Instruction**: `Must provide an appropriately cropped 1200x675 image. NO TEXT OVERLAYS.`
-* **Target Filename**: `step5_path_cards.png`
+* **Target Filename**: `step6_path_cards.png`
 
 ### Task 4: Configure Cloud Routing
 #### Step 1: Review Routing Table

@@ -28,6 +28,11 @@ category: "Admin Console"
 
 ### Level 3: Task 1 — Download & Install Ollama
 
+> 🤖 **AntiGravity Agent Prompt**
+> If you have the AntiGravity Agent (or Claude Code) installed in your terminal, you can skip Tasks 1 and 2 entirely! Just run:
+> `/cyam-setup-local-ai`
+> *(The agent will automatically install Ollama, pull Llama 3.1, DeepSeek-R1, and Nomic Embeddings, and start the local server).*
+
 #### Level 4: Steps
 
 1. **Step 1 — Download Ollama for Desktop**
@@ -208,44 +213,57 @@ This determines your funding mechanism and controls which models appear in Task 
 
 ### Level 3: Task 4 — Configure CYAM Routing & Offloading
 
+> 🤖 **AntiGravity Agent Prompts**
+> If you have the AntiGravity Agent (or Claude Code) installed in your terminal, it can automatically detect and configure your local connection:
+> * `/cyam-fix-ollama-bridge` — Automatically configures Ollama's CORS settings so your browser can detect it.
+> * `/cyam-sync-local-models` — Syncs your installed Ollama models to the CYAM Routing Table automatically.
+
 #### Level 4: Steps
 
 1. **Step 1 — Open the Model Routing Table**
-   - Click the **"Model Routing"** tab in the AI Engines panel.
-   - The routing table loads, displaying every CYAM function that requires an AI model assignment.
+   - In the interactive panel **below these steps**, click the **"Open Routing Table"** button.
+   - The routing table loads, displaying every **AI Task Type** that CYAM uses.
+   - ⚠️ If the model dropdowns appear empty, return to **Task 3** and complete the OpenRouter connection first.
    - 📖 *See Help & Context panel for detailed guidance*
-2. **Step 2 — Review All Function Rows**
-   - Scan each row in the table (e.g., **Main Chat**, **Summarizer**, **Code Assistant**).
-   - Confirm that the pre-filled default model shown in the **"Primary Model"** column is appropriate for your deployment.
+2. **Step 2 — Review AI Task Types**
+   - Each row in the Routing Table represents a **Type of AI work** — not an individual feature. CYAM maps all its AI tools to these Types automatically.
+   - The pre-filled models are **curated defaults** — each AI tool in the platform is designed around its assigned model. We recommend keeping the defaults unless you have specific needs.
    - 📖 *See Help & Context panel for detailed guidance*
-3. **Step 3 — Reassign a Primary Cloud Model (if needed)**
-   - For any function whose default model you want to change, click the **dropdown in the "Primary Model" column** of that row and select a different OpenRouter model from the list.
+3. **Step 3 — Change a Primary Cloud Model (Optional)**
+   - **In the Routing Table below**, click the **Primary Model dropdown** for any row you wish to change, and select a different model from the list.
+   - This is **optional** — the defaults are chosen for optimal performance.
    - 📖 *See Help & Context panel for detailed guidance*
 4. **Step 4 — Assign a Fallback Model (Recommended)**
-   - For each critical function, click the **dropdown in the "Fallback Model" column** and select a backup model.
+   - **In the Routing Table below**, click the **Fallback Model dropdown** for each critical AI Task Type and select a backup model.
+   - If the primary model fails or hits rate limits, CYAM automatically switches to the fallback — with zero disruption.
    - 📖 *See Help & Context panel for detailed guidance*
 5. **Step 5 — Enable Local Offloading via Ollama (Conditional)**
-   - For any function you want to run locally, flip the **"Local Offloading" toggle to ON** in that function's row.
-   - The row's Primary Model dropdown will update to display your locally available Ollama models instead of cloud options.
+   - **In the Routing Table below**, flip the **Local Offloading toggle to ON** for any AI Task Type you want to run on your own machine.
+   - When enabled, that row's Primary Model dropdown updates to show your locally available Ollama models instead of cloud options.
+   - This toggle is disabled if Ollama is not detected on your machine.
    - 📖 *See Help & Context panel for detailed guidance*
 6. **Step 6 — Save Your Configuration**
-   - Click **"Save Configuration"** at the bottom of the routing table.
-   - CYAM validates the assignments, locks in your routing rules, and automatically verifies the connection.
+   - Click the **"Save Configuration"** button at the bottom of the **Routing Table below**.
+   - CYAM validates the assignments, locks in your routing rules, and confirms the save with a green success banner.
    - 📖 *See Help & Context panel for detailed guidance*
 
 ##### Level 5: Help & Context
 
-**Steps 1-2 — Routing Table Overview:**
+**Steps 1-2 — Understanding the Routing Table:**
 
-- Different AI tasks have **radically different requirements** — running everything through one model wastes credits and produces poor results.
-- The Routing Table is a **dispatch board** — assign the right model to the right job:
+- The Routing Table is a **dispatch board** — it maps each **AI Task Type** to the best model for that kind of work.
+- Different AI tasks have **radically different requirements** — running everything through one model wastes credits and produces poor results:
   - Lightweight, fast model → quick summarization tasks
   - Capable frontier model → complex chat interactions
+  - Embedding model → document search and memory
 - Your credit spend is directed **precisely where it produces the most value**.
-- Open the Model Routing tab in the interactive panel below to see every function.
+- The defaults are **curated** — each AI tool in CYAM is specifically designed around its assigned model. We recommend keeping them unless you have a specific reason to change.
+- **If the model dropdowns are empty**, return to Task 3 and complete the OpenRouter connection first.
+- Click the **"Open Routing Table"** button in the interactive panel below to see every AI Task Type.
 
-**Steps 3-4 — Fallback Model Strategy:**
+**Steps 3-4 — Primary & Fallback Model Strategy:**
 
+- Changing a Primary Model is **optional** — the defaults are chosen for optimal performance.
 - Provider outages and rate-limit exhaustion are **real operational risks**.
 - When you assign a **Fallback Model**, CYAM implements automatic failover:
   - Primary model returns an error → engine immediately retries with the fallback.
@@ -257,10 +275,11 @@ This determines your funding mechanism and controls which models appear in Task 
 
 **Step 5 — Local Offloading with Ollama:**
 
-- When enabled for a function, CYAM **stops routing through OpenRouter entirely**.
+- When enabled for an AI Task Type, CYAM **stops routing through OpenRouter entirely**.
 - Requests go to the **Ollama runtime on your local machine** — zero API traffic.
-- **Recommended for:** High-frequency, lower-stakes functions (e.g., Embeddings).
+- **Recommended for:** High-frequency, lower-stakes tasks (e.g., Embeddings).
 - **Keep cloud models for:** Main Chat, complex reasoning, and web-search tasks.
+- The toggle is **disabled** if Ollama is not detected running on your machine.
 - Use the **'< >' carousel arrows** below for the visual routing configuration guide.
 
 **Step 6 — BYOK in the Routing Table:**

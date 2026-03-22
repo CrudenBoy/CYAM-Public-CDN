@@ -17,6 +17,7 @@
 * **State 1**: Desktop environment with the new Ollama GUI Chat App open.
 * **State 2**: Browser logged into `openrouter.ai/settings/keys` with dark mode enabled.
 * **State 3**: Browser logged into the CYAM Admin Console AI Routing page.
+* **State 4**: Browser showing the CYAM Dashboard with the new FAB Chatbot open, Path cards visible, and accordion step blocks.
 
 ## 3. End-to-End Walkthrough Script (Video)
 *(Video walkthrough generation is suspended for this specific generation request. Focus exclusively on the 9 Help Carousel static assets below).*
@@ -61,10 +62,16 @@
 * **Post-Processing Instruction**: `Must provide an appropriately cropped 1200x675 image. NO TEXT OVERLAYS.`
 * **Target Filename**: `openrouter_key_created.png`
 
+#### Step 5: Choose Your Path (Action Cards)
+* **Source**: `[User-Provided Screenshot / AI Generation]`
+* **Trigger Moment**: `Capture the three Path cards (Free Tier, Premium Credits, BYOK) displayed in a grid with lucide icons and styled action buttons.`
+* **Post-Processing Instruction**: `Must provide an appropriately cropped 1200x675 image. NO TEXT OVERLAYS.`
+* **Target Filename**: `step5_path_cards.png`
+
 ### Task 4: Configure Cloud Routing
 #### Step 1: Review Routing Table
 * **Source**: `[User-Provided Screenshot / AI Generation]`
-* **Trigger Moment**: `Capture a sleek web dashboard table titled "AI Model Routing" with columns for "Function", "Primary Model", and "Escalation Model".`
+* **Trigger Moment**: `Capture a sleek web dashboard table titled "Model Routing" with columns for "Function", "Primary Model", "Fallback Model", and "Local". Show the "Open Routing Table" button clicked.`
 * **Post-Processing Instruction**: `Must provide an appropriately cropped 1200x675 image. NO TEXT OVERLAYS.`
 * **Target Filename**: `step10_routing_table.png`
 
@@ -79,6 +86,13 @@
 * **Trigger Moment**: `Capture a close-up UI shot of a successfully saved workflow configuration card in a dashboard, prominently featuring a green pill badge that says "Verified & Active".`
 * **Post-Processing Instruction**: `Must provide an appropriately cropped 1200x675 image. NO TEXT OVERLAYS.`
 * **Target Filename**: `step13_test_connection_badge.png`
+
+### Dashboard UI Elements
+#### FAB Chatbot & Step Blocks
+* **Source**: `[User-Provided Screenshot / AI Generation]`
+* **Trigger Moment**: `Capture the floating gradient Chatbot panel open on the bottom right (sparkles icon visible), with bulleted step blocks (accordion style) visible in the right side context panel.`
+* **Post-Processing Instruction**: `Must provide an appropriately cropped 1200x675 image. NO TEXT OVERLAYS.`
+* **Target Filename**: `dashboard_fab_chatbot.png`
 
 ---
 

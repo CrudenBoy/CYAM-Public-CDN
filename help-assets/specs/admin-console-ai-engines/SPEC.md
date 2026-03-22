@@ -28,8 +28,13 @@ category: "Admin Console"
 
 ### Level 3: Task 1 — Download & Install Ollama
 
-
 #### Level 4: Steps
+
+:::AI_AUTOMATOR
+
+/cyam-setup-local-ai
+
+:::
 
 1. **Step 1 — Download Ollama for Desktop**
    - Click the **"Download Ollama"** button in the AI Engines panel to open `https://ollama.com/download` in a new tab.
@@ -59,15 +64,6 @@ category: "Admin Console"
 * **Carousel Item 3:** Task 1, Step 3: macOS Verification — The Ollama llama icon will appear in the top menu bar, confirming the background service is running.
   (Media: `step3b_mac_menubar.png`)
 * **Chatbot Note:** Assist Admins with specific OS installation nuances for Ollama ensuring they mount .dmg on mac and handle SmartScreen on Windows.
-
-**Automate with AntiGravity:**
-If you have the AntiGravity Agent (or Claude Code) installed in your terminal, you can skip Tasks 1 and 2 entirely! The agent will automatically install Ollama, pull Llama 3.1, DeepSeek-R1, and Nomic Embeddings, and start the local server.
-
-:::AGENT_PROMPT
-
-/cyam-setup-local-ai
-
-:::
 
 ---
 
@@ -218,8 +214,13 @@ This determines your funding mechanism and controls which models appear in Task 
 
 ### Level 3: Task 4 — Configure CYAM Routing & Offloading
 
-
 #### Level 4: Steps
+
+:::AI_AUTOMATOR
+
+/cyam-fix-ollama-bridge && /cyam-sync-local-models
+
+:::
 
 1. **Step 1 — Open the Model Routing Table**
    - In the interactive panel **below these steps**, click the **"Open Routing Table"** button.
@@ -260,20 +261,6 @@ This determines your funding mechanism and controls which models appear in Task 
 - Your credit spend is directed **precisely where it produces the most value**.
 - The defaults are **curated** — each AI tool in CYAM is specifically designed around its assigned model. We recommend keeping them unless you have a specific reason to change.
 
-**Automate with AntiGravity:**
-If you have the AntiGravity Agent (or Claude Code) installed in your terminal, it can automatically fix connection issues and sync your local models to the routing table:
-
-:::AGENT_PROMPT
-
-/cyam-fix-ollama-bridge
-
-:::
-
-:::AGENT_PROMPT
-
-/cyam-sync-local-models
-
-:::
 - **If the model dropdowns are empty**, return to Task 3 and complete the OpenRouter connection first.
 - Click the **"Open Routing Table"** button in the interactive panel below to see every AI Task Type.
 

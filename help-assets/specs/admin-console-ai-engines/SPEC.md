@@ -26,9 +26,11 @@ category: "Admin Console"
 
 > **Hardware limitations?** If your computer does not meet the minimum requirements below (or you lack disk space), you can **skip this entire workflow** and use the **"Free Cloud Offloading"** fallback in Workflow 2 to handle simple background tasks without consuming paid credits.
 
-### Level 3: Task 1 — Download & Install Ollama
+### Level 3: Task 1 — Assess Hardware & Install Local AI (Ollama)
 
 #### Level 4: Steps
+
+We highly recommend the **Automated Fast Path** below to assess your hardware and safely install Ollama. If you prefer not to use an AI agent, follow the **Manual Path** steps further down.
 
 :::AI_AUTOMATOR
 
@@ -91,6 +93,8 @@ Verification & Success Flags:
 
 ##### Level 5: Help & Context
 
+**Step 0 — AntiGravity Guide:** The automated path uses an intelligent Agent Workflow. In Stage 1, the agent safely assesses your hardware (RAM and GPU) to ensure Ollama won't freeze your system. In Stage 2, it handles the complex command-line installation so you don't have to.
+
 **Step 1 — Ollama Deployment Scope:** AI models run as background daemons natively on your hardware. Unlike cloud deployments, you do not need the CYAM Web App, the AntiGravity Agent, or development packages like `gemini-cli` installed to operate Ollama. Once installed, it is permanently available to CYAM or any other local software silently in the background.
 
 **Step 2 — System Requirements:** AI models are highly resource-intensive. Running a local LLM ensures data privacy and zero cloud cost, but it requires capable hardware. Verify you have at least Windows 10 22H2+ or macOS 14 Sonoma+, and a minimum of 4 GB free disk space just for the Ollama binary. Depending on the models you pull later, you may need an additional 10-100 GB of storage.
@@ -107,9 +111,11 @@ Verification & Success Flags:
 
 ---
 
-### Level 3: Task 2 — Pull Local Models (via Ollama GUI)
+### Level 3: Task 2 — Initialize Bridge & Pull Models
 
 #### Level 4: Steps
+
+This task securely connects your dashboard to your local server. Use the **Automated Fast Path** below to initialize the bridge automatically, or follow the **Manual Path** steps below.
 
 :::AI_AUTOMATOR
 
@@ -156,6 +162,8 @@ Verification & Success Flags:
    - 📖 *See Help & Context panel for detailed guidance*
 
 ##### Level 5: Help & Context
+
+**Step 0 — AntiGravity Guide:** Local AI servers strictly block web browser connections by default for security. The automated initialization script securely configures the `OLLAMA_ORIGINS` CORS environment variable and automatically syncs your installed models directly into the CYAM platform.
 
 **Steps 1-2 — Terminal Setup & Primary Model:** Open a terminal (PowerShell on Windows, Terminal on macOS) and pull the primary reasoning model with `ollama run llama3.1`. The Ollama App acts as the local model registry. Unlike cloud interfaces, physical AI models must be downloaded entirely to your hard drive. We strongly recommend starting with `llama3.1` (8B parameters) as it offers strong reasoning capabilities while remaining small enough (4-5 GB) to run alongside your primary IDEs and browsers.
 

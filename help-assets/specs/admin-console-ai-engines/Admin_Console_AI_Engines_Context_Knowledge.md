@@ -316,3 +316,20 @@ OpenRouter credits are only consumed for:
 **Step 3 — Identifying BYOK-Compatible Models:** BYOK support is available for major commercial providers including OpenAI, Anthropic, Google, Mistral, and Cohere. In your Model Routing Table, look for models from these established providers—they will show a key icon (🔑) indicating BYOK compatibility. Community models, open-source models hosted by third parties, or specialized fine-tuned models generally require OpenRouter credits and cannot be routed through personal API keys. When selecting models for high-volume functions like your Main Chat, prioritizing BYOK-compatible models from major providers can significantly reduce your operational costs while maintaining high-quality AI responses, especially once you exceed the 1 million free BYOK requests per month threshold.
 
 **Step 4 — Managing BYOK Configuration and Cost Tracking:** To set up BYOK, visit OpenRouter's dedicated BYOK settings page at `https://openrouter.ai/workspaces/default/byok` while logged into the same account you connected to CYAM during OAuth authorization. There you can securely add API keys for multiple providers simultaneously—OpenRouter will intelligently route each request to the appropriate key based on your model selections. Since BYOK requests bypass OpenRouter's usage dashboard for provider billing, you must track costs directly through each provider's dashboard: OpenAI usage at `platform.openai.com/usage`, Anthropic at `console.anthropic.com/settings/usage`, and Google in the Cloud Console. Remember that after your first million BYOK requests each month, you'll need a small OpenRouter credit balance to cover the 5% usage fee, so monitor both your provider costs and your OpenRouter credit consumption to maintain uninterrupted service.
+
+## 11. AntiGravity Automation & Agent Workflows
+
+In addition to manual GUI instructions, the platform provides "Agent Workflow" prompts (via the AntiGravity AI Automator banner) that Admins can copy and paste into their own terminal-based AI agents (like AntiGravity or Claude Code). 
+
+### The Advantage of Agent Workflows:
+Agent Workflows execute complex OS-level commands automatically, preventing user error. To ensure safety, these prompts are written using strict **10/10 Agent Manager Constraints**:
+- **Objectives:** Clearly define exactly what the agent should accomplish.
+- **Execution Boundaries:** Restrict the agent from writing custom scripts; force it to only use officially provided slash commands (e.g., `/cyam-setup-local-ai`).
+- **Verification Flags:** Require the agent to read terminal output and confirm success stages before proceeding, pausing immediately if an error occurs.
+
+### Understanding the Three Automation Stages:
+1. **Task 1 (Stage 1 — Hardware Diagnostic):** Ollama models will crash computers lacking sufficient RAM or GPU capabilities. The Agent runs a strictly read-only check (`system_profiler`, `lshw`, etc.) to assess the Admin's unified memory/VRAM. It refuses to install models if the hardware is unsuitable unless the Admin explicitly overrides it.
+2. **Task 1 (Stage 2 — Automated Setup):** Once approved, the Agent installs Ollama unattended and pulls the CYAM base models (Llama 3.1, DeepSeek-R1, Nomic Embeddings) directly via the CLI, bypassing OS security prompt confusion (like Gatekeeper warning dialogs) by handling them natively.
+3. **Task 2 (Initialization & Sync):** Ollama's local server explicitly blocks Web Apps from communicating with it (CORS restriction). The `/cyam-fix-ollama-bridge` command injects the necessary `OLLAMA_ORIGINS="*"` environment variables and restarts the daemon. Next, `/cyam-sync-local-models` automatically reads the downloaded models and inserts them into CYAM's routing configuration so the user does not have to manually type model tags.
+
+*Chatbot Note:* When an Admin asks about the "AI Automator" or "AntiGravity Prompts", explain that these are optional, highly-secure automation scripts that massively speed up local AI configuration. Encourage them to install AntiGravity to use this Fast Path if they are comfortable with terminal applications.

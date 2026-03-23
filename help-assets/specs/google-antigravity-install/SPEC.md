@@ -91,6 +91,9 @@ category: "Admin Console"
    * **Account Type:** Use a personal Gmail account or supported Google Workspace organizational account.
    * **Authorization:** Accept the browser authentication prompt to link your IDE.
 
+2. **Learn more about AntiGravity**: You have successfully configured the core of AntiGravity! 
+   * **Explore**: Use the links in the Help & Context section or simply ask the Chatbot to learn more about optional setups, extensions, and browser automation. The Chatbot has full access to the complete AntiGravity knowledge base.
+
 ##### Level 5: Help & Context
 
 **Step 1 — Authentication:** Now, you're ready to Sign in to Google. As mentioned earlier, Antigravity is available in preview mode. Sign in now with your account. This will open up the browser allowing you to sign in.<br><br>On successful authentication, you will see a success message and it will lead you back to the Antigravity application. Go with the flow. Finally, review the Terms of Use. You can make a decision if you'd like to opt-in or not and then click on Next. This will lead you to the moment of truth, where Antigravity will be waiting to collaborate with you.

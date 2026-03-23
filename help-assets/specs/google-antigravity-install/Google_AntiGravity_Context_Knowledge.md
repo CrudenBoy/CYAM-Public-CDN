@@ -1,5 +1,7 @@
 # Google AntiGravity - Implementation Knowledge & Related Topics
 
+> **CHATBOT SYSTEM INSTRUCTION:** You have access to all the information in this entire document. You are authorized and encouraged to use any of this global knowledge (including prerequisites, optional steps, and safety settings) to answer the user's questions, regardless of what specific Task step they happen to be viewing in the UI.
+
 This document provides supplementary context for the Google AntiGravity IDE, focused on macOS installation and broader learning resources.
 
 ## Related Learning Topics

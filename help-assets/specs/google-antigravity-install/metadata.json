@@ -1,0 +1,60 @@
+{
+    "category": "Developer Tools",
+    "workflow_description": "Guided installation and configuration of the Google AntiGravity IDE on macOS.",
+    "task_summary": "Download, install, launch, and authenticate Google AntiGravity.",
+    "overview_description": "This workflow guides you through the complete setup of Google AntiGravity, the world's first agent-first IDE. You will learn how to download the correct version for your hardware, deploy it to your Applications folder, and configure safety policies for your AI agents.",
+    "ui_instructions": [
+        "Step 1: Download the macOS installer from antigravity.google/download.",
+        "Step 2: Drag the AntiGravity icon into your Applications folder.",
+        "Step 3: Launch the app and click Next on the Welcome screen.",
+        "Step 4: Select 'Review-driven development' as your agent policy.",
+        "Step 5: Sign in with your Google Account and verify with 'agy --version'."
+    ],
+    "carousel_items": [
+        {
+            "task_number": 1,
+            "step_number": 1,
+            "type": "image",
+            "src": "1_step_1_macOS.png",
+            "caption": "Task 1, Step 1: Visit the official download page and select your Mac architecture."
+        },
+        {
+            "task_number": 2,
+            "step_number": 1,
+            "type": "image",
+            "src": "2_step_1_macOS.png",
+            "caption": "Task 2, Step 1: Drag the AntiGravity application into the Applications folder alias."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "type": "image",
+            "src": "3_step_1_macOS.png",
+            "caption": "Task 3, Step 1: Welcome to AntiGravity. Click Next to begin configuration."
+        },
+        {
+            "task_number": 3,
+            "step_number": 2,
+            "type": "image",
+            "src": "3_step_2_macOS.png",
+            "caption": "Task 3, Step 2: Choose 'Review-driven development' for optimal agent safety."
+        }
+    ],
+    "relevant_links": [
+        {
+            "title": "Official Download Page",
+            "url": "https://antigravity.google/download"
+        },
+        {
+            "title": "AntiGravity Codelab",
+            "url": "https://codelabs.developers.google.com/getting-started-google-antigravity"
+        }
+    ],
+    "INSTALL_CHATBOT": true,
+    "chatbot_context_urls": [
+        "https://codelabs.developers.google.com/getting-started-google-antigravity",
+        "https://antigravity.google/docs"
+    ],
+    "chatbot_context_file": "Google_AntiGravity_Context_Knowledge.md",
+    "chatbot_prompt_context": "Help the user with questions about Google AntiGravity installation on macOS. Reference the provided YouTube playlist for visual tutorials and Codelabs for deep dives."
+}

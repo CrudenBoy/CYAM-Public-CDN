@@ -32,7 +32,47 @@ category: "Admin Console"
 
 :::AI_AUTOMATOR
 
-/cyam-setup-local-ai
+**Stage 1: System Diagnostic Request**
+
+Objective: Perform a read-only system diagnostic to evaluate hardware viability for running local LLMs via Ollama, before proceeding with any local installation.
+
+Execution Steps:
+1. Safely determine my operating system.
+2. Run read-only, non-destructive terminal commands to gather system specifications: Total System RAM, CPU Core count, and GPU details (including dedicated VRAM or Apple Unified Memory).
+
+Constraints & Guardrails:
+1. You are strictly limited to read-only diagnostic commands (e.g., system_profiler, wmic, lshw). 
+2. Do not install any software, read personal files, or execute any state-changing commands whatsoever.
+
+Analysis & Deliverables:
+- Viability Assessment: Provide a definitive, layman's terms recommendation on whether my system can comfortably run Ollama.
+- Failure Mode: If a command fails and you cannot determine my specs, ask me for them manually. 
+- Warning Logic: If my available RAM is under 8GB or I lack a capable discrete GPU / Apple Silicon, clearly state the severe performance limitations. Strongly recommend that I skip to Task 3 (Cloud Models via OpenRouter) or advise strictly limiting to "Tiny" models like Phi-3.
+- Tiered Recommendations: Based on my available RAM and GPU compute, provide a tiered list of recommended models (e.g., "Fast/Daily Driver", "Advanced Reasoning" parameter size, estimated RAM footprint).
+- Hardware Context: Briefly explain how my specific hardware architecture dictates these recommendations.
+
+Do not proceed to Stage 2 installation until I explicitly confirm I want to continue based on your assessment.
+
+:::
+
+:::AI_AUTOMATOR
+
+**Stage 2: Automated Installation Workflow**
+
+Objective: Fully automate the installation of local AI infrastructure (Ollama) and provision necessary base models based on the Stage 1 assessment.
+
+Execution Steps: 
+If the user approved installation in Stage 1, use your terminal capabilities to execute the `/cyam-setup-local-ai` workflow.
+
+Constraints & Guardrails:
+1. Do not execute this workflow if the user's hardware was deemed insufficient in Stage 1 and they did not explicitly override the warning.
+2. Do not attempt to manually download binaries via curl/wget; rely entirely on the provided slash command workflow.
+3. If the command prompts for an administrator password or software permissions you cannot bypass, pause execution and ask me for input.
+
+Verification & Success Flags:
+- Verify that the terminal output confirms the Ollama service has successfully started.
+- Confirm that the base models (Llama 3.1, DeepSeek-R1, and Nomic Embeddings) have been successfully pulled.
+- If the output indicates installation failure or missing models, report the exact error and do not proceed to subsequent Tasks.
 
 :::
 
@@ -71,6 +111,25 @@ category: "Admin Console"
 
 #### Level 4: Steps
 
+:::AI_AUTOMATOR
+
+Objective: Initialize the Ollama browser bridge connection so the web app can securely communicate with the local daemon, and sync local models to the CYAM Routing Table.
+
+Execution Steps: Using your terminal tool, please sequentially execute the following CLI commands:
+- `/cyam-fix-ollama-bridge`
+- `/cyam-sync-local-models`
+
+Constraints & Guardrails:
+- Strictly Sequential: Wait for the first command to finish entirely before initiating the second.
+- No Custom Scripting: Do not attempt to manually edit CORS configuration files, alter environment variables, or write custom bash scripts to initialize the bridge. Rely entirely on the provided CLI commands.
+- Failure State: If either command fails, throws an error, hangs for more than 60 seconds, or asks for user input, immediately pause the automation and ask me for help. Do not attempt self-correction on the CORS files.
+
+Verification & Success Flags:
+- After Command 1: Review the terminal output to ensure the script confirms the CORS origins are enabled. Critically, verify the Ollama service is fully restarted and responsive before proceeding.
+- After Command 2: Review the output to ensure the installed local models were successfully detected and pushed to the CYAM configuration without network errors (e.g., Connection Refused).
+- Final Output: Provide a summary report detailing the models synced, confirming readiness to proceed to Task 4.
+
+:::
 1. **Step 1 — Open the Ollama Terminal/Command Prompt**
    - **Windows:** Search for "cmd" or "PowerShell" in your Start menu and open it.
    - **macOS:** Open "Terminal" from your Applications > Utilities folder.
@@ -215,12 +274,6 @@ This determines your funding mechanism and controls which models appear in Task 
 ### Level 3: Task 4 — Configure CYAM Routing & Offloading
 
 #### Level 4: Steps
-
-:::AI_AUTOMATOR
-
-/cyam-fix-ollama-bridge && /cyam-sync-local-models
-
-:::
 
 1. **Step 1 — Open the Model Routing Table**
    - In the interactive panel **below these steps**, click the **"Open Routing Table"** button.

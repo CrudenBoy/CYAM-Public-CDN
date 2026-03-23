@@ -86,5 +86,9 @@ Finally, Terms of Use. You can make a decision if you'd like to opt-in or not an
 
 This will lead you to the moment of truth, where Antigravity will be waiting to collaborate with you.
 
+**Note:** There are two links the user can use for further information about AntiGravity:
+* YouTube: https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN
+* Codelabs: https://codelabs.developers.google.com/getting-started-google-antigravity#0
+
 ---
 *Context for AntiGravity Chatbot — Last Updated March 2026*

@@ -81,19 +81,13 @@ category: "Developer Tools"
 [/OS:macOS]
    (Media: `3_step_2_macOS.png`)
 
+4. **Editor Settings**: On the "Configure your Editor settings" page, choose your preferences for Keybindings, Extensions, and the Command Line tool.
+
 ##### Level 5: Help & Context
 
 **Step 1 — Security:** Once you have completed the installation, launch the Antigravity application. macOS Gatekeeper verifies apps for your safety. Clicking "Open" white-lists the application for future use. You should see a welcome screen, please proceed with clicking on Next each time.
 
-**Steps 2-3 — Policy:** How do you want to use the Antigravity agent? The autonomy policy defines how much control the AI agent has over your system. This is about giving the Agent the ability to execute commands (applications/tools) in your terminal (Always proceed vs Request review), Review policy (determining when the agent asks for plan reviews), and JavaScript Execution policy in the browser. 
-
-The 4 options on the left are specific settings for the terminal execution, review, and JavaScript execution policies.
-- **Secure mode:** Enhanced security controls for the Agent, restricting external access.
-- **Review-driven development (recommended):** The agent will frequently ask for review. This is a good balance and the recommended one since it allows the agent to make a decision and come back to the user for approval.
-- **Agent-driven development:** The agent will never ask for review.
-- **Custom configuration**
-
-Remember that settings can be changed at any time via Antigravity User Settings (Cmd + ,). 
+**Steps 2-3 — Policy:** How do you want to use the Antigravity agent? The autonomy policy defines how much control the AI agent has over your system. This is about giving the Agent the ability to execute commands (applications/tools) in your terminal (Always proceed vs Request review), Review policy (determining when the agent asks for plan reviews), and JavaScript Execution policy in the browser.<br><br>The 4 options on the left are specific settings for the terminal execution, review, and JavaScript execution policies.<br>• **Secure mode:** Enhanced security controls for the Agent, restricting external access.<br>• **Review-driven development (recommended):** The agent will frequently ask for review. This is a good balance and the recommended one since it allows the agent to make a decision and come back to the user for approval.<br>• **Agent-driven development:** The agent will never ask for review.<br>• **Custom configuration**<br><br>Remember that settings can be changed at any time via Antigravity User Settings (Cmd + ,).
 
 **Step 4 — Editor Settings:** Next is the Configure your Editor settings page where you can choose your preferences for Keybindings, Extensions, and the Command Line tool to open Antigravity with `agy`.
 
@@ -131,6 +125,8 @@ On successful authentication, you will see a success message and it will lead yo
 ##### Level 5: Help & Context
 
 **Step 2 — CLI Check:** The `agy` tool is the heart of AntiGravity's agentic power. Running this command confirms the CLI was installed correctly during the setup phase.
+
+**Step 3 — Further Information:** There are two links the user can use for further information about AntiGravity:<br>• **YouTube**: https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN<br>• **Codelabs**: https://codelabs.developers.google.com/getting-started-google-antigravity#0
 
 ---
 

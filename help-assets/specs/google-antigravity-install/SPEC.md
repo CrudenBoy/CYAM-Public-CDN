@@ -3,13 +3,13 @@ spec_id: "google-antigravity-install"
 spec_version: "1.0"
 generated_by: "CYAM_Spec_Designer"
 generated_date: "2026-03-23"
-category: "Developer Tools"
+category: "Admin Console"
 ---
 
 # Google AntiGravity macOS Installation Guide
 
 ## Level 1: Category
-* **Category:** Developer Tools
+* **Category:** Admin Console
 * **Permissions:** All Users
 
 ---
@@ -24,7 +24,7 @@ category: "Developer Tools"
 ## Level 2: Installation and Initial Setup
 **Goal:** Successfully download, install, and configure Google AntiGravity on your Apple device to begin autonomous development.
 
-### Level 3: Task 1 — Download the Installer
+### Level 3: Task 1 — Download and Install Antigravity
 
 #### Level 4: Steps
 
@@ -34,36 +34,25 @@ category: "Developer Tools"
    * **Select Architecture:** Choose between **Apple Silicon** (M1/M2/M3/M4) or **Intel** based on your Mac's processor.
 [/OS:macOS]
 
-##### Level 5: Help & Context
-
-**Step 1 — Download Site:** If you don't have Antigravity installed already, let's begin with installing Antigravity. Currently the product is available for preview and you can use your personal Gmail account to get started with it. Go to the downloads page and click on the appropriate operating system version that is applicable to your case.
-
-* **Carousel Item 1:** The macOS download options on the official site.
-  (Media: `1_step_1_macOS.png`)
-
----
-
-### Level 3: Task 2 — Run the Application Installer
-
-#### Level 4: Steps
-
-1. **Open the DMG File**: Locate the downloaded `.dmg` file in your Downloads folder and double-click it.
-
-2. **Deploy to Applications**: Drag the AntiGravity icon into the Applications folder alias.
+2. **Deploy to Applications**: Locate the downloaded `.dmg` file, double-click it, and drag the AntiGravity icon into the Applications folder alias.
 [OS:macOS]
    * **Drag and Drop**: Ensure you drag the icon completely into the target folder to initiate the copy process.
 [/OS:macOS]
 
 ##### Level 5: Help & Context
 
+**Step 1 — Download Site:** If you don't have Antigravity installed already, let's begin with installing Antigravity. Currently the product is available for preview and you can use your personal Gmail account or supported Google Workspace organizational account to get started with it. Go to the downloads page and click on the appropriate operating system version that is applicable to your case.
+
 **Step 2 — Installation:** Launch the application installer and install the same on your machine by dragging the application to the Applications folder. This is the standard way to install software on macOS and ensures the app has the correct permissions to run.
 
-* **Carousel Item 1:** Dragging the AntiGravity icon into the Applications folder.
+* **Carousel Item 1:** The macOS download options on the official site.
+  (Media: `1_step_1_macOS.png`)
+* **Carousel Item 2:** Dragging the AntiGravity icon into the Applications folder.
   (Media: `2_step_1_macOS.png`)
 
 ---
 
-### Level 3: Task 3 — Initial Launch and Policy Setup
+### Level 3: Task 2 — Launch and Configure Safety Settings
 
 #### Level 4: Steps
 
@@ -81,15 +70,11 @@ category: "Developer Tools"
 [/OS:macOS]
    (Media: `3_step_2_macOS.png`)
 
-4. **Editor Settings**: On the "Configure your Editor settings" page, choose your preferences for Keybindings, Extensions, and the Command Line tool.
-
 ##### Level 5: Help & Context
 
 **Step 1 — Security:** Once you have completed the installation, launch the Antigravity application. macOS Gatekeeper verifies apps for your safety. Clicking "Open" white-lists the application for future use. You should see a welcome screen, please proceed with clicking on Next each time.
 
 **Steps 2-3 — Policy:** How do you want to use the Antigravity agent? The autonomy policy defines how much control the AI agent has over your system. This is about giving the Agent the ability to execute commands (applications/tools) in your terminal (Always proceed vs Request review), Review policy (determining when the agent asks for plan reviews), and JavaScript Execution policy in the browser.<br><br>The 4 options on the left are specific settings for the terminal execution, review, and JavaScript execution policies.<br>• **Secure mode:** Enhanced security controls for the Agent, restricting external access.<br>• **Review-driven development (recommended):** The agent will frequently ask for review. This is a good balance and the recommended one since it allows the agent to make a decision and come back to the user for approval.<br>• **Agent-driven development:** The agent will never ask for review.<br>• **Custom configuration**<br><br>Remember that settings can be changed at any time via Antigravity User Settings (Cmd + ,).
-
-**Step 4 — Editor Settings:** Next is the Configure your Editor settings page where you can choose your preferences for Keybindings, Extensions, and the Command Line tool to open Antigravity with `agy`.
 
 * **Carousel Item 1:** The Welcome to AntiGravity screen.
   (Media: `3_step_1_macOS.png`)
@@ -98,35 +83,19 @@ category: "Developer Tools"
 
 ---
 
-### Level 3: Task 4 — Authenticate your Account
+### Level 3: Task 3 — Sign In and Authenticate
 
 #### Level 4: Steps
 
 1. **Sign In**: Click the **Sign In** button to connect your Google Account.
-   * **Account Type:** Use a personal Gmail account for public preview access.
+   * **Account Type:** Use a personal Gmail account or supported Google Workspace organizational account.
    * **Authorization:** Accept the browser authentication prompt to link your IDE.
 
 ##### Level 5: Help & Context
 
-**Step 1 — Authentication:** Now, you're ready to Sign in to Google. As mentioned earlier, Antigravity is available in preview mode and free if you have a personal Gmail account. Sign in now with your account. This will open up the browser allowing you to sign in. 
+**Step 1 — Authentication:** Now, you're ready to Sign in to Google. As mentioned earlier, Antigravity is available in preview mode. Sign in now with your account. This will open up the browser allowing you to sign in.<br><br>On successful authentication, you will see a success message and it will lead you back to the Antigravity application. Go with the flow. Finally, review the Terms of Use. You can make a decision if you'd like to opt-in or not and then click on Next. This will lead you to the moment of truth, where Antigravity will be waiting to collaborate with you.
 
-On successful authentication, you will see a success message and it will lead you back to the Antigravity application. Go with the flow. Finally, review the Terms of Use. You can make a decision if you'd like to opt-in or not and then click on Next. This will lead you to the moment of truth, where Antigravity will be waiting to collaborate with you.
-
----
-
-### Level 3: Task 5 — Verify Installation
-
-#### Level 4: Steps
-
-1. **Open Terminal**: In the AntiGravity IDE, open the integrated terminal (`Ctrl + ` `).
-2. **Check Version**: Type `agy --version` and press Enter.
-3. **Success Output**: You should see a version string (e.g., `Antigravity CLI v1.20.6`).
-
-##### Level 5: Help & Context
-
-**Step 2 — CLI Check:** The `agy` tool is the heart of AntiGravity's agentic power. Running this command confirms the CLI was installed correctly during the setup phase.
-
-**Step 3 — Further Information:** There are two links the user can use for further information about AntiGravity:<br>• **YouTube**: https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN<br>• **Codelabs**: https://codelabs.developers.google.com/getting-started-google-antigravity#0
+**Step 2 — Further Information:** There are two links you can use for further information about AntiGravity:<br>• **YouTube**: https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN<br>• **Codelabs**: https://codelabs.developers.google.com/getting-started-google-antigravity#0
 
 ---
 

@@ -19,25 +19,25 @@
             "caption": "Task 1, Step 1: Visit the official download page and select your Mac architecture."
         },
         {
-            "task_number": 2,
-            "step_number": 1,
-            "type": "image",
-            "src": "2_step_1_macOS.png",
-            "caption": "Task 2, Step 1: Drag the AntiGravity application into the Applications folder alias."
-        },
-        {
-            "task_number": 3,
-            "step_number": 1,
-            "type": "image",
-            "src": "3_step_1_macOS.png",
-            "caption": "Task 3, Step 1: Welcome to AntiGravity. Click Next to begin configuration."
-        },
-        {
-            "task_number": 3,
+            "task_number": 1,
             "step_number": 2,
             "type": "image",
+            "src": "2_step_1_macOS.png",
+            "caption": "Task 1, Step 2: Drag the AntiGravity application into the Applications folder alias."
+        },
+        {
+            "task_number": 2,
+            "step_number": 2,
+            "type": "image",
+            "src": "3_step_1_macOS.png",
+            "caption": "Task 2, Step 2: Welcome Screen. Click Next to begin configuration."
+        },
+        {
+            "task_number": 2,
+            "step_number": 3,
+            "type": "image",
             "src": "3_step_2_macOS.png",
-            "caption": "Task 3, Step 2: Choose 'Review-driven development' for optimal agent safety."
+            "caption": "Task 2, Step 3: Choose 'Review-driven development' for optimal agent safety."
         }
     ],
     "relevant_links": [

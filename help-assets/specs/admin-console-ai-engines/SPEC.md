@@ -78,7 +78,9 @@ Verification & Success Flags:
 
 :::
 
-1. **Step 1 — Download Ollama for Desktop**
+1. **Step 1 — Assess Computer's capacity for AI and Download Ollama for Desktop**
+   - Verify your computer has at least 8 GB of RAM and sufficient storage space before downloading Ollama. 
+   - Ensure you have a dedicated graphics card (GPU) or Apple Silicon. If you only have Intel integrated graphics, local models will run too slowly—skip to Task 3 to use OpenRouter cloud models instead.
    - Click the **"Download Ollama"** button in the AI Engines panel to open `https://ollama.com/download` in a new tab.
    - Choose the installer matching your computer's operating system (Windows or macOS).
    - 📖 *See Help & Context panel for detailed guidance*
@@ -93,7 +95,9 @@ Verification & Success Flags:
 
 ##### Level 5: Help & Context
 
-**Step 0 — AntiGravity Guide:** The automated path uses an intelligent Agent Workflow. In Stage 1, the agent safely assesses your hardware (RAM and GPU) to ensure Ollama won't freeze your system. In Stage 2, it handles the complex command-line installation so you don't have to.
+**Tip — How to use AntiGravity:** The automated path uses an intelligent Agent Workflow. In Stage 1, the agent safely assesses your hardware (RAM and GPU) to ensure Ollama won't freeze your system. In Stage 2, it handles the complex command-line installation so you don't have to. 
+1). You need to install AntiGravity on your computer to run these prompts. In the Admin Console, follow the workflow *Install AntiGravity*. 
+2) Installing AntiGravity will save much time and streamline the process.
 
 **Step 1 — Ollama Deployment Scope:** AI models run as background daemons natively on your hardware. Unlike cloud deployments, you do not need the CYAM Web App, the AntiGravity Agent, or development packages like `gemini-cli` installed to operate Ollama. Once installed, it is permanently available to CYAM or any other local software silently in the background.
 

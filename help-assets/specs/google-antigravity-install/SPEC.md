@@ -36,7 +36,7 @@ category: "Developer Tools"
 
 ##### Level 5: Help & Context
 
-**Step 1 — Download Site:** Google AntiGravity is an AI-powered IDE. Ensure you download the version specifically for macOS to ensure compatibility with Apple's security features.
+**Step 1 — Download Site:** If you don't have Antigravity installed already, let's begin with installing Antigravity. Currently the product is available for preview and you can use your personal Gmail account to get started with it. Go to the downloads page and click on the appropriate operating system version that is applicable to your case.
 
 * **Carousel Item 1:** The macOS download options on the official site.
   (Media: `1_step_1_macOS.png`)
@@ -56,7 +56,7 @@ category: "Developer Tools"
 
 ##### Level 5: Help & Context
 
-**Step 2 — Installation:** Dragging the application to the Applications folder is the standard way to install software on macOS. This ensures the app has the correct permissions to run.
+**Step 2 — Installation:** Launch the application installer and install the same on your machine by dragging the application to the Applications folder. This is the standard way to install software on macOS and ensures the app has the correct permissions to run.
 
 * **Carousel Item 1:** Dragging the AntiGravity icon into the Applications folder.
   (Media: `2_step_1_macOS.png`)
@@ -83,9 +83,19 @@ category: "Developer Tools"
 
 ##### Level 5: Help & Context
 
-**Step 1 — Security:** macOS Gatekeeper verifies apps for your safety. Clicking "Open" white-lists the application for future use.
+**Step 1 — Security:** Once you have completed the installation, launch the Antigravity application. macOS Gatekeeper verifies apps for your safety. Clicking "Open" white-lists the application for future use. You should see a welcome screen, please proceed with clicking on Next each time.
 
-**Steps 2-3 — Policy:** The autonomy policy defines how much control the AI agent has over your system. "Review-driven" is the safest starting point for most users.
+**Steps 2-3 — Policy:** How do you want to use the Antigravity agent? The autonomy policy defines how much control the AI agent has over your system. This is about giving the Agent the ability to execute commands (applications/tools) in your terminal (Always proceed vs Request review), Review policy (determining when the agent asks for plan reviews), and JavaScript Execution policy in the browser. 
+
+The 4 options on the left are specific settings for the terminal execution, review, and JavaScript execution policies.
+- **Secure mode:** Enhanced security controls for the Agent, restricting external access.
+- **Review-driven development (recommended):** The agent will frequently ask for review. This is a good balance and the recommended one since it allows the agent to make a decision and come back to the user for approval.
+- **Agent-driven development:** The agent will never ask for review.
+- **Custom configuration**
+
+Remember that settings can be changed at any time via Antigravity User Settings (Cmd + ,). 
+
+**Step 4 — Editor Settings:** Next is the Configure your Editor settings page where you can choose your preferences for Keybindings, Extensions, and the Command Line tool to open Antigravity with `agy`.
 
 * **Carousel Item 1:** The Welcome to AntiGravity screen.
   (Media: `3_step_1_macOS.png`)
@@ -104,7 +114,9 @@ category: "Developer Tools"
 
 ##### Level 5: Help & Context
 
-**Step 1 — Authentication:** Signing in is required to activate the Gemini 3 Pro models and sync your preferences across devices.
+**Step 1 — Authentication:** Now, you're ready to Sign in to Google. As mentioned earlier, Antigravity is available in preview mode and free if you have a personal Gmail account. Sign in now with your account. This will open up the browser allowing you to sign in. 
+
+On successful authentication, you will see a success message and it will lead you back to the Antigravity application. Go with the flow. Finally, review the Terms of Use. You can make a decision if you'd like to opt-in or not and then click on Next. This will lead you to the moment of truth, where Antigravity will be waiting to collaborate with you.
 
 ---
 

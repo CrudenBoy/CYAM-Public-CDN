@@ -1,5 +1,5 @@
 {
-    "category": "Developer Tools",
+    "category": "Admin Console",
     "workflow_description": "Guided installation and configuration of the Google AntiGravity IDE on macOS.",
     "task_summary": "Download, install, launch, and authenticate Google AntiGravity.",
     "overview_description": "This workflow guides you through the complete setup of Google AntiGravity, the world's first agent-first IDE. You will learn how to download the correct version for your hardware, deploy it to your Applications folder, and configure safety policies for your AI agents.",

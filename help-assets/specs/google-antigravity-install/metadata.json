@@ -1,20 +1,21 @@
 {
     "category": "Admin Console",
-    "workflow_description": "Guided installation and configuration of the Google AntiGravity IDE on macOS.",
+    "workflow_description": "Guided installation and configuration of the Google AntiGravity IDE on macOS and Windows.",
     "task_summary": "Download, install, launch, and authenticate Google AntiGravity.",
     "overview_description": "This workflow guides you through the complete setup of Google AntiGravity, the world's first agent-first IDE. You will learn how to download the correct version for your hardware, deploy it to your Applications folder, and configure safety policies for your AI agents.",
     "ui_instructions": [
-        "Step 1: Download the macOS installer from antigravity.google/download.",
-        "Step 2: Drag the AntiGravity icon into your Applications folder.",
+        "Step 1: Download the installer from antigravity.google/download.",
+        "Step 2: Install relying on the standard OS mechanism.",
         "Step 3: Launch the app and click Next on the Welcome screen.",
         "Step 4: Select 'Review-driven development' as your agent policy.",
         "Step 5: Sign in with your Google Account and verify with 'agy --version'."
     ],
-    "carousel_items_macOS": [
+    "carousel_items": [
         {
             "task_number": 1,
             "step_number": 1,
             "type": "image",
+            "carousel_group": "macOS",
             "src": "1_step_1_macOS.png",
             "caption": "Task 1, Step 1: Visit the official download page and select your Mac architecture."
         },
@@ -22,78 +23,15 @@
             "task_number": 1,
             "step_number": 2,
             "type": "image",
+            "carousel_group": "macOS",
             "src": "2_step_1_macOS.png",
             "caption": "Task 1, Step 2: Drag the AntiGravity application into the Applications folder alias."
         },
         {
-            "task_number": 2,
-            "step_number": 1,
-            "type": "image",
-            "src": "1_step_2.1_all.png",
-            "caption": "Task 2, Step 1: Select the Cog wheel."
-        },
-        {
-            "task_number": 2,
-            "step_number": 2,
-            "type": "image",
-            "src": "1_step_2.2_all.png",
-            "caption": "Task 2, Step 2: Select Open AntiGravity User Settings."
-        },
-        {
-            "task_number": 2,
-            "step_number": 3,
-            "type": "image",
-            "src": "1_step_2.3_all.png",
-            "caption": "Task 2, Step 3: Modify settings."
-        },
-        {
-            "task_number": 3,
-            "step_number": 1,
-            "type": "image",
-            "src": "1_step_3.1_all.png",
-            "caption": "Task 3, Step 1: Press Sign up/Login."
-        },
-        {
-            "task_number": 3,
-            "step_number": 2,
-            "type": "image",
-            "src": "1_step_3.2_all.png",
-            "caption": "Task 3, Step 2: Choose sign in method."
-        },
-        {
-            "task_number": 3,
-            "step_number": 3,
-            "type": "image",
-            "src": "1_step_3.3_all.png",
-            "caption": "Task 3, Step 3: Choose an Account."
-        },
-        {
-            "task_number": 3,
-            "step_number": 4,
-            "type": "image",
-            "src": "1_step_3.4_all.png",
-            "caption": "Task 3, Step 4: Press Sign In."
-        },
-        {
-            "task_number": 3,
-            "step_number": 5,
-            "type": "image",
-            "src": "1_step_3.5_all.png",
-            "caption": "Task 3, Step 5: Authentication Success."
-        },
-        {
-            "task_number": 4,
-            "step_number": 1,
-            "type": "video",
-            "src": "https://www.youtube.com/embed/videoseries?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN",
-            "caption": "Task 4, Step 1: Watch the AntiGravity Tutorial Playlist to learn about extensions and autonomy setups."
-        }
-    ],
-    "carousel_items_Windows": [
-        {
             "task_number": 1,
             "step_number": 1,
             "type": "image",
+            "carousel_group": "Windows",
             "src": "1_step_1.0_Windows.png",
             "caption": "Task 1, Step 1: Visit the official download page and select the Windows (64-bit) installer."
         },
@@ -101,6 +39,7 @@
             "task_number": 1,
             "step_number": 2,
             "type": "image",
+            "carousel_group": "Windows",
             "src": "1_step_1.2_Windows.png",
             "caption": "Task 1, Step 2: Run the downloaded .exe installer wizard."
         },
@@ -184,5 +123,5 @@
         "https://antigravity.google/docs"
     ],
     "chatbot_context_file": "Google_AntiGravity_Context_Knowledge.md",
-    "chatbot_prompt_context": "Help the user with questions about Google AntiGravity installation on macOS. Reference the provided YouTube playlist for visual tutorials and Codelabs for deep dives."
+    "chatbot_prompt_context": "Help the user with questions about Google AntiGravity installation. Reference the provided YouTube playlist for visual tutorials and Codelabs for deep dives."
 }

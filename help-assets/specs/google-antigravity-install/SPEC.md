@@ -34,26 +34,31 @@ category: "Admin Console"
    * **Select Architecture:** Choose between **Apple Silicon** (M1/M2/M3/M4) or **Intel** based on your Mac's processor.
 [/OS:macOS]
 [OS:Windows]
-   * **Windows:** Open your browser and navigate to [AntiGravity Download Page](https://antigravity.google/download).
-   * **Download Installer:** Click the **Download for Windows (64-bit)** button to get the `.exe` installer.
-[/OS:Windows]
+1.  **Visit the Official Download Site**: Go to the Google AntiGravity download page.
+    *   [OS:macOS] **macOS:** Open your browser and navigate to [AntiGravity Download Page](https://antigravity.google/download).
+        *   **Select Architecture:** Choose between **Apple Silicon** (M1/M2/M3/M4) or **Intel** based on your Mac's processor. [/OS:macOS]
+    *   [OS:Windows] **Windows:** Open your browser and navigate to [AntiGravity Download Page](https://antigravity.google/download).
+        *   **Download Installer:** Click the **Download for Windows (64-bit)** button to get the `.exe` installer. [/OS:Windows]
 
-[OS:macOS]
-2. **Deploy to Applications**: Locate the downloaded `.dmg` file, double-click it, and drag the AntiGravity icon into the Applications folder alias.
-   * **Drag and Drop**: Ensure you drag the icon completely into the target folder to initiate the copy process.
-[/OS:macOS]
-[OS:Windows]
-2. **Run the Installer**: Locate the downloaded `.exe` file and double-click it to start the installation wizard.
-   * **Installation Wizard**: Follow the on-screen prompts to complete the installation.
-[/OS:Windows]
+2.  **Install the Application**: Proceed with the local installation for your specific operating system.
+    *   [OS:macOS] **Deploy to Applications**: Locate the downloaded `.dmg` file, double-click it, and drag the AntiGravity icon into the Applications folder alias.
+        *   **Drag and Drop**: Ensure you drag the icon completely into the target folder to initiate the copy process. [/OS:macOS]
+    *   [OS:Windows] **Run the Installer**: Locate the downloaded `.exe` file and double-click it to start the installation wizard.
+        *   **Installation Wizard**: Follow the on-screen prompts to complete the installation. [/OS:Windows]
+
+3.  **Launch AntiGravity**: Start the newly installed IDE application.
+    *   [OS:macOS] **Launch**: Open your Applications folder and double-click **Antigravity**.
+        *   **Security Bypass:** If macOS asks if you are sure you want to open it (app downloaded from internet), click **Open**. [/OS:macOS]
+    *   [OS:Windows] **Launch**: Open your Start Menu, search for **AntiGravity**, and click to launch it.
+        *   **SmartScreen Bypass:** If Windows Defender SmartScreen prevents the app from starting, click **More info** and then **Run anyway**. [/OS:Windows]
 
 ##### Level 5: Help & Context
 
 **Step 1 — Download Site:** If you don't have Antigravity installed already, let's begin with installing Antigravity. Currently the product is available for preview and you can use your personal Gmail account or supported Google Workspace organizational account to get started with it. Go to the downloads page and click on the appropriate operating system version that is applicable to your case.
 
-**Step 2 — Installation:** 
-[OS:macOS]Launch the application installer and install the same on your machine by dragging the application to the Applications folder. This is the standard way to install software on macOS and ensures the app has the correct permissions to run.[/OS:macOS]
-[OS:Windows]Launch the downloaded `.exe` installer and follow the wizard. This is the standard way to install software on Windows and ensures the app has the correct permissions to run.[/OS:Windows]
+**Step 2 — Installation:** Launch the application installer. For macOS, drag the application to the Applications folder. For Windows, launch the downloaded `.exe` installer wizard. This is the standard way to install software and ensures the app has the correct permissions to run.
+
+**Step 3 — Security:** Once you have completed the installation, launch the Antigravity application. macOS Gatekeeper or Windows Defender SmartScreen will verify the app for your safety. Clicking "Open" (macOS) or "More info -> Run anyway" (Windows) white-lists the application for future use. You should see a welcome screen, please proceed with clicking on Next each time.
 
 <div class="carousel-os-toggle" style="margin-top: 10px;">
   <button class="os-btn active" data-os="macOS">macOS</button>

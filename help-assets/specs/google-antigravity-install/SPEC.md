@@ -28,29 +28,41 @@ category: "Admin Console"
 
 #### Level 4: Steps
 
-1. **Visit the Official Download Site**: Go to the Google AntiGravity download page.
-[OS:macOS]
-   * **macOS:** Open your browser and navigate to [AntiGravity Download Page](https://antigravity.google/download).
-   * **Select Architecture:** Choose between **Apple Silicon** (M1/M2/M3/M4) or **Intel** based on your Mac's processor.
-[/OS:macOS]
-[OS:Windows]
 1.  **Visit the Official Download Site**: Go to the Google AntiGravity download page.
-    *   [OS:macOS] **macOS:** Open your browser and navigate to [AntiGravity Download Page](https://antigravity.google/download).
-        *   **Select Architecture:** Choose between **Apple Silicon** (M1/M2/M3/M4) or **Intel** based on your Mac's processor. [/OS:macOS]
-    *   [OS:Windows] **Windows:** Open your browser and navigate to [AntiGravity Download Page](https://antigravity.google/download).
-        *   **Download Installer:** Click the **Download for Windows (64-bit)** button to get the `.exe` installer. [/OS:Windows]
+
+    [OS:macOS]
+    **macOS:** Open your browser and navigate to [AntiGravity Download Page](https://antigravity.google/download).
+    *   **Select Architecture:** Choose between **Apple Silicon** (M1/M2/M3/M4) or **Intel** based on your Mac's processor.
+    [/OS:macOS]
+
+    [OS:Windows]
+    **Windows:** Open your browser and navigate to [AntiGravity Download Page](https://antigravity.google/download).
+    *   **Download Installer:** Click the **Download for Windows (64-bit)** button to get the `.exe` installer.
+    [/OS:Windows]
 
 2.  **Install the Application**: Proceed with the local installation for your specific operating system.
-    *   [OS:macOS] **Deploy to Applications**: Locate the downloaded `.dmg` file, double-click it, and drag the AntiGravity icon into the Applications folder alias.
-        *   **Drag and Drop**: Ensure you drag the icon completely into the target folder to initiate the copy process. [/OS:macOS]
-    *   [OS:Windows] **Run the Installer**: Locate the downloaded `.exe` file and double-click it to start the installation wizard.
-        *   **Installation Wizard**: Follow the on-screen prompts to complete the installation. [/OS:Windows]
+
+    [OS:macOS]
+    **Deploy to Applications**: Locate the downloaded `.dmg` file, double-click it, and drag the AntiGravity icon into the Applications folder alias.
+    *   **Drag and Drop**: Ensure you drag the icon completely into the target folder to initiate the copy process.
+    [/OS:macOS]
+
+    [OS:Windows]
+    **Run the Installer**: Locate the downloaded `.exe` file and double-click it to start the installation wizard.
+    *   **Installation Wizard**: Follow the on-screen prompts to complete the installation.
+    [/OS:Windows]
 
 3.  **Launch AntiGravity**: Start the newly installed IDE application.
-    *   [OS:macOS] **Launch**: Open your Applications folder and double-click **Antigravity**.
-        *   **Security Bypass:** If macOS asks if you are sure you want to open it (app downloaded from internet), click **Open**. [/OS:macOS]
-    *   [OS:Windows] **Launch**: Open your Start Menu, search for **AntiGravity**, and click to launch it.
-        *   **SmartScreen Bypass:** If Windows Defender SmartScreen prevents the app from starting, click **More info** and then **Run anyway**. [/OS:Windows]
+
+    [OS:macOS]
+    **Launch**: Open your Applications folder and double-click **Antigravity**.
+    *   **Security Bypass:** If macOS asks if you are sure you want to open it (app downloaded from internet), click **Open**.
+    [/OS:macOS]
+
+    [OS:Windows]
+    **Launch**: Open your Start Menu, search for **AntiGravity**, and click to launch it.
+    *   **SmartScreen Bypass:** If Windows Defender SmartScreen prevents the app from starting, click **More info** and then **Run anyway**.
+    [/OS:Windows]
 
 ##### Level 5: Help & Context
 
@@ -65,8 +77,8 @@ category: "Admin Console"
   <button class="os-btn" data-os="Windows">Windows</button>
 </div>
 
-* **Carousel Item 1:** The download options on the official site.
-* **Carousel Item 2:** Installing the AntiGravity application.
+* **Carousel Item 1:** Visit the official download page. (Media: `1_step_1_macOS.png` / `1_step_1.0_Windows.png`)
+* **Carousel Item 2:** View the installation folder UI. (Media: `2_step_1_macOS.png` / `1_step_1.2_Windows.png`)
 
 ---
 
@@ -131,4 +143,4 @@ category: "Admin Console"
 
 **Step 1 — Learn more about AntiGravity:** There are two links you can use for further information about AntiGravity:<br>• **YouTube**: [YouTube Playlist](https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN)<br>• **Codelabs**: [Getting Started Codelabs](https://codelabs.developers.google.com/getting-started-google-antigravity#0)
 
-* **Video Link:** AntiGravity Tutorial Playlist
+* **Carousel Item 1:** Watch the AntiGravity Tutorial Playlist to learn about extensions and autonomy setups. (Media: `https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN`)

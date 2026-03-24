@@ -6,7 +6,7 @@ generated_date: "2026-03-23"
 category: "Admin Console"
 ---
 
-# Google AntiGravity macOS Installation Guide
+# Google AntiGravity Installation Guide
 
 ## Level 1: Category
 * **Category:** Admin Console
@@ -30,11 +30,11 @@ category: "Admin Console"
 
 1. **Visit the Official Download Site**: Go to the Google AntiGravity download page.
 [OS:macOS]
-   * **macOS:** Open your browser and navigate to `https://antigravity.google/download`.
+   * **macOS:** Open your browser and navigate to [AntiGravity Download Page](https://antigravity.google/download).
    * **Select Architecture:** Choose between **Apple Silicon** (M1/M2/M3/M4) or **Intel** based on your Mac's processor.
 [/OS:macOS]
 [OS:Windows]
-   * **Windows:** Open your browser and navigate to `https://antigravity.google/download`.
+   * **Windows:** Open your browser and navigate to [AntiGravity Download Page](https://antigravity.google/download).
    * **Download Installer:** Click the **Download for Windows (64-bit)** button to get the `.exe` installer.
 [/OS:Windows]
 
@@ -61,9 +61,7 @@ category: "Admin Console"
 </div>
 
 * **Carousel Item 1:** The download options on the official site.
-  (Media: `1_step_1_macOS.png` / `1_step_1.0_Windows.png`)
 * **Carousel Item 2:** Installing the AntiGravity application.
-  (Media: `2_step_1_macOS.png` / `1_step_1.2_Windows.png`)
 
 ---
 
@@ -72,26 +70,20 @@ category: "Admin Console"
 #### Level 4: Steps
 
 1. **Select the Cog wheel**: Click the cog wheel icon in the top right corner of the IDE.
-   (Media: `1_step_2.1_all.png`)
 
 2. **Select Open AntiGravity User Settings**: Choose this option from the dropdown menu.
-   (Media: `1_step_2.2_all.png`)
 
 3. **Modify Settings**: This screen explains how safe the default settings are on the Agent Setting page. 
    * **Secure mode:** Enhanced security controls for the Agent, restricting external access.
    * **Review-driven development (recommended):** The agent will frequently ask for review. This is a good balance and the recommended one since it allows the agent to make a decision and come back to the user for approval.
-   (Media: `1_step_2.3_all.png`)
 
 ##### Level 5: Help & Context
 
 **Steps 1-3 — Configure Safety Settings:** How do you want to use the Antigravity agent? The autonomy policy defines how much control the AI agent has over your system. This is about giving the Agent the ability to execute commands (applications/tools) in your terminal (Always proceed vs Request review), Review policy (determining when the agent asks for plan reviews), and JavaScript Execution policy in the browser.<br><br>The 4 options on the left are specific settings for the terminal execution, review, and JavaScript execution policies.<br>• **Secure mode:** Enhanced security controls for the Agent, restricting external access.<br>• **Review-driven development (recommended):** The agent will frequently ask for review. This is a good balance and the recommended one since it allows the agent to make a decision and come back to the user for approval.<br>• **Agent-driven development:** The agent will never ask for review.<br>• **Custom configuration**<br><br>Remember that settings can be changed at any time via Antigravity User Settings (Cmd + ,).
 
 * **Carousel Item 1:** Select the Cog wheel.
-  (Media: `1_step_2.1_all.png`)
 * **Carousel Item 2:** Select Open AntiGravity User Settings.
-  (Media: `1_step_2.2_all.png`)
 * **Carousel Item 3:** Modify settings.
-  (Media: `1_step_2.3_all.png`)
 
 ---
 
@@ -100,20 +92,15 @@ category: "Admin Console"
 #### Level 4: Steps
 
 1. **Press Sign up/Login**: Click the blue button in the top right to start the authentication process. It will say "Sign in" if this is your first time.
-   (Media: `1_step_3.1_all.png`)
 
 2. **Choose Sign In Method**: Choose to sign in with Google or use a GCP project instead.
    * **Note:** See the Help & Context section for details on the GCP Project option.
-   (Media: `1_step_3.2_all.png`)
 
 3. **Choose an Account**: Select your Google Account from the list.
-   (Media: `1_step_3.3_all.png`)
 
 4. **Press Sign In**: You will see a message "Make sure that you have downloaded the App from Google." Click the Sign In button.
-   (Media: `1_step_3.4_all.png`)
 
 5. **Authentication Success**: You will see a message "Google Antigravity: You have successfully authenticated."
-   (Media: `1_step_3.5_all.png`)
 
 ##### Level 5: Help & Context
 
@@ -122,15 +109,10 @@ category: "Admin Console"
 **GCP Project:** This is a Google Cloud Platform project used for billing and API quota limits for Cloud services like Vertex AI, which AntiGravity connects to. 
 
 * **Carousel Item 1:** Press Sign up/Login.
-  (Media: `1_step_3.1_all.png`)
 * **Carousel Item 2:** Choose sign in method.
-  (Media: `1_step_3.2_all.png`)
 * **Carousel Item 3:** Choose an Account.
-  (Media: `1_step_3.3_all.png`)
 * **Carousel Item 4:** Press Sign In.
-  (Media: `1_step_3.4_all.png`)
 * **Carousel Item 5:** Authentication Success.
-  (Media: `1_step_3.5_all.png`)
 
 ---
 
@@ -142,17 +124,6 @@ category: "Admin Console"
 
 ##### Level 5: Help & Context
 
-**Step 1 — Learn more about AntiGravity:** There are two links you can use for further information about AntiGravity:<br>• **YouTube**: https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN<br>• **Codelabs**: https://codelabs.developers.google.com/getting-started-google-antigravity#0
+**Step 1 — Learn more about AntiGravity:** There are two links you can use for further information about AntiGravity:<br>• **YouTube**: [YouTube Playlist](https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN)<br>• **Codelabs**: [Getting Started Codelabs](https://codelabs.developers.google.com/getting-started-google-antigravity#0)
 
 * **Video Link:** AntiGravity Tutorial Playlist
-  (Link: `https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN`)
-
----
-
-## Context & Chatbot Delivery Summary
-
-| Field | Value |
-|---|---|
-| `INSTALL_CHATBOT` | `true` |
-| `chatbot_context_file` | `Google_AntiGravity_Context_Knowledge.md` |
-| Context URLs | Listed in `metadata.json` |

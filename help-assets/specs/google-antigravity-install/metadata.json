@@ -80,6 +80,13 @@
             "type": "image",
             "src": "1_step_3.5_all.png",
             "caption": "Task 3, Step 5: Authentication Success."
+        },
+        {
+            "task_number": 4,
+            "step_number": 1,
+            "type": "video",
+            "src": "https://www.youtube.com/embed/videoseries?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN",
+            "caption": "Task 4, Step 1: Watch the AntiGravity Tutorial Playlist to learn about extensions and autonomy setups."
         }
     ],
     "carousel_items_Windows": [
@@ -152,6 +159,13 @@
             "type": "image",
             "src": "1_step_3.5_all.png",
             "caption": "Task 3, Step 5: Authentication Success."
+        },
+        {
+            "task_number": 4,
+            "step_number": 1,
+            "type": "video",
+            "src": "https://www.youtube.com/embed/videoseries?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN",
+            "caption": "Task 4, Step 1: Watch the AntiGravity Tutorial Playlist to learn about extensions and autonomy setups."
         }
     ],
     "relevant_links": [

@@ -14,7 +14,7 @@ This document provides supplementary context for the Google AntiGravity IDE, foc
 
 | Required | Optional / Changeable Later |
 | :--- | :--- |
-| **Supported OS** (macOS 12+ Silicon, Win 10, Linux) | **Keybindings** |
+| **Supported OS** (macOS 12+ Silicon, Windows 10/11 64-bit, Linux) | **Keybindings** |
 | **Google Chrome browser** | **Extensions** |
 | **Google Account** (Personal or Workspace) | **Command Line (`agy`)** |
 | **Install the desktop app & sign in** | **Terminal & Review Policies** (changeable later) |
@@ -33,8 +33,8 @@ If you just want AG running, do the basics first: install the app, sign in, and 
 * **A Google Account**: The codelab says Antigravity preview is available for personal Gmail accounts, but you can also access it with a supported organizational Google Workspace account. In plain terms, that means you need a regular Google account you can sign into.
 
 ### What is required to actually install and start using AG
-* **Download and install the Antigravity app**: This is the actual installation step. Without the desktop app, you do not have AG installed.
-* **Launch the app and sign in**: The codelab shows that after installation, you go through setup and then sign in to Google. Practically speaking, if you want to use AG as described in the codelab, signing in is part of getting it running.
+* **Download and install the Antigravity app**: This is the actual installation step. Without the desktop app, you do not have AG installed. For macOS, this involves dragging the application to the Applications folder. For Windows, this involves running the `.exe` installer.
+* **Launch the app and sign in**: The codelab shows that after installation, you go through setup and then sign in to Google. macOS users may need to bypass Gatekeeper, while Windows users might need to bypass SmartScreen. Practically speaking, if you want to use AG as described in the codelab, signing in is part of getting it running.
 * **Choose your initial safety / autonomy settings**: During setup, AG asks how much freedom the agent has to run terminal commands, whether it should ask for review, and whether it can run JavaScript in the browser. These are important operational settings, but the codelab also says they can be changed later in Settings. So they matter, but they are not permanent choices.
 
 ### What is optional during setup — useful, but not required to install AG

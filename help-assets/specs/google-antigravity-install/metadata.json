@@ -10,7 +10,7 @@
         "Step 4: Select 'Review-driven development' as your agent policy.",
         "Step 5: Sign in with your Google Account and verify with 'agy --version'."
     ],
-    "carousel_items": [
+    "carousel_items_macOS": [
         {
             "task_number": 1,
             "step_number": 1,
@@ -27,17 +27,131 @@
         },
         {
             "task_number": 2,
+            "step_number": 1,
+            "type": "image",
+            "src": "1_step_2.1_all.png",
+            "caption": "Task 2, Step 1: Select the Cog wheel."
+        },
+        {
+            "task_number": 2,
             "step_number": 2,
             "type": "image",
-            "src": "3_step_1_macOS.png",
-            "caption": "Task 2, Step 2: Welcome Screen. Click Next to begin configuration."
+            "src": "1_step_2.2_all.png",
+            "caption": "Task 2, Step 2: Select Open AntiGravity User Settings."
         },
         {
             "task_number": 2,
             "step_number": 3,
             "type": "image",
-            "src": "3_step_2_macOS.png",
-            "caption": "Task 2, Step 3: Choose 'Review-driven development' for optimal agent safety."
+            "src": "1_step_2.3_all.png",
+            "caption": "Task 2, Step 3: Modify settings."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "type": "image",
+            "src": "1_step_3.1_all.png",
+            "caption": "Task 3, Step 1: Press Sign up/Login."
+        },
+        {
+            "task_number": 3,
+            "step_number": 2,
+            "type": "image",
+            "src": "1_step_3.2_all.png",
+            "caption": "Task 3, Step 2: Choose sign in method."
+        },
+        {
+            "task_number": 3,
+            "step_number": 3,
+            "type": "image",
+            "src": "1_step_3.3_all.png",
+            "caption": "Task 3, Step 3: Choose an Account."
+        },
+        {
+            "task_number": 3,
+            "step_number": 4,
+            "type": "image",
+            "src": "1_step_3.4_all.png",
+            "caption": "Task 3, Step 4: Press Sign In."
+        },
+        {
+            "task_number": 3,
+            "step_number": 5,
+            "type": "image",
+            "src": "1_step_3.5_all.png",
+            "caption": "Task 3, Step 5: Authentication Success."
+        }
+    ],
+    "carousel_items_Windows": [
+        {
+            "task_number": 1,
+            "step_number": 1,
+            "type": "image",
+            "src": "1_step_1.0_Windows.png",
+            "caption": "Task 1, Step 1: Visit the official download page and select the Windows (64-bit) installer."
+        },
+        {
+            "task_number": 1,
+            "step_number": 2,
+            "type": "image",
+            "src": "1_step_1.2_Windows.png",
+            "caption": "Task 1, Step 2: Run the downloaded .exe installer wizard."
+        },
+        {
+            "task_number": 2,
+            "step_number": 1,
+            "type": "image",
+            "src": "1_step_2.1_all.png",
+            "caption": "Task 2, Step 1: Select the Cog wheel."
+        },
+        {
+            "task_number": 2,
+            "step_number": 2,
+            "type": "image",
+            "src": "1_step_2.2_all.png",
+            "caption": "Task 2, Step 2: Select Open AntiGravity User Settings."
+        },
+        {
+            "task_number": 2,
+            "step_number": 3,
+            "type": "image",
+            "src": "1_step_2.3_all.png",
+            "caption": "Task 2, Step 3: Modify settings."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "type": "image",
+            "src": "1_step_3.1_all.png",
+            "caption": "Task 3, Step 1: Press Sign up/Login."
+        },
+        {
+            "task_number": 3,
+            "step_number": 2,
+            "type": "image",
+            "src": "1_step_3.2_all.png",
+            "caption": "Task 3, Step 2: Choose sign in method."
+        },
+        {
+            "task_number": 3,
+            "step_number": 3,
+            "type": "image",
+            "src": "1_step_3.3_all.png",
+            "caption": "Task 3, Step 3: Choose an Account."
+        },
+        {
+            "task_number": 3,
+            "step_number": 4,
+            "type": "image",
+            "src": "1_step_3.4_all.png",
+            "caption": "Task 3, Step 4: Press Sign In."
+        },
+        {
+            "task_number": 3,
+            "step_number": 5,
+            "type": "image",
+            "src": "1_step_3.5_all.png",
+            "caption": "Task 3, Step 5: Authentication Success."
         }
     ],
     "relevant_links": [

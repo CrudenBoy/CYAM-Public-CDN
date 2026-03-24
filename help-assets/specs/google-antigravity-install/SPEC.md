@@ -33,22 +33,37 @@ category: "Admin Console"
    * **macOS:** Open your browser and navigate to `https://antigravity.google/download`.
    * **Select Architecture:** Choose between **Apple Silicon** (M1/M2/M3/M4) or **Intel** based on your Mac's processor.
 [/OS:macOS]
+[OS:Windows]
+   * **Windows:** Open your browser and navigate to `https://antigravity.google/download`.
+   * **Download Installer:** Click the **Download for Windows (64-bit)** button to get the `.exe` installer.
+[/OS:Windows]
 
-2. **Deploy to Applications**: Locate the downloaded `.dmg` file, double-click it, and drag the AntiGravity icon into the Applications folder alias.
 [OS:macOS]
+2. **Deploy to Applications**: Locate the downloaded `.dmg` file, double-click it, and drag the AntiGravity icon into the Applications folder alias.
    * **Drag and Drop**: Ensure you drag the icon completely into the target folder to initiate the copy process.
 [/OS:macOS]
+[OS:Windows]
+2. **Run the Installer**: Locate the downloaded `.exe` file and double-click it to start the installation wizard.
+   * **Installation Wizard**: Follow the on-screen prompts to complete the installation.
+[/OS:Windows]
 
 ##### Level 5: Help & Context
 
 **Step 1 — Download Site:** If you don't have Antigravity installed already, let's begin with installing Antigravity. Currently the product is available for preview and you can use your personal Gmail account or supported Google Workspace organizational account to get started with it. Go to the downloads page and click on the appropriate operating system version that is applicable to your case.
 
-**Step 2 — Installation:** Launch the application installer and install the same on your machine by dragging the application to the Applications folder. This is the standard way to install software on macOS and ensures the app has the correct permissions to run.
+**Step 2 — Installation:** 
+[OS:macOS]Launch the application installer and install the same on your machine by dragging the application to the Applications folder. This is the standard way to install software on macOS and ensures the app has the correct permissions to run.[/OS:macOS]
+[OS:Windows]Launch the downloaded `.exe` installer and follow the wizard. This is the standard way to install software on Windows and ensures the app has the correct permissions to run.[/OS:Windows]
 
-* **Carousel Item 1:** The macOS download options on the official site.
-  (Media: `1_step_1_macOS.png`)
-* **Carousel Item 2:** Dragging the AntiGravity icon into the Applications folder.
-  (Media: `2_step_1_macOS.png`)
+<div class="carousel-os-toggle" style="margin-top: 10px;">
+  <button class="os-btn active" data-os="macOS">macOS</button>
+  <button class="os-btn" data-os="Windows">Windows</button>
+</div>
+
+* **Carousel Item 1:** The download options on the official site.
+  (Media: `1_step_1_macOS.png` / `1_step_1.0_Windows.png`)
+* **Carousel Item 2:** Installing the AntiGravity application.
+  (Media: `2_step_1_macOS.png` / `1_step_1.2_Windows.png`)
 
 ---
 
@@ -56,30 +71,27 @@ category: "Admin Console"
 
 #### Level 4: Steps
 
-1. **Launch AntiGravity**: Open your Applications folder and double-click **Antigravity**.
-[OS:macOS]
-   * **Security Bypass:** If macOS asks if you are sure you want to open it (app downloaded from internet), click **Open**.
-[/OS:macOS]
+1. **Select the Cog wheel**: Click the cog wheel icon in the top right corner of the IDE.
+   (Media: `1_step_2.1_all.png`)
 
-2. **Welcome Screen**: On the "Welcome to Antigravity" screen, click **Next**.
-   (Media: `3_step_1_macOS.png`)
+2. **Select Open AntiGravity User Settings**: Choose this option from the dropdown menu.
+   (Media: `1_step_2.2_all.png`)
 
-3. **Configure Autonomy Policy**: Select your preferred agent execution policy.
-[OS:macOS]
-   * **Recommended:** Select **Review-driven development**. This allows the agent to propose terminal commands but requires your explicit approval before execution.
-[/OS:macOS]
-   (Media: `3_step_2_macOS.png`)
+3. **Modify Settings**: This screen explains how safe the default settings are on the Agent Setting page. 
+   * **Secure mode:** Enhanced security controls for the Agent, restricting external access.
+   * **Review-driven development (recommended):** The agent will frequently ask for review. This is a good balance and the recommended one since it allows the agent to make a decision and come back to the user for approval.
+   (Media: `1_step_2.3_all.png`)
 
 ##### Level 5: Help & Context
 
-**Step 1 — Security:** Once you have completed the installation, launch the Antigravity application. macOS Gatekeeper verifies apps for your safety. Clicking "Open" white-lists the application for future use. You should see a welcome screen, please proceed with clicking on Next each time.
+**Steps 1-3 — Configure Safety Settings:** How do you want to use the Antigravity agent? The autonomy policy defines how much control the AI agent has over your system. This is about giving the Agent the ability to execute commands (applications/tools) in your terminal (Always proceed vs Request review), Review policy (determining when the agent asks for plan reviews), and JavaScript Execution policy in the browser.<br><br>The 4 options on the left are specific settings for the terminal execution, review, and JavaScript execution policies.<br>• **Secure mode:** Enhanced security controls for the Agent, restricting external access.<br>• **Review-driven development (recommended):** The agent will frequently ask for review. This is a good balance and the recommended one since it allows the agent to make a decision and come back to the user for approval.<br>• **Agent-driven development:** The agent will never ask for review.<br>• **Custom configuration**<br><br>Remember that settings can be changed at any time via Antigravity User Settings (Cmd + ,).
 
-**Steps 2-3 — Policy:** How do you want to use the Antigravity agent? The autonomy policy defines how much control the AI agent has over your system. This is about giving the Agent the ability to execute commands (applications/tools) in your terminal (Always proceed vs Request review), Review policy (determining when the agent asks for plan reviews), and JavaScript Execution policy in the browser.<br><br>The 4 options on the left are specific settings for the terminal execution, review, and JavaScript execution policies.<br>• **Secure mode:** Enhanced security controls for the Agent, restricting external access.<br>• **Review-driven development (recommended):** The agent will frequently ask for review. This is a good balance and the recommended one since it allows the agent to make a decision and come back to the user for approval.<br>• **Agent-driven development:** The agent will never ask for review.<br>• **Custom configuration**<br><br>Remember that settings can be changed at any time via Antigravity User Settings (Cmd + ,).
-
-* **Carousel Item 1:** The Welcome to AntiGravity screen.
-  (Media: `3_step_1_macOS.png`)
-* **Carousel Item 2:** Selecting the Autonomy Policy.
-  (Media: `3_step_2_macOS.png`)
+* **Carousel Item 1:** Select the Cog wheel.
+  (Media: `1_step_2.1_all.png`)
+* **Carousel Item 2:** Select Open AntiGravity User Settings.
+  (Media: `1_step_2.2_all.png`)
+* **Carousel Item 3:** Modify settings.
+  (Media: `1_step_2.3_all.png`)
 
 ---
 
@@ -87,18 +99,53 @@ category: "Admin Console"
 
 #### Level 4: Steps
 
-1. **Sign In**: Click the **Sign In** button to connect your Google Account.
-   * **Account Type:** Use a personal Gmail account or supported Google Workspace organizational account.
-   * **Authorization:** Accept the browser authentication prompt to link your IDE.
+1. **Press Sign up/Login**: Click the blue button in the top right to start the authentication process. It will say "Sign in" if this is your first time.
+   (Media: `1_step_3.1_all.png`)
 
-2. **Learn more about AntiGravity**: You have successfully configured the core of AntiGravity! 
-   * **Explore**: Use the links in the Help & Context section or simply ask the Chatbot to learn more about optional setups, extensions, and browser automation. The Chatbot has full access to the complete AntiGravity knowledge base.
+2. **Choose Sign In Method**: Choose to sign in with Google or use a GCP project instead.
+   * **Note:** See the Help & Context section for details on the GCP Project option.
+   (Media: `1_step_3.2_all.png`)
+
+3. **Choose an Account**: Select your Google Account from the list.
+   (Media: `1_step_3.3_all.png`)
+
+4. **Press Sign In**: You will see a message "Make sure that you have downloaded the App from Google." Click the Sign In button.
+   (Media: `1_step_3.4_all.png`)
+
+5. **Authentication Success**: You will see a message "Google Antigravity: You have successfully authenticated."
+   (Media: `1_step_3.5_all.png`)
 
 ##### Level 5: Help & Context
 
-**Step 1 — Authentication:** Now, you're ready to Sign in to Google. As mentioned earlier, Antigravity is available in preview mode. Sign in now with your account. This will open up the browser allowing you to sign in.<br><br>On successful authentication, you will see a success message and it will lead you back to the Antigravity application. Go with the flow. Finally, review the Terms of Use. You can make a decision if you'd like to opt-in or not and then click on Next. This will lead you to the moment of truth, where Antigravity will be waiting to collaborate with you.
+**Steps 1-5 — Sign In and Authenticate:** Now, you're ready to Sign in to Google. As mentioned earlier, Antigravity is available in preview mode. Sign in now with your account. This will open up the browser allowing you to sign in.<br><br>On successful authentication, you will see a success message and it will lead you back to the Antigravity application. Go with the flow. Finally, review the Terms of Use. You can make a decision if you'd like to opt-in or not and then click on Next. This will lead you to the moment of truth, where Antigravity will be waiting to collaborate with you.
 
-**Step 2 — Further Information:** There are two links you can use for further information about AntiGravity:<br>• **YouTube**: https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN<br>• **Codelabs**: https://codelabs.developers.google.com/getting-started-google-antigravity#0
+**GCP Project:** This is a Google Cloud Platform project used for billing and API quota limits for Cloud services like Vertex AI, which AntiGravity connects to. 
+
+* **Carousel Item 1:** Press Sign up/Login.
+  (Media: `1_step_3.1_all.png`)
+* **Carousel Item 2:** Choose sign in method.
+  (Media: `1_step_3.2_all.png`)
+* **Carousel Item 3:** Choose an Account.
+  (Media: `1_step_3.3_all.png`)
+* **Carousel Item 4:** Press Sign In.
+  (Media: `1_step_3.4_all.png`)
+* **Carousel Item 5:** Authentication Success.
+  (Media: `1_step_3.5_all.png`)
+
+---
+
+### Level 3: Task 4 — Learn more about AntiGravity
+
+#### Level 4: Steps
+
+1. **Explore**: You have successfully configured the core of AntiGravity! Use the links in the Help & Context section or simply ask the Chatbot to learn more about optional setups, extensions, and browser automation. The Chatbot has full access to the complete AntiGravity knowledge base. Please see the links and videos in the Help & Context Section.
+
+##### Level 5: Help & Context
+
+**Step 1 — Learn more about AntiGravity:** There are two links you can use for further information about AntiGravity:<br>• **YouTube**: https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN<br>• **Codelabs**: https://codelabs.developers.google.com/getting-started-google-antigravity#0
+
+* **Video Link:** AntiGravity Tutorial Playlist
+  (Link: `https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN`)
 
 ---
 

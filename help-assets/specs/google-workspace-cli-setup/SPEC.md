@@ -47,13 +47,13 @@ category: "CLI Setup and Authentication"
     </summary>
     <div class="px-4 pb-3 pt-2 border-t border-indigo-100 mt-1">
         <p class="text-sm text-slate-700 leading-relaxed mb-3">
-            Request an AI agent to install the necessary base software dependencies on your machine automatically.
+            This Fast Track automatically handles Steps 1 through 5. Once the agent is finished, you must manually complete Step 6 below to authenticate `gcloud`.
         </p>
         <details class="group/prompt">
             <summary class="text-xs text-indigo-600 font-medium cursor-pointer select-none flex items-center gap-1 hover:text-indigo-800 transition-colors">
                 <i data-lucide="terminal" class="w-3 h-3"></i> View Agent Prompt Payload
             </summary>
-            <div class="mt-2 p-3 bg-white rounded-lg border border-indigo-100 font-mono text-[11px] text-slate-700 whitespace-pre-wrap shadow-inner">Please install Node.js and the latest version of Python 3 for me.</div>
+            <div class="mt-2 p-3 bg-white rounded-lg border border-indigo-100 font-mono text-[11px] text-slate-700 whitespace-pre-wrap shadow-inner">Please refer to the GWS-CLI setup guide in your skills. I need you to automate the prerequisites for me (Task 1). Check if Node.js and Python 3 are installed, and install them if missing. Download the official Google Cloud CLI, extract it, and run the installation script. When you finish, explicitly remind me to refer back to Step 6 in the Task 1 Guide to authenticate manually.</div>
         </details>
     </div>
 </details>

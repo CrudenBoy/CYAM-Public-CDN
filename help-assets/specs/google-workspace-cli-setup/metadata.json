@@ -54,33 +54,40 @@
             "task_number": 1,
             "step_number": 6,
             "media_placeholder": "1_step_6_all_1.png",
+            "src": "1_step_6_all_1.png",
             "caption": "Task 1, Step 6: Additional step details."
         },
         {
             "task_number": 1,
             "step_number": 6,
             "media_placeholder": "1_step_6_all_2.png",
+            "src": "1_step_6_all_2.png",
             "caption": "Task 1, Step 6: Additional step details."
         },
         {
             "task_number": 1,
             "step_number": 6,
-            "media_placeholder": "1_step_6_all_3.png",
+            "media_placeholder": "1_step_6_all_2.png",
+            "src": "1_step_6_all_2.png",
             "caption": "Task 1, Step 6: Additional step details."
         },
         {
             "task_number": 2,
             "step_number": 1,
+            "media_placeholder": "2_step_1_Windows_1.png",
+            "src": "2_step_1_Windows_1.png",
+            "caption": "Task 2, Step 1: Open Terminal as Administrator.",
             "carousel_group": "Windows",
-            "media_placeholder": "2_step_1_Windows.png",
-            "caption": "Task 2, Step 1: Open Terminal as Administrator."
+            "os": "Windows"
         },
         {
             "task_number": 2,
             "step_number": 1,
+            "media_placeholder": "2_step_1_macOS_2.png",
+            "src": "2_step_1_macOS_2.png",
+            "caption": "Task 2, Step 1: Open Terminal.",
             "carousel_group": "macOS",
-            "media_placeholder": "2_step_1_macOS.png",
-            "caption": "Task 2, Step 1: Open Terminal."
+            "os": "macOS"
         },
         {
             "task_number": 2,
@@ -91,56 +98,79 @@
         {
             "task_number": 3,
             "step_number": 1,
-            "media_placeholder": "3_step_1_all_1.png",
+            "media_placeholder": "3_step_1_all_0.png",
+            "src": "3_step_1_all_0.png",
             "caption": "Task 3, Step 1: Open Google Cloud Console."
         },
         {
             "task_number": 3,
             "step_number": 1,
-            "media_placeholder": "3_step_1_all_2.png",
+            "media_placeholder": "3_step_1_all_1.png",
+            "src": "3_step_1_all_1.png",
             "caption": "Task 3, Step 1: Select or Create a Project."
         },
         {
             "task_number": 3,
             "step_number": 1,
-            "media_placeholder": "3_step_1_all_3.png",
+            "media_placeholder": "3_step_1_all_2.png",
+            "src": "3_step_1_all_2.png",
             "caption": "Task 3, Step 1: Enter Project Details."
         },
         {
             "task_number": 3,
-            "step_number": 1,
-            "media_placeholder": "3_step_1_all_4.png",
-            "caption": "Task 3, Step 1: Confirm Project Creation."
-        },
-        {
-            "task_number": 3,
-            "step_number": 1,
-            "media_placeholder": "3_step_1_all_5.png",
-            "caption": "Task 3, Step 1: Proceed to Dashboard."
-        },
-        {
-            "task_number": 3,
-            "step_number": 1,
-            "media_placeholder": "3_step_1_all_6.png",
-            "caption": "Task 3, Step 1: Complete Project Setup."
-        },
-        {
-            "task_number": 3,
             "step_number": 2,
-            "media_placeholder": "step7_enable_apis.png",
+            "media_placeholder": "3_step_2_all_0.png",
+            "src": "3_step_2_all_0.png",
             "caption": "Task 3, Step 2: Enable APIs."
         },
         {
             "task_number": 3,
+            "step_number": 2,
+            "media_placeholder": "3_step_2_all_1.png",
+            "src": "3_step_2_all_1.png",
+            "caption": "Task 3, Step 2: Execute documented instruction."
+        },
+        {
+            "task_number": 3,
             "step_number": 3,
-            "media_placeholder": "oauth_get_started.png",
+            "media_placeholder": "3_step_3_all_0.png",
+            "src": "3_step_3_all_0.png",
             "caption": "Task 3, Step 3: OAuth Consent Screen."
         },
         {
             "task_number": 3,
             "step_number": 3,
-            "media_placeholder": "oauth_audience.png",
+            "media_placeholder": "3_step_3_all_1.png",
+            "src": "3_step_3_all_1.png",
             "caption": "Task 3, Step 3: OAuth Audience Setup."
+        },
+        {
+            "task_number": 3,
+            "step_number": 3,
+            "media_placeholder": "3_step_3_all_2.png",
+            "src": "3_step_3_all_2.png",
+            "caption": "Task 3, Step 3: Execute documented instruction."
+        },
+        {
+            "task_number": 3,
+            "step_number": 3,
+            "media_placeholder": "3_step_3_all_3.png",
+            "src": "3_step_3_all_3.png",
+            "caption": "Task 3, Step 3: Execute documented instruction."
+        },
+        {
+            "task_number": 3,
+            "step_number": 3,
+            "media_placeholder": "3_step_3_all_4.png",
+            "src": "3_step_3_all_4.png",
+            "caption": "Task 3, Step 3: Execute documented instruction."
+        },
+        {
+            "task_number": 3,
+            "step_number": 3,
+            "media_placeholder": "3_step_3_all_5.png",
+            "src": "3_step_3_all_5.png",
+            "caption": "Task 3, Step 3: Execute documented instruction."
         },
         {
             "task_number": 3,
@@ -173,10 +203,60 @@
             "caption": "Task 3, Step 4: Save Client ID and Secret."
         },
         {
+            "task_number": 4,
+            "step_number": 1,
+            "media_placeholder": "4_step_1_all_0.png",
+            "src": "4_step_1_all_0.png",
+            "caption": "Task 4, Step 1: Execute documented instruction."
+        },
+        {
+            "task_number": 4,
+            "step_number": 1,
+            "media_placeholder": "4_step_1_all_1.png",
+            "src": "4_step_1_all_1.png",
+            "caption": "Task 4, Step 1: Execute documented instruction."
+        },
+        {
+            "task_number": 4,
+            "step_number": 1,
+            "media_placeholder": "4_step_1_all_2.png",
+            "src": "4_step_1_all_2.png",
+            "caption": "Task 4, Step 1: Execute documented instruction."
+        },
+        {
+            "task_number": 4,
+            "step_number": 1,
+            "media_placeholder": "4_step_1_all_3.png",
+            "src": "4_step_1_all_3.png",
+            "caption": "Task 4, Step 1: Execute documented instruction."
+        },
+        {
+            "task_number": 4,
+            "step_number": 1,
+            "media_placeholder": "4_step_1_all_4.png",
+            "src": "4_step_1_all_4.png",
+            "caption": "Task 4, Step 1: Execute documented instruction."
+        },
+        {
             "task_number": 5,
             "step_number": 1,
-            "media_placeholder": "gws_auth_login.png",
+            "media_placeholder": "5_step_1_all_0.png",
+            "src": "5_step_1_all_0.png",
             "caption": "Task 5, Step 1: Run gws auth login."
+        },
+        {
+            "task_number": 5,
+            "step_number": 2,
+            "media_placeholder": "5_step_2_all_0.png",
+            "src": "5_step_2_all_0.png",
+            "caption": "Task 5, Step 2: Execute documented instruction."
+        },
+        {
+            "task_number": 5,
+            "step_number": 3,
+            "media_placeholder": "5_step_3_all_1.png",
+            "src": "5_step_3_all_1.png",
+            "caption": "Task 5, Step 3: Execute documented instruction."
         },
         {
             "task_number": 6,

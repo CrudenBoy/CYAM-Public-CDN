@@ -26,6 +26,11 @@ category: "Admin Console"
 
 ### Level 3: Task 1 — Download and Install Antigravity
 
+**Prerequisites** 
+- Node.js installed (verified via `node -v`).
+- **Google Cloud CLI (gcloud)** installed and authenticated.
+- Access to a Google Workspace account.
+
 #### Level 4: Steps
 
 1. **Visit the Official Download Site**: Go to the Google AntiGravity download page.
@@ -82,65 +87,229 @@ category: "Admin Console"
 
 ---
 
-### Level 3: Task 2 — Launch and Configure Safety Settings
+### Level 3: Task 2 — Install Google Workspace CLI
 
 #### Level 4: Steps
 
-1. **Select the Cog wheel**: Click the cog wheel icon in the top right corner of the IDE.
+<details>
+<summary>🤖 AntiGravity Agent Prompt</summary>
 
-2. **Select Open AntiGravity User Settings**: Choose this option from the dropdown menu.
+If you prefer to have an AI agent perform the technical parts of this setup, you can use the prompt below. AntiGravity will use the existing `SKILL.md` to guide you through Tasks 2 to 6, stopping only when your manual input (like choosing a Google account) is required.
 
-3. **Modify Settings**: This screen explains how safe the default settings are on the Agent Setting page. 
-   * **Secure mode:** Enhanced security controls for the Agent, restricting external access.
-   * **Review-driven development (recommended):** The agent will frequently ask for review. This is a good balance and the recommended one since it allows the agent to make a decision and come back to the user for approval.
+**Recommended Prompt:**
+
+> "Please refer to the SKILL.md saved to the GitHub CDN repo at https://raw.githubusercontent.com/CrudenBoy/CYAM-Public-CDN/main/help-assets/specs/google-antigravity-install/SKILL.md and assist me with the Google Workspace CLI setup (Tasks 2 to 5). Start by verifying the installation of Node.js and then proceed to install the CLI. Guide me through the Google Cloud Console steps by providing the exact URLs, and then resume the technical configuration once I have my Client ID and Secret."
+
+</details>
+
+1. **Open Your Terminal**: Launch your system's command-line interface.
+
+[OS:macOS]
+* **macOS (Terminal):**
+  * Press **Cmd + Space**, type 'Terminal', and press Enter.
+[/OS:macOS]
+
+[OS:Windows]
+* **Windows (PowerShell/CMD):**
+  * Search for 'PowerShell' in the Start menu. Right-click it and select **"Run as Administrator"**.
+[/OS:Windows]
+
+2. **Install the Package**: Run the following command exactly:
+
+[OS:macOS]
+```bash
+sudo npm install -g @googleworkspace/cli
+```
+[/OS:macOS]
+
+[OS:Windows]
+```powershell
+npm install -g @googleworkspace/cli
+```
+[/OS:Windows]
+
+3. **Verify Installation**: Wait for the process to finish, then verify by typing:
+
+[OS:macOS]
+```bash
+gws --version
+```
+[/OS:macOS]
+
+[OS:Windows]
+```powershell
+gws --version
+```
+[/OS:Windows]
 
 ##### Level 5: Help & Context
 
-**Steps 1-3 — Configure Safety Settings:** How do you want to use the Antigravity agent? The autonomy policy defines how much control the AI agent has over your system. This is about giving the Agent the ability to execute commands (applications/tools) in your terminal (Always proceed vs Request review), Review policy (determining when the agent asks for plan reviews), and JavaScript Execution policy in the browser.<br><br>The 4 options on the left are specific settings for the terminal execution, review, and JavaScript execution policies.<br>• **Secure mode:** Enhanced security controls for the Agent, restricting external access.<br>• **Review-driven development (recommended):** The agent will frequently ask for review. This is a good balance and the recommended one since it allows the agent to make a decision and come back to the user for approval.<br>• **Agent-driven development:** The agent will never ask for review.<br>• **Custom configuration**<br><br>Remember that settings can be changed at any time via Antigravity User Settings (Cmd + ,).
-
-* **Carousel Item 1:** Select the Cog wheel.
-* **Carousel Item 2:** Select Open AntiGravity User Settings.
-* **Carousel Item 3:** Modify settings.
+**Installation Nuances:** The installation requires global permissions because `npm` writes to protected system folders. On Windows, if you see `EPERM` errors, it’s almost always because the terminal wasn't opened as Administrator. On macOS, prepending the command with `sudo` is the standard fix.
 
 ---
 
-### Level 3: Task 3 — Sign In and Authenticate
+### Level 3: Task 3 — Google Cloud Console Setup (Manual Task)
+
+> [!NOTE]
+> This task must be performed by a human in a web browser because it involves security settings and 2FA.
 
 #### Level 4: Steps
 
-1. **Press Sign up/Login**: Click the blue button in the top right to start the authentication process. It will say "Sign in" if this is your first time.
+1. **Open/Create Your Project**:
+   * Go to the [Google Cloud Console](https://console.cloud.google.com/).
+   * Click the **Project Dropdown** at the top left.
+   * Select an existing project (e.g., `cyam-workspace-cli`) or click **New Project** to create one.
 
-2. **Choose Sign In Method**: Choose to sign in with Google or use a GCP project instead.
-   * **Note:** See the Help & Context section for details on the GCP Project option.
+2. **Enable APIs and Services**:
+   * Use the search bar at the top to find and **Enable** each of these APIs:
+     * **Gmail API** (Essential for email-to-sheet workflows)
+     * **Google Sheets API** (Essential for creating/editing spreadsheets)
+     * **Google Drive API** (Core requirement for most GWS tasks)
+     * **Google Calendar API** (Optional)
+     * **Google Docs API** (Optional)
 
-3. **Choose an Account**: Select your Google Account from the list.
+3. **Configure OAuth Consent Screen**:
+   * Search for **"OAuth consent screen"** in the top search bar.
+   * Click **Get Started**.
+   * Click **Create**.
+   * Fill in the **App Information**:
+     * **App name**: "GWS CLI"
+     * **User support email**: Your email address.
+   * Select Audience: Select **Internal** (if you have a Workspace organization) or **External** (if using a personal @gmail.com account).
+   * Add Contact Information:
+     * **Developer contact info**: Your email address.
+   * Click **Finish** through the remaining screens. You will be taken to Step 4 to configure **OAuth client ID**.
 
-4. **Press Sign In**: You will see a message "Make sure that you have downloaded the App from Google." Click the Sign In button.
-
-5. **Authentication Success**: You will see a message "Google Antigravity: You have successfully authenticated."
+4. **Create Desktop Credentials**:
+   * After completing Step 3, you will be taken to the **Application type** screen. Alternatively, search for **"Credentials"** in the top search bar.
+   * Click **+ Create Credentials** > **OAuth client ID**.
+   * **Application type**: Select **Desktop app**.
+   * **Name**: example "GWS CLI Desktop".
+   * Click **Create**.
+   * **Save these!** Copy the **Client ID** and **Client Secret** to a safe place; you will need them for the next task.
 
 ##### Level 5: Help & Context
 
-**Steps 1-5 — Sign In and Authenticate:** Now, you're ready to Sign in to Google. As mentioned earlier, Antigravity is available in preview mode. Sign in now with your account. This will open up the browser allowing you to sign in.<br><br>On successful authentication, you will see a success message and it will lead you back to the Antigravity application. Go with the flow. Finally, review the Terms of Use. You can make a decision if you'd like to opt-in or not and then click on Next. This will lead you to the moment of truth, where Antigravity will be waiting to collaborate with you.
-
-**GCP Project:** This is a Google Cloud Platform project used for billing and API quota limits for Cloud services like Vertex AI, which AntiGravity connects to. 
-
-* **Carousel Item 1:** Press Sign up/Login.
-* **Carousel Item 2:** Choose sign in method.
-* **Carousel Item 3:** Choose an Account.
-* **Carousel Item 4:** Press Sign In.
-* **Carousel Item 5:** Authentication Success.
+**Why This is Manual:** Google Cloud Platform enforces strict security. Enabling APIs is like "unlocking doors" for the CLI tool. If you skip enabling the Gmail API, for example, the CLI will be "Authorized" to talk to your account but "Forbidden" from actually reading emails.
 
 ---
 
-### Level 3: Task 4 — Learn more about AntiGravity
+### Level 3: Task 4 — CLI Authorization Setup
 
 #### Level 4: Steps
 
-1. **Explore**: You have successfully configured the core of AntiGravity! Use the links in the Help & Context section or simply ask the Chatbot to learn more about optional setups, extensions, and browser automation. The Chatbot has full access to the complete AntiGravity knowledge base. Please see the links and videos in the Help & Context Section.
+1. **Start CLI Setup**: In your terminal, run the setup command:
+
+[OS:macOS]
+```bash
+gws auth setup --project your-project-id
+```
+[/OS:macOS]
+
+[OS:Windows]
+```powershell
+gws auth setup --project your-project-id
+```
+[/OS:Windows]
+
+*(Replace `your-project-id` with the ID of the project you created/selected in Task 3).*
+
+2. **Input Credentials**: When prompted, paste the **Client ID** and **Client Secret** you saved from Task 3.
+
+---
+
+### Level 3: Task 5 — Complete OAuth Login & Scopes
+
+#### Level 4: Steps
+
+1. **Run Login Command**: Run the following command to grant the CLI access to your data:
+
+[OS:macOS]
+```bash
+gws auth login -s drive,gmail,sheets
+```
+[/OS:macOS]
+
+[OS:Windows]
+```powershell
+gws auth login -s drive,gmail,sheets
+```
+[/OS:Windows]
+
+2. **Select Scopes in Terminal**: Use the arrow keys and **Space** to ensure these are checked:
+   * [x] **Recommended (Core Consumer Scopes)**
+   * [x] **gmail.readonly**
+   * [x] **spreadsheets**
+   * Press **Enter**.
+
+3. **Approve in Browser**:
+   * A browser window will open. Select your Google account.
+   * **CRITICAL:** You must **manually check the boxes** for Gmail, Sheets, and Drive on the "GWS CLI wants to access your account" screen.
+   * Click **Allow**.
+
+---
+
+### Level 3: Task 6 — Verification
+
+#### Level 4: Steps
+
+1. **Test Drive Access**: Validate that the CLI can see your files:
+
+[OS:macOS]
+```bash
+gws drive files list --params '{"pageSize": 5}'
+```
+[/OS:macOS]
+
+[OS:Windows]
+```powershell
+gws drive files list --params "{\`"pageSize\`": 5}"
+```
+[/OS:Windows]
+
+2. **Test Gmail/Sheets Integration**: Run a test to ensure the CLI can read emails and write to a sheet. *(If you have a script for this, run it now, otherwise manually verify you can see your file list).*
 
 ##### Level 5: Help & Context
 
-**Step 1 — Learn more about AntiGravity:** There are two links you can use for further information about AntiGravity:<br>• **YouTube**: [YouTube Playlist](https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN)<br>• **Codelabs**: [Getting Started Codelabs](https://codelabs.developers.google.com/getting-started-google-antigravity#0)
+**Resources:**
+- [Official GWS CLI Documentation](https://googleworkspace-cli.mintlify.app/)
+- [Google Cloud Console](https://console.cloud.google.com/)
+- [Gmail API Scopes Reference](https://developers.google.com/gmail/api/auth/scopes)
 
-* **Carousel Item 1:** Watch the AntiGravity Tutorial Playlist to learn about extensions and autonomy setups. (Media: `https://www.youtube.com/playlist?list=PLuT8wfgyV8tjGHAYNHJ9wPES3BEq-TnKN`)
+---
+
+## Context & Chatbot Delivery Summary
+
+### Overview: GWS CLI Technical Architecture
+
+The `gws` CLI is a cross-platform tool that communicates with Google Workspace APIs via OAuth 2.0. It requires a Desktop-type OAuth Client ID associated with a GCP project where the relevant APIs (Drive, Gmail, Sheets) are enabled.
+
+### Implementation Details
+
+- **Configuration Storage**: Settings are stored in `$HOME/.config/gws/`.
+- **Token Management**: OAuth tokens are encrypted and cached in `token_cache.json`.
+- **Scope Requirements**: Core tasks require `https://www.googleapis.com/auth/drive`, `https://www.googleapis.com/auth/gmail.readonly`, and `https://www.googleapis.com/auth/spreadsheets`.
+
+### Edge Cases & Troubleshooting
+
+| Issue | Likely Cause | Resolution |
+| :--- | :--- | :--- |
+| `403 Forbidden` | API not enabled in GCP | Go to Library and enable the specific API. |
+| `insufficientPermissions` | Scopes not checked in browser | Re-run `gws auth login` and check all boxes. |
+| `Connection Refused` | CLI listener timeout | Restart the login command and refresh browser. |
+| `EPERM` (Windows) | Missing Admin rights | Restart terminal as "Run as Administrator". |
+
+### Q&A
+
+**Q: Can I use the same Client ID for multiple users?**
+A: Yes, the Client ID identifies the *application* (the CLI), while the login process identifies the *user*.
+
+**Q: How do I change the project after setup?**
+A: Run `gws auth setup --project new-project-id` to overwrite the existing configuration.
+
+### Key Links
+
+* **Official Docs:** [https://googleworkspace-cli.mintlify.app/](https://googleworkspace-cli.mintlify.app/)  
+* **GitHub Repository:** [https://github.com/googleworkspace/cli](https://github.com/googleworkspace/cli)  
+* **NPM Package:** [https://www.npmjs.com/package/@googleworkspace/cli](https://www.npmjs.com/package/@googleworkspace/cli)  
+* **Video Tutorial (Fru Dev):** [https://www.youtube.com/watch?v=aci6mSkFPf8](https://www.youtube.com/watch?v=aci6mSkFPf8)

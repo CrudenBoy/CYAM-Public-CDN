@@ -173,7 +173,8 @@ You can use this fast track approach using the prompt below in the AntiGravity A
     </div>
 </details>
 
-1. **Open Your Terminal**: Launch your system's command-line interface.
+1. **Open Your Native Terminal**: Launch your system's command-line interface. 
+> **⚠️ CRITICAL:** You **cannot** use the terminal window in AntiGravity for this step. You must open a native terminal on your computer because this installation requires Administrator/Sudo permissions that AntiGravity does not possess.
 
 [OS:macOS]
 * **macOS (Terminal):**
@@ -215,7 +216,7 @@ gws --version
 
 ##### Level 5: Help & Context
 
-**Steps 1-3 — Installation Nuances:** The installation requires global permissions because `npm` writes to protected system folders. On Windows, if you see `EPERM` errors, it’s almost always because the terminal wasn't opened as Administrator. On macOS, prepending the command with `sudo` is the standard fix.
+**Steps 1-3 — Installation Nuances:** The installation requires global permissions because `npm` writes to protected system folders. On Windows, if you see `EPERM` errors, it’s almost always because the terminal wasn't opened as Administrator. On macOS, prepending the command with `sudo` is the standard fix. Because of these deep system privilege requirements, you cannot install this via the AntiGravity terminal—you must use a native Windows or Mac terminal.
 
 ---
 
@@ -269,7 +270,7 @@ gws --version
    * Click **Create**.
    * **Save these!** Copy the **Client ID** and **Client Secret** to a safe place; you will need them for the next task.
 
-2. **Start CLI Setup**: In your terminal, run the setup command:
+2. **Start CLI Setup**: In your terminal in AntiGravity (or a native terminal), run the setup command:
 
 [OS:macOS]
 ```bash
@@ -285,11 +286,13 @@ gws auth setup --project your-project-id
 
 *(Replace `your-project-id` with the ID of the project you created/selected).*
 
-3. **Input Credentials**: When prompted, paste the **Client ID** and **Client Secret** you saved from Step 1.
+3. **Input Credentials**: In the AntiGravity terminal, when prompted, paste the **Client ID** and **Client Secret** you saved from Step 1.
 
 ##### Level 5: Help & Context
 
 **Steps 1-3 — CLI Credentials:** To run the CLI tool, it needs to be securely linked to the project you created in the Google Cloud Console. Creating Desktop Credentials generates a unique Client ID and Secret key pair that authenticates the CLI specifically. Do not share your Client Secret with anyone, as it acts as the primary access token to interact with your data programmatically.
+
+**Terminal Usage (AntiGravity vs Native):** You can safely run Steps 2 and 3 directly inside the terminal window in AntiGravity! These commands (`gws auth setup` and `gws auth login`) only modify your local application configuration files, which AntiGravity has full permission to safely edit. By contrast, the earlier `npm install -g` command required deep system Administrator rights, which is why it had to be run in your computer's native terminal.
 
 ---
 
@@ -297,7 +300,7 @@ gws auth setup --project your-project-id
 
 #### Level 4: Steps
 
-1. **Run Login Command**: Run the following command to grant the CLI access to your data:
+1. **Run Login Command**: In your terminal in AntiGravity, run the following command to grant the CLI access to your data:
 
 [OS:macOS]
 ```bash
@@ -311,7 +314,7 @@ gws auth login -s drive,gmail,sheets
 ```
 [/OS:Windows]
 
-2. **Select Scopes in Terminal**: Use the arrow keys and **Space** to ensure these are checked:
+2. **Select Scopes in Terminal**: In the AntiGravity terminal, use the arrow keys and **Space** to ensure these are checked:
    * [x] **Recommended (Core Consumer Scopes)**
    * [x] **gmail.readonly**
    * [x] **spreadsheets**

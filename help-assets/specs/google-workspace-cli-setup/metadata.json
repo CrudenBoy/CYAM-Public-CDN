@@ -5,7 +5,7 @@
     "task_summary": "Install Google Cloud Command Line Interface (CLI) and Google Workspace CLI, set up a Google Cloud Project, and authenticate using Open Authorization (OAuth).",
     "overview_description": "To allow the CYAM platform and AI agents to help manage your Google Workspace (Drive, Gmail, Calendar, Docs, etc.), we need to install two helper tools on your computer. First, we install the Google Cloud CLI to manage your Google Cloud account. Second, we install the Google Workspace CLI (gws) which acts as the bridge. We then create a dedicated 'CYAM-Workspace-CLI' project in Google Cloud, configure the Open Authorization (OAuth) security settings, and finally log in. This securely connects your tools without exposing your passwords.",
     "ui_instructions": [
-        "Step 1: Install NodeJS. Node.js is a software platform required to run the Workspace CLI. If you don't have it, download and install it from the official Node.js website. (🤖 Agent Automation: Ask your AntiGravity Agent to install Node.js and Python for you!)",
+        "Step 1: Install NodeJS. Node.js is a software platform required to run the Workspace CLI. If you don't have it, download and install it from the official Node.js website. (\ud83e\udd16 Agent Automation: Ask your AntiGravity Agent to install Node.js and Python for you!)",
         "Step 2: Install Google Cloud CLI. Check your Python version in the terminal (macOS: python3 -V, Windows: python -V). Download the correct installer from the Google Cloud website (check Apple Silicon vs Intel for Macs).",
         "Step 3: Run the Installer. On Windows, double-click the .exe. On macOS, drag 'install.sh' into the terminal and press Enter. Answer 'N' to usage stats, 'Y' to update PATH, and just press 'Enter' when asked for the rc file path. If prompted for a 'Password', type your Mac login password blindly (characters won't show) and press Enter.",
         "Step 4: Authenticate gcloud. Open a new terminal or PowerShell and type 'gcloud init'. If asked to 'Pick configuration', type '1'. If asked to 'Choose the account', type the number next to your email or select 'Sign in with a new Google Account' (Note: always choose the 'Sign in with a new Google Account' option if your account uses Passkeys like Fingerprint/FaceID, as the terminal cannot process them). A browser will open; log in and click Allow. Back in the terminal, type the number for 'Create a new project', name it 'cyam-workspace-cli', and press Enter.",
@@ -15,9 +15,9 @@
         "Step 8: Initialize OAuth. Go to APIs & Services > OAuth consent screen. If you see 'Google auth platform not configured yet', click 'Get started'. Set the app name to 'CYAM-Workspace-CLI', enter your email, and save through the steps.",
         "Step 9: Configure OAuth Audience. Go to the 'Audience' tab on the left. Under User type, click 'Make external'. When prompted for publishing status, choose 'Testing'. Crucially, under 'Test users', you must add your own Google account email. If you skip this, your login will be blocked.",
         "Step 10: Create OAuth Credentials. Go to Credentials > Create Credentials > OAuth client ID. Select 'Desktop app'. Download the JSON file.",
-        "Step 11: Save the Credentials. Save the JSON file to exactly '~/.config/gws/client_secret.json'. (🤖 Agent Automation: Ask your AntiGravity Agent to find the most recent client secret file in your Downloads folder and move it to the hidden .config/gws folder automatically!)",
-        "Step 12: Authenticate the Workspace CLI. In your terminal, run 'gws auth login --services drive,gmail,sheets'. If the browser does not open automatically, copy the entire long URL from the terminal and paste it into your browser to log in. (🤖 Agent Automation: Ask your agent to run this command with the --services flag for you!)",
-        "Step 13: Verify the Connection. Run 'gws drive files list --params ''{\"pageSize\": 5}'''. If it lists your recent Google Drive files, you are successfully connected! (🤖 Agent Automation: Ask your agent to run the verification command and check your Drive files!)"
+        "Step 11: Save the Credentials. Save the JSON file to exactly '~/.config/gws/client_secret.json'. (\ud83e\udd16 Agent Automation: Ask your AntiGravity Agent to find the most recent client secret file in your Downloads folder and move it to the hidden .config/gws folder automatically!)",
+        "Step 12: Authenticate the Workspace CLI. In your terminal, run 'gws auth login --services drive,gmail,sheets'. If the browser does not open automatically, copy the entire long URL from the terminal and paste it into your browser to log in. (\ud83e\udd16 Agent Automation: Ask your agent to run this command with the --services flag for you!)",
+        "Step 13: Verify the Connection. Run 'gws drive files list --params ''{\"pageSize\": 5}'''. If it lists your recent Google Drive files, you are successfully connected! (\ud83e\udd16 Agent Automation: Ask your agent to run the verification command and check your Drive files!)"
     ],
     "carousel_items": [
         {
@@ -30,79 +30,159 @@
             "task_number": 1,
             "step_number": 1,
             "media_placeholder": "install_nodejs.png",
-            "caption": "Task 1, Step 1: Download and install Node.js (required prerequisite)."
+            "caption": "Task 1, Step 1: Download and install Node.js."
         },
         {
             "task_number": 1,
             "step_number": 2,
             "media_placeholder": "install_gcloud_cli_download.png",
-            "caption": "Task 1, Step 2: Check Python version and download the correct Google Cloud CLI installer."
+            "caption": "Task 1, Step 2: Google Cloud CLI download."
         },
         {
             "task_number": 1,
             "step_number": 3,
             "media_placeholder": "install_gcloud_cli_run.png",
-            "caption": "Task 1, Step 3: Run the installer or drag 'install.sh' into the macOS Terminal."
+            "caption": "Task 1, Step 3: Run the installer."
         },
         {
             "task_number": 1,
             "step_number": 4,
             "media_placeholder": "gcloud_init.png",
-            "caption": "Task 1, Step 4: Run 'gcloud init' in your terminal and log into your Google Account."
+            "caption": "Task 1, Step 4: gcloud init."
+        },
+        {
+            "task_number": 1,
+            "step_number": 6,
+            "media_placeholder": "1_step_6_all_1.png",
+            "caption": "Task 1, Step 6: Additional step details."
+        },
+        {
+            "task_number": 1,
+            "step_number": 6,
+            "media_placeholder": "1_step_6_all_2.png",
+            "caption": "Task 1, Step 6: Additional step details."
+        },
+        {
+            "task_number": 1,
+            "step_number": 6,
+            "media_placeholder": "1_step_6_all_3.png",
+            "caption": "Task 1, Step 6: Additional step details."
         },
         {
             "task_number": 2,
             "step_number": 1,
+            "os": "Windows",
+            "media_placeholder": "2_step_1_Windows.png",
+            "caption": "Task 2, Step 1: Open Terminal as Administrator."
+        },
+        {
+            "task_number": 2,
+            "step_number": 1,
+            "os": "macOS",
+            "media_placeholder": "2_step_1_macOS.png",
+            "caption": "Task 2, Step 1: Open Terminal."
+        },
+        {
+            "task_number": 2,
+            "step_number": 2,
             "media_placeholder": "install_gws_cli.png",
-            "caption": "Task 2, Step 1: Run the npm install command in your terminal to get the Workspace CLI."
+            "caption": "Task 2, Step 2: Run npm install."
         },
         {
             "task_number": 3,
             "step_number": 1,
-            "media_placeholder": "step6_create_new_project.png",
-            "caption": "Task 3, Step 1: Click the Project Dropdown and select or create 'CYAM-Workspace-CLI'."
+            "media_placeholder": "3_step_1_all_1.png",
+            "caption": "Task 3, Step 1: Open Google Cloud Console."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "media_placeholder": "3_step_1_all_2.png",
+            "caption": "Task 3, Step 1: Select or Create a Project."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "media_placeholder": "3_step_1_all_3.png",
+            "caption": "Task 3, Step 1: Enter Project Details."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "media_placeholder": "3_step_1_all_4.png",
+            "caption": "Task 3, Step 1: Confirm Project Creation."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "media_placeholder": "3_step_1_all_5.png",
+            "caption": "Task 3, Step 1: Proceed to Dashboard."
+        },
+        {
+            "task_number": 3,
+            "step_number": 1,
+            "media_placeholder": "3_step_1_all_6.png",
+            "caption": "Task 3, Step 1: Complete Project Setup."
         },
         {
             "task_number": 3,
             "step_number": 2,
             "media_placeholder": "step7_enable_apis.png",
-            "caption": "Task 3, Step 2: Use the search bar in the Library to find and enable each API one by one."
+            "caption": "Task 3, Step 2: Enable APIs."
         },
         {
-            "task_number": 4,
-            "step_number": 1,
-            "media_placeholder": "oauth_get_started.png",
-            "caption": "Task 4, Step 1: Click 'Get started' on the OAuth screen, name the app 'CYAM-Workspace-CLI', and save."
-        },
-        {
-            "task_number": 4,
-            "step_number": 2,
-            "media_placeholder": "oauth_audience.png",
-            "caption": "Task 4, Step 2: On the Audience tab, click 'Make external', select 'Testing', and add your email."
-        },
-        {
-            "task_number": 4,
+            "task_number": 3,
             "step_number": 3,
-            "media_placeholder": "step8_desktop_app.png",
-            "caption": "Task 4, Step 3: Create a Desktop OAuth client and download the JSON file."
+            "media_placeholder": "oauth_get_started.png",
+            "caption": "Task 3, Step 3: OAuth Consent Screen."
         },
         {
-            "task_number": 4,
+            "task_number": 3,
+            "step_number": 3,
+            "media_placeholder": "oauth_audience.png",
+            "caption": "Task 3, Step 3: OAuth Audience Setup."
+        },
+        {
+            "task_number": 3,
             "step_number": 4,
-            "media_placeholder": "step9_save_client_secret.png",
-            "caption": "Task 4, Step 4: Save the JSON file to the required hidden .config folder."
+            "media_placeholder": "3_step_4_all_1.png",
+            "caption": "Task 3, Step 4: Go to Credentials."
+        },
+        {
+            "task_number": 3,
+            "step_number": 4,
+            "media_placeholder": "3_step_4_all_2.png",
+            "caption": "Task 3, Step 4: Create OAuth client ID."
+        },
+        {
+            "task_number": 3,
+            "step_number": 4,
+            "media_placeholder": "3_step_4_all_3.png",
+            "caption": "Task 3, Step 4: Select Desktop app."
+        },
+        {
+            "task_number": 3,
+            "step_number": 4,
+            "media_placeholder": "3_step_4_all_4.png",
+            "caption": "Task 3, Step 4: Name the OAuth Client."
+        },
+        {
+            "task_number": 3,
+            "step_number": 4,
+            "media_placeholder": "3_step_4_all_5.png",
+            "caption": "Task 3, Step 4: Save Client ID and Secret."
         },
         {
             "task_number": 5,
             "step_number": 1,
             "media_placeholder": "gws_auth_login.png",
-            "caption": "Task 5, Step 1: Run 'gws auth login' with limited scopes and approve the consent screen."
+            "caption": "Task 5, Step 1: Run gws auth login."
         },
         {
-            "task_number": 5,
-            "step_number": 2,
+            "task_number": 6,
+            "step_number": 1,
             "media_placeholder": "gws_drive_verify.png",
-            "caption": "Task 5, Step 2: Test your setup by listing your Google Drive files in the terminal."
+            "caption": "Task 6, Step 1: Verify the Connection."
         }
     ],
     "chatbot_context_urls": [

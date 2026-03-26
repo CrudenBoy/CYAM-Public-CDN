@@ -34,11 +34,28 @@ category: "CLI Setup and Authentication"
 
 1. Your computer must have **Node.js** installed to download the Workspace CLI. Node.js is an underlying software platform. If you do not have it, download and install it from the [official Node.js website](https://nodejs.org/).
 
-<details>
-<summary>🤖 Agent Automation</summary>
-
-> "Please install Node.js and the latest version of Python 3 for me."
-
+<details class="ml-10 my-4 p-1 bg-indigo-50 border border-indigo-200 rounded-xl shadow-sm group overflow-hidden">
+    <summary class="flex items-center justify-between p-3 cursor-pointer select-none">
+        <div class="flex items-center gap-3 text-indigo-800 font-bold text-sm">
+            <div class="bg-white p-2 rounded-lg text-indigo-600 shadow-sm border border-indigo-100">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+            </div>
+            AI Automator 
+            <span class="bg-indigo-200 text-indigo-800 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-widest ml-1">FAST PATH</span>
+        </div>
+        <i data-lucide="chevron-down" class="w-4 h-4 text-indigo-400 group-open:rotate-180 transition-transform"></i>
+    </summary>
+    <div class="px-4 pb-3 pt-2 border-t border-indigo-100 mt-1">
+        <p class="text-sm text-slate-700 leading-relaxed mb-3">
+            Request an AI agent to install the necessary base software dependencies on your machine automatically.
+        </p>
+        <details class="group/prompt">
+            <summary class="text-xs text-indigo-600 font-medium cursor-pointer select-none flex items-center gap-1 hover:text-indigo-800 transition-colors">
+                <i data-lucide="terminal" class="w-3 h-3"></i> View Agent Prompt Payload
+            </summary>
+            <div class="mt-2 p-3 bg-white rounded-lg border border-indigo-100 font-mono text-[11px] text-slate-700 whitespace-pre-wrap shadow-inner">Please install Node.js and the latest version of Python 3 for me.</div>
+        </details>
+    </div>
 </details>
 
 2. **Check Python Version**: The CLI requires Python.
@@ -122,7 +139,7 @@ category: "CLI Setup and Authentication"
 * **Carousel Item 2:** Check Python version and download the correct Google Cloud CLI installer. (Media: `1_step_2_macOS.png` / `1_step_2.0_Windows.png`)
 * **Carousel Item 3:** Run the installer or drag 'install.sh' into the macOS Terminal. (Media: `1_step_3_macOS.png` / `1_step_3.0_Windows.png`)
 * **Carousel Item 4:** Run 'gcloud init' in your terminal and log into your Google Account in the browser. (Media: `1_step_4_macOS.png` / `1_step_4.0_Windows.png`)
-* **Chatbot Note:** Emphasize that choosing "Sign in with a new Google Account" is safer for passkey login.
+
 
 ---
 
@@ -130,15 +147,28 @@ category: "CLI Setup and Authentication"
 
 #### Level 4: Steps
 
-<details>
-<summary>🤖 AntiGravity Agent Prompt</summary>
-
-If you prefer to have an AI agent perform the technical parts of this setup, you can use the prompt below. AntiGravity will use the existing `SKILL.md` to guide you through Tasks 2 to 6, stopping only when your manual input (like choosing a Google account) is required.
-
-**Recommended Prompt:**
-
-> "Please refer to the SKILL.md saved to the GitHub CDN repo at https://raw.githubusercontent.com/CrudenBoy/CYAM-Public-CDN/main/help-assets/specs/google-antigravity-install/SKILL.md and assist me with the Google Workspace CLI setup (Tasks 2 to 5). Start by verifying the installation of Node.js and then proceed to install the CLI. Guide me through the Google Cloud Console steps by providing the exact URLs, and then resume the technical configuration once I have my Client ID and Secret."
-
+<details class="ml-10 my-4 p-1 bg-indigo-50 border border-indigo-200 rounded-xl shadow-sm group overflow-hidden">
+    <summary class="flex items-center justify-between p-3 cursor-pointer select-none">
+        <div class="flex items-center gap-3 text-indigo-800 font-bold text-sm">
+            <div class="bg-white p-2 rounded-lg text-indigo-600 shadow-sm border border-indigo-100">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+            </div>
+            AI Automator 
+            <span class="bg-indigo-200 text-indigo-800 text-[10px] px-2 py-0.5 rounded font-mono uppercase tracking-widest ml-1">FAST PATH</span>
+        </div>
+        <i data-lucide="chevron-down" class="w-4 h-4 text-indigo-400 group-open:rotate-180 transition-transform"></i>
+    </summary>
+    <div class="px-4 pb-3 pt-2 border-t border-indigo-100 mt-1">
+        <p class="text-sm text-slate-700 leading-relaxed mb-3">
+            If you prefer to have an AI agent perform the technical parts of this setup, you can use the prompt below. AntiGravity will guide you through Tasks 2 to 6, stopping only when your manual input (such as choosing a Google account or retrieving tokens) is needed.
+        </p>
+        <details class="group/prompt">
+            <summary class="text-xs text-indigo-600 font-medium cursor-pointer select-none flex items-center gap-1 hover:text-indigo-800 transition-colors">
+                <i data-lucide="terminal" class="w-3 h-3"></i> View Agent Prompt Payload
+            </summary>
+            <div class="mt-2 p-3 bg-white rounded-lg border border-indigo-100 font-mono text-[11px] text-slate-700 whitespace-pre-wrap shadow-inner">Please refer to the SKILL.md saved to GitHub CDN repo at https://raw.githubusercontent.com/CrudenBoy/CYAM-Platform/main/.agent/skills/gws-cli/SKILL.md and assist me with the Google Workspace CLI setup (Tasks 2 to 5). Start by verifying the installation of Node.js and then proceed to install the CLI. Guide me through the Google Cloud Console steps by providing the exact URLs, and then resume the technical configuration once I have my Client ID and Secret.</div>
+        </details>
+    </div>
 </details>
 
 1. **Open Your Terminal**: Launch your system's command-line interface.
@@ -183,7 +213,7 @@ gws --version
 
 ##### Level 5: Help & Context
 
-**Installation Nuances:** The installation requires global permissions because `npm` writes to protected system folders. On Windows, if you see `EPERM` errors, it’s almost always because the terminal wasn't opened as Administrator. On macOS, prepending the command with `sudo` is the standard fix.
+**Steps 1-3 — Installation Nuances:** The installation requires global permissions because `npm` writes to protected system folders. On Windows, if you see `EPERM` errors, it’s almost always because the terminal wasn't opened as Administrator. On macOS, prepending the command with `sudo` is the standard fix.
 
 ---
 
@@ -219,17 +249,9 @@ gws --version
      * **Developer contact info**: Your email address.
    * Click **Finish** through the remaining screens. You will be taken to Step 4 to configure **OAuth client ID**.
 
-4. **Create Desktop Credentials**:
-   * After completing Step 3, you will be taken to the **Application type** screen. Alternatively, search for **"Credentials"** in the top search bar.
-   * Click **+ Create Credentials** > **OAuth client ID**.
-   * **Application type**: Select **Desktop app**.
-   * **Name**: example "GWS CLI Desktop".
-   * Click **Create**.
-   * **Save these!** Copy the **Client ID** and **Client Secret** to a safe place; you will need them for the next task.
-
 ##### Level 5: Help & Context
 
-**Why This is Manual:** Google Cloud Platform enforces strict security. Enabling APIs is like "unlocking doors" for the CLI tool. If you skip enabling the Gmail API, for example, the CLI will be "Authorized" to talk to your account but "Forbidden" from actually reading emails.
+**Steps 1-3 — Why This is Manual:** Google Cloud Platform enforces strict security. Enabling APIs is like "unlocking doors" for the CLI tool. If you skip enabling the Gmail API, for example, the CLI will be "Authorized" to talk to your account but "Forbidden" from actually reading emails.
 
 ---
 
@@ -237,7 +259,15 @@ gws --version
 
 #### Level 4: Steps
 
-1. **Start CLI Setup**: In your terminal, run the setup command:
+1. **Create Desktop Credentials**:
+   * After completing Task 3 Step 3, you will be taken to the **Application type** screen. Alternatively, search for **"Credentials"** in the top search bar.
+   * Click **+ Create Credentials** > **OAuth client ID**.
+   * **Application type**: Select **Desktop app**.
+   * **Name**: example "GWS CLI Desktop".
+   * Click **Create**.
+   * **Save these!** Copy the **Client ID** and **Client Secret** to a safe place; you will need them for the next task.
+
+2. **Start CLI Setup**: In your terminal, run the setup command:
 
 [OS:macOS]
 ```bash
@@ -251,9 +281,13 @@ gws auth setup --project your-project-id
 ```
 [/OS:Windows]
 
-*(Replace `your-project-id` with the ID of the project you created/selected in Task 3).*
+*(Replace `your-project-id` with the ID of the project you created/selected).*
 
-2. **Input Credentials**: When prompted, paste the **Client ID** and **Client Secret** you saved from Task 3.
+3. **Input Credentials**: When prompted, paste the **Client ID** and **Client Secret** you saved from Step 1.
+
+##### Level 5: Help & Context
+
+**Steps 1-3 — CLI Credentials:** To run the CLI tool, it needs to be securely linked to the project you created in the Google Cloud Console. Creating Desktop Credentials generates a unique Client ID and Secret key pair that authenticates the CLI specifically. Do not share your Client Secret with anyone, as it acts as the primary access token to interact with your data programmatically.
 
 ---
 
@@ -286,6 +320,10 @@ gws auth login -s drive,gmail,sheets
    * **CRITICAL:** You must **manually check the boxes** for Gmail, Sheets, and Drive on the "GWS CLI wants to access your account" screen.
    * Click **Allow**.
 
+##### Level 5: Help & Context
+
+**Steps 1-3 — Scope Assignment:** The `-s drive,gmail,sheets` parameter tells the CLI tool strictly which Google services it's allowed to touch. Limiting the scopes minimizes risk! During the browser handshake, it is essential you manually tick the boxes for Gmail, Drive, and Sheets. Google automatically unchecks these for security reasons to ensure users explicitly permit granular access levels.
+
 ---
 
 ### Level 3: Task 6 — Verification
@@ -310,45 +348,15 @@ gws drive files list --params "{\`"pageSize\`": 5}"
 
 ##### Level 5: Help & Context
 
-**Resources:**
-- [Official GWS CLI Documentation](https://googleworkspace-cli.mintlify.app/)
-- [Google Cloud Console](https://console.cloud.google.com/)
-- [Gmail API Scopes Reference](https://developers.google.com/gmail/api/auth/scopes)
+**Steps 1-2 — Verification Status:** These simple CLI commands make external network requests directly to the REST API via your newly authenticated OAuth token. If `gws drive files list` fetches exactly 5 objects representing your real Google Drive content, congratulations! The pipeline is 100% stable and operational, and you open up a world of automated potential.
 
 ---
 
 ## Context & Chatbot Delivery Summary
 
-### Overview: GWS CLI Technical Architecture
+| Field | Value |
+|---|---|
+| `INSTALL_CHATBOT` | `true` |
+| `chatbot_context_file` | `GoogleWorkspaceCLI_Context_Knowledge.md` |
+| Context URLs | Listed in `metadata.json` |
 
-The `gws` CLI is a cross-platform tool that communicates with Google Workspace APIs via OAuth 2.0. It requires a Desktop-type OAuth Client ID associated with a GCP project where the relevant APIs (Drive, Gmail, Sheets) are enabled.
-
-### Implementation Details
-
-- **Configuration Storage**: Settings are stored in `$HOME/.config/gws/`.
-- **Token Management**: OAuth tokens are encrypted and cached in `token_cache.json`.
-- **Scope Requirements**: Core tasks require `https://www.googleapis.com/auth/drive`, `https://www.googleapis.com/auth/gmail.readonly`, and `https://www.googleapis.com/auth/spreadsheets`.
-
-### Edge Cases & Troubleshooting
-
-| Issue | Likely Cause | Resolution |
-| :--- | :--- | :--- |
-| `403 Forbidden` | API not enabled in GCP | Go to Library and enable the specific API. |
-| `insufficientPermissions` | Scopes not checked in browser | Re-run `gws auth login` and check all boxes. |
-| `Connection Refused` | CLI listener timeout | Restart the login command and refresh browser. |
-| `EPERM` (Windows) | Missing Admin rights | Restart terminal as "Run as Administrator". |
-
-### Q&A
-
-**Q: Can I use the same Client ID for multiple users?**
-A: Yes, the Client ID identifies the *application* (the CLI), while the login process identifies the *user*.
-
-**Q: How do I change the project after setup?**
-A: Run `gws auth setup --project new-project-id` to overwrite the existing configuration.
-
-### Key Links
-
-* **Official Docs:** [https://googleworkspace-cli.mintlify.app/](https://googleworkspace-cli.mintlify.app/)  
-* **GitHub Repository:** [https://github.com/googleworkspace/cli](https://github.com/googleworkspace/cli)  
-* **NPM Package:** [https://www.npmjs.com/package/@googleworkspace/cli](https://www.npmjs.com/package/@googleworkspace/cli)  
-* **Video Tutorial (Fru Dev):** [https://www.youtube.com/watch?v=aci6mSkFPf8](https://www.youtube.com/watch?v=aci6mSkFPf8)

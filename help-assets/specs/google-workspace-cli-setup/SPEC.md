@@ -32,9 +32,11 @@ category: "CLI Setup and Authentication"
 
 #### Level 4: Steps
 
+1. Your computer must have **Node.js** installed to download the Workspace CLI. Node.js is an underlying software platform. If you do not have it, download and install it from the [official Node.js website](https://nodejs.org/).
+
 You can use this fast track approach using the prompt below in the AntiGravity Agent Manager, or do it manually following Steps 1 to 6 by opening a new terminal and following the commands for each step below, after downloading the correct software.
 
-<details class="my-4 p-1 bg-indigo-50 border border-indigo-200 rounded-xl shadow-sm group overflow-hidden">
+<details class="ml-10 my-4 p-1 bg-indigo-50 border border-indigo-200 rounded-xl shadow-sm group overflow-hidden">
     <summary class="flex items-center justify-between p-3 cursor-pointer select-none">
         <div class="flex items-center gap-3 text-indigo-800 font-bold text-sm">
             <div class="bg-white p-2 rounded-lg text-indigo-600 shadow-sm border border-indigo-100">
@@ -57,8 +59,6 @@ You can use this fast track approach using the prompt below in the AntiGravity A
         </details>
     </div>
 </details>
-
-1. Your computer must have **Node.js** installed to download the Workspace CLI. Node.js is an underlying software platform. If you do not have it, download and install it from the [official Node.js website](https://nodejs.org/).
 
 2. **Check Python Version**: The CLI requires Python.
 [OS:macOS]

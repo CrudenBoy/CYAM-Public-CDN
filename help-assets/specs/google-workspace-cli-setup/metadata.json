@@ -71,14 +71,14 @@
         {
             "task_number": 2,
             "step_number": 1,
-            "os": "Windows",
+            "carousel_group": "Windows",
             "media_placeholder": "2_step_1_Windows.png",
             "caption": "Task 2, Step 1: Open Terminal as Administrator."
         },
         {
             "task_number": 2,
             "step_number": 1,
-            "os": "macOS",
+            "carousel_group": "macOS",
             "media_placeholder": "2_step_1_macOS.png",
             "caption": "Task 2, Step 1: Open Terminal."
         },

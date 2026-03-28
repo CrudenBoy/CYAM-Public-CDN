@@ -125,7 +125,9 @@ You can use this fast track approach using the prompt below in the AntiGravity A
 
 **Step 2 — Python Check:** Google Cloud CLI requires Python 3.8+. On macOS, type `python3 -V`. On Windows, type `python -V`. If Python isn't found or opens the Microsoft Store, install it from [python.org](https://www.python.org/downloads/) — **check "Add Python to PATH" during install**.
 
-**Steps 3 & 4 — Browser & File Explorer:** These steps strictly use your internet browser and your operating system's native file explorer (Finder or Windows Explorer). They do not require terminal access. On macOS, the downloaded `.tar.gz` archive must be manually double-clicked to extract. On Windows, the `.exe` is a self-contained bundled installer that bypasses the need for manual extraction.
+**Step 3 — Download via Browser:** This step strictly uses your normal internet browser. Go to the official URL and download the file.
+
+**Step 4 — Extract via Explorer:** This step uses your operating system's native file explorer (Finder or Windows Explorer). It does not require terminal access. On macOS, the downloaded `.tar.gz` archive must be manually double-clicked to extract. On Windows, the `.exe` is a self-contained bundled installer that bypasses the need for manual extraction.
 
 **Step 5 — Run Installer:** On macOS, running the `install.sh` script via a terminal invokes system-level changes to your Shell profile (PATH) and requires your administrator password to configure Python dependencies. On Windows, the installer runs as a standard graphical UI wizard. However, it is vital that both "Start Cloud SDK Shell" and "Run `gcloud init`" remain checked at the end so the environment maps correctly before Step 6.
 

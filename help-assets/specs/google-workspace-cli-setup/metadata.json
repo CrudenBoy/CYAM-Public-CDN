@@ -29,26 +29,33 @@
         {
             "task_number": 1,
             "step_number": 1,
-            "media_placeholder": "install_nodejs.png",
-            "caption": "Task 1, Step 1: Download and install Node.js."
+            "media_placeholder": "1_step_1_All_1.png",
+            "src": "1_step_1_All_1.png",
+            "caption": "Task 1, Step 1: Initialize operations."
         },
         {
             "task_number": 1,
             "step_number": 2,
-            "media_placeholder": "install_gcloud_cli_download.png",
-            "caption": "Task 1, Step 2: Google Cloud CLI download."
+            "media_placeholder": "1_step_2_Windows_0.png",
+            "src": "1_step_2_Windows_0.png",
+            "caption": "Task 1 Step 2 AntiGravity Terminal.",
+            "carousel_group": "Windows",
+            "os": "Windows"
+        },
+        {
+            "task_number": 1,
+            "step_number": 2,
+            "media_placeholder": "1_step_2_macOS_0.png",
+            "src": "1_step_2_macOS_0.png",
+            "caption": "Task 1 Step 2 AntiGravity Terminal.",
+            "carousel_group": "macOS",
+            "os": "macOS"
         },
         {
             "task_number": 1,
             "step_number": 3,
-            "media_placeholder": "install_gcloud_cli_run.png",
-            "caption": "Task 1, Step 3: Run the installer."
-        },
-        {
-            "task_number": 1,
-            "step_number": 4,
-            "media_placeholder": "gcloud_init.png",
-            "caption": "Task 1, Step 4: gcloud init."
+            "media_placeholder": "install_gcloud_cli_download.png",
+            "caption": "Task 1 Step 3 Run the Installer."
         },
         {
             "task_number": 1,

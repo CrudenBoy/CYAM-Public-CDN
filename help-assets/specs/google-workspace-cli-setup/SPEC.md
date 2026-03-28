@@ -89,6 +89,8 @@ You can use this fast track approach using the prompt below in the AntiGravity A
 [/OS:Windows]
 
 5. **Run the Installer**:
+> **💡 Terminal Tip:** You can run this installer using your computer's native terminal, or simply open a new Terminal tab directly inside AntiGravity!
+
 [OS:macOS]
    * **macOS:** Open the **Terminal** application. Drag and drop the `install.sh` file from inside that `google-cloud-sdk` folder directly into the Terminal window and press Enter. 
      * It will ask: "Do you want to help improve the Google Cloud CLI (y/N)?". Type **N** and press Enter.
@@ -149,8 +151,8 @@ You can use this fast track approach using the prompt below in the AntiGravity A
 
 #### Level 4: Steps
 
-1. **Open Your Native Terminal**: Launch your system's command-line interface. 
-> **⚠️ CRITICAL:** You **cannot** use the terminal window in AntiGravity for this step. You must open a native terminal on your computer because this installation requires Administrator/Sudo permissions that AntiGravity does not possess.
+1. **Open Your Terminal**: Launch your system's command-line interface. 
+> **💡 Terminal Tip:** You can run this installation using your computer's native terminal, or simply open a new Terminal tab directly inside AntiGravity!
 
 [OS:macOS]
 * **macOS (Terminal):**
@@ -216,7 +218,7 @@ gws --version
 
 ##### Level 5: Help & Context
 
-**Steps 1-3 — Installation Nuances:** The installation requires global permissions because `npm` writes to protected system folders. On Windows, if you see `EPERM` errors, it’s almost always because the terminal wasn't opened as Administrator. On macOS, prepending the command with `sudo` is the standard fix. Because of these deep system privilege requirements, you cannot install this via the AntiGravity terminal—you must use a native Windows or Mac terminal.
+**Steps 1-3 — Installation Nuances:** The installation requires global permissions because `npm` writes to protected system folders. On Windows, if you see `EPERM` errors, it’s almost always because the terminal wasn't opened as Administrator. On macOS, prepending the command with `sudo` is the standard fix. If you choose to use an AntiGravity terminal for this, ensure you open a fresh terminal tab inside the IDE to properly handle required password and permission prompts.
 
 ---
 
@@ -292,7 +294,7 @@ gws auth setup --project your-project-id
 
 **Steps 1-3 — CLI Credentials:** To run the CLI tool, it needs to be securely linked to the project you created in the Google Cloud Console. Creating Desktop Credentials generates a unique Client ID and Secret key pair that authenticates the CLI specifically. Do not share your Client Secret with anyone, as it acts as the primary access token to interact with your data programmatically.
 
-**Terminal Usage (AntiGravity vs Native):** You can safely run Steps 2 and 3 directly inside the terminal window in AntiGravity! These commands (`gws auth setup` and `gws auth login`) only modify your local application configuration files, which AntiGravity has full permission to safely edit. By contrast, the earlier `npm install -g` command required deep system Administrator rights, which is why it had to be run in your computer's native terminal.
+**Terminal Usage (AntiGravity vs Native):** You can safely run Steps 2 and 3 using the active interactive terminal window in AntiGravity, or simply open a new terminal tab. These commands (`gws auth setup` and `gws auth login`) only modify your local application configuration files, which AntiGravity has full permission to safely edit without prompting for Administrator rights.
 
 ---
 

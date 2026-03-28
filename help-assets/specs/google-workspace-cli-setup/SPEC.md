@@ -72,41 +72,41 @@ You can use this fast track approach using the prompt below in the AntiGravity A
 [/OS:Windows]
    * If it prints a version number (like Python 3.x.x), you are ready. If you get an error, download Python from python.org.
 
-3. **Download the Installer**: Go to the [Google Cloud CLI Downloads](https://cloud.google.com/sdk/docs/install) page.
+3. **Download the Google Installer**: Open your normal Web Browser and go to the official [Google Cloud CLI Downloads](https://cloud.google.com/sdk/docs/install) page.
 [OS:macOS]
-   * **macOS:** Check your chip type (Apple Silicon/M1/M2/M3 vs Intel) by clicking the Apple Logo > About This Mac. Download the matching macOS archive.
+   * **macOS:** Click the "macOS" tab on the webpage. Before downloading, check if your Mac uses an Apple Silicon (M1/M2/M3) chip or an Intel chip by clicking the Apple Logo > "About This Mac" at the top left of your screen. Click the blue link to download the `.tar.gz` file that matches your chip.
 [/OS:macOS]
 [OS:Windows]
-   * **Windows:** Download the **Windows 64-bit (bundled Python)** `.exe` installer. This version includes Python and handles all dependencies automatically. Most modern Windows 10/11 systems are 64-bit.
+   * **Windows:** Click the "Windows" tab on the webpage. Click the blue button to download the **Windows 64-bit (bundled Python)** `.exe` installer. This single file includes everything you need.
 [/OS:Windows]
 
-4. **Extract the Download**:
+4. **Locate the Downloaded File**: Open your computer's built-in file browser (Finder on Mac, File Explorer on Windows) and go to your Downloads folder.
 [OS:macOS]
-   * **macOS:** Find the downloaded `.tar.gz` file in your Downloads folder and double-click it to extract a folder named `google-cloud-sdk`.
+   * **macOS:** Find the `google-cloud-cli-###.tar.gz` file you just downloaded. Double-click it. Your Mac will automatically extract it into a new blue folder named `google-cloud-sdk`.
 [/OS:macOS]
 [OS:Windows]
-   * **Windows:** Right-click the downloaded `.exe` file and select **"Run as administrator"**. If Windows Security shows "Windows protected your PC", click **"More info"** then **"Run anyway"** (this is normal for new installers).
+   * **Windows:** Find the `GoogleCloudSDKInstaller.exe` file you just downloaded. Right-click the file and select **"Run as administrator"**. (If Windows Security pops up saying "Windows protected your PC", this is just a standard warning for new installers. Click **"More info"** then **"Run anyway"**).
 [/OS:Windows]
 
-5. **Run the Installer**:
+5. **Run the Installation Process**:
 > **💡 Terminal Tip:** You can run this installer using your computer's native terminal, or simply open a new Terminal tab directly inside AntiGravity!
 
 [OS:macOS]
-   * **macOS:** Open the **Terminal** application. Drag and drop the `install.sh` file from inside that `google-cloud-sdk` folder directly into the Terminal window and press Enter. 
+   * **macOS:** *This step requires a terminal.* Open the **Terminal** application (or a new tab in AntiGravity). Drag and drop the `install.sh` file from inside the newly extracted `google-cloud-sdk` folder directly into the Terminal window and press Enter. 
      * It will ask: "Do you want to help improve the Google Cloud CLI (y/N)?". Type **N** and press Enter.
      * It will ask: "Modify profile to update your $PATH...? (Y/n)?". Type **Y** and press Enter.
      * It will ask: "Enter a path to an rc file to update, or leave blank to use...". **Just press the Enter key** to accept the default.
-     * **INVISIBLE PASSWORD PROMPT**: If the terminal says "Running Python 3.13 installer, you may be prompted for sudo password..." followed by a `Password:` prompt, it needs your Mac computer login password to install Python. Type your password and press Enter. **Crucial Note:** As you type, the keys will not show up on the screen (no asterisks). Just type it blindly and press Enter.
+     * **INVISIBLE PASSWORD PROMPT**: If it asks for a "sudo password", it needs your Mac computer login password. Type your password blindly (no stars will appear) and press Enter.
 [/OS:macOS]
 [OS:Windows]
-   * **Windows:** Follow the installation wizard:
+   * **Windows:** *This step is a normal click-through wizard.* Follow the on-screen installer:
      1. **Welcome Screen**: Click "Next".
      2. **License Agreement**: Click "I Agree".
-     3. **Installation Type**: Choose "Install for all users" if you have admin rights.
+     3. **Installation Type**: Choose "Install for all users".
      4. **Component Selection**: Ensure **"Google Cloud CLI Core Libraries"** and **"Bundled Python"** are both checked.
-     5. **Installation Options**: **CRITICAL** — Check both **"Start Google Cloud CLI Shell"** and **"Run `gcloud init`"**.
+     5. **Installation Options**: **CRITICAL** — Put a checkmark next to **"Start Google Cloud CLI Shell"** and **"Run `gcloud init`"**.
      6. Click "Install" and wait 2-5 minutes for completion.
-   * After installation, the **Google Cloud SDK Shell** should open automatically — keep it open for the next step.
+    * After installation, the **Google Cloud SDK Shell** terminal window should open automatically — keep it open for the next step.
 [/OS:Windows]
 
 6. **Log In and Initialize**: 
@@ -125,11 +125,9 @@ You can use this fast track approach using the prompt below in the AntiGravity A
 
 **Step 2 — Python Check:** Google Cloud CLI requires Python 3.8+. On macOS, type `python3 -V`. On Windows, type `python -V`. If Python isn't found or opens the Microsoft Store, install it from [python.org](https://www.python.org/downloads/) — **check "Add Python to PATH" during install**.
 
-**Step 3 — Download:** Go to the [Google Cloud CLI Downloads](https://cloud.google.com/sdk/docs/install) page. On macOS, check Apple Menu > About This Mac to determine if you need the Apple Silicon or Intel version. On Windows, choose the **bundled Python** `.exe` installer.
+**Steps 3 & 4 — Browser & File Explorer:** These steps strictly use your internet browser and your operating system's native file explorer (Finder or Windows Explorer). They do not require terminal access. On macOS, the downloaded `.tar.gz` archive must be manually double-clicked to extract. On Windows, the `.exe` is a self-contained bundled installer that bypasses the need for manual extraction.
 
-**Step 4 — Extract:** On macOS, double-click the `.tar.gz` file in your Downloads folder to extract a `google-cloud-sdk` folder. On Windows, right-click the `.exe` and select "Run as administrator".
-
-**Step 5 — Run Installer:** On macOS, drag `install.sh` from the extracted folder into Terminal and press Enter. Answer N to usage stats, Y to PATH update, and just press Enter for the rc file path. On Windows, follow the wizard — ensure both "Start Cloud SDK Shell" and "Run gcloud init" are checked.
+**Step 5 — Run Installer:** On macOS, running the `install.sh` script via a terminal invokes system-level changes to your Shell profile (PATH) and requires your administrator password to configure Python dependencies. On Windows, the installer runs as a standard graphical UI wizard. However, it is vital that both "Start Cloud SDK Shell" and "Run `gcloud init`" remain checked at the end so the environment maps correctly before Step 6.
 
 **Step 6 — Initialize:** In a fresh terminal, run `gcloud init`. Choose "Re-initialize" (option 1), then "Sign in with a new Google Account" (avoids passkey issues). Log in via browser, then create a new project named `cyam-workspace-cli`.
 

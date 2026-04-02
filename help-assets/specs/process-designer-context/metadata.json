@@ -1,0 +1,36 @@
+{
+    "category": "Agent & Workflow Designer",
+    "workflow_description": "Context & Knowledge Integration — gather foundational building blocks from the WDE to produce a portable Specification.",
+    "task_summary": "Guide the WDE through goal definition, tier assessment, process elicitation, and CYAM data structure mapping.",
+    "overview_description": "Capture what the workflow should do, classify its complexity, outline existing processes, and define what context files the End User must provide in Stage 3.",
+    "ui_instructions": [
+        "Task 1, Step 1: WDE describes the primary goal, desired output, and provides concrete examples.",
+        "Task 1, Step 2: WDE selects trigger type(s) from chips: Webhook, Schedule, AppSheet Button, Manual, Other.",
+        "Task 1, Step 3: WDE uploads spec-writing material (Bucket A) via Google Drive Picker — example SOPs, brand voice, reference docs.",
+        "Task 1, Step 4: WDE defines End User context requirements (Bucket B) with definite/optional classification. Optionally uploads template examples.",
+        "Task 2, Step 1: AI reviews the Goal and suggests a Tier (1=Routine, 2=Methodology, 3=Enterprise) with rationale.",
+        "Task 2, Step 2: WDE confirms or overrides the suggested Tier with justification.",
+        "Task 3, Step 1: WDE outlines the current process in a text area.",
+        "Task 3, Step 2: WDE optionally uploads an existing SOP via Drive Picker as reference input.",
+        "Task 3, Step 3: If no SOP exists, guided ISO 9001 elicitation form appears: Inputs → Activities → Outputs → Controls.",
+        "Task 4, Step 1: AI reads data_dictionary.csv and suggests CYAM Platform dependencies based on the Goal.",
+        "Task 4, Step 2: WDE classifies each dependency as Definite or Optional for Stage 3 End Users.",
+        "Task 4, Step 3: WDE specifies additional raw files End Users must upload in Stage 3.",
+        "Task 4, Step 4: WDE defines conversion rules for raw files → structured Markdown. Optionally uploads template Markdown."
+    ],
+    "carousel_items": [],
+    "relevant_links": [
+        {
+            "title": "CYAM Process Designer Framework",
+            "url": "file:///Users/imac/dev/CYAM-Platform/docs/process_design/cyam_process_designer_framework.md"
+        },
+        {
+            "title": "Cross-Agent Design Notes (Framework Section)",
+            "url": "file:///Users/imac/dev/CYAM-Platform/docs/process_design/cyam_process_designer_framework.md#cross-agent-design-notes"
+        }
+    ],
+    "INSTALL_CHATBOT": true,
+    "chatbot_context_urls": [],
+    "chatbot_context_file": "Context_Knowledge_WF1.md",
+    "chatbot_prompt_context": "You are the Phase 1: Context Integration Specialist. Assist the WDE (Workflow Domain Expert) with: goal refinement, trigger selection, understanding Bucket A (spec-writing material) vs Bucket B (End User Stage 3 requirements), Tier classification, ISO 9001 process elicitation (IAOC framework), CYAM data structure selection using data_dictionary.csv, and Markdown template design for context conversion rules. Remember: WF1 is Stage 1 — you are helping create a portable Specification, not pulling live data or writing code."
+}

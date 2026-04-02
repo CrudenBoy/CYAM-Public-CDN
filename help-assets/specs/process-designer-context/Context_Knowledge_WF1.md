@@ -57,3 +57,25 @@ At the end of WF1, the `gas-agent-prompt-architect` compiles all inputs into `WF
 - Never suggest writing code — this is a specification-gathering phase.
 - Always clarify the Bucket A vs Bucket B distinction if the WDE seems confused.
 - If the WDE cannot articulate a goal after 3 rounds, suggest they prepare a written brief and return.
+
+## Workflow Tier & Skill Categorization Framework
+
+The Tier Assessment ensures compilation into the CYAM system correctly as agent-readable skills, not just one-off prompts. Tiers are defined by organizational scope, not complexity:
+
+*   **Tier 1 (Standard Skills):**
+    *   *Definition:* Organizational-wide standards that are consistent across the entire team.
+    *   *Examples:* Brand voice, formatting rules, common corporate templates.
+    *   *AI Action:* Defines standardization parameters.
+
+*   **Tier 2 (Methodology Skills):**
+    *   *Definition:* High-value, domain-specific expertise or "craft" processes used by senior practitioners. These are the exact workflows you would teach a new hire to make them proficient.
+    *   *Examples:* Code review processes, financial analysis methodologies, specialized research workflows.
+    *   *AI Action:* Structures an agent-readable routing description, reasoning-based methodology, and highly defined output contract.
+
+*   **Tier 3 (Personal Workflow Skills):**
+    *   *Definition:* Individual, task-specific, or "under-the-desk" automations that help with daily productivity but may not be standardized or required for the whole organization.
+    *   *Examples:* Automatically summarizing personal standup notes, organizing local files, personal email drafting styles.
+    *   *AI Action:* Defines a personal methodology and routing constraint.
+
+**Skill Integration vs Creation:**
+The goal is "Compounding Advantage". Instead of making isolated one-off prompts, the AI determines if this new workflow should be merged into an existing skill file in the registry or if it deserves a brand new skill file, ensuring system memory compounds over time.

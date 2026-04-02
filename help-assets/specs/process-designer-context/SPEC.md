@@ -67,103 +67,69 @@ category: "Agent & Workflow Designer"
 
 ---
 
-### Level 3: Task 2 — Workflow Tier Assessment
+### Level 3: Task 2 — Process Distillation
 
 #### Level 4: Steps
 
-1. **Step 1 — Review AI Tier Suggestion**
-   - The AI analyses your Goal from Task 1 and recommends a Tier:
-     - **Tier 1 (Routine):** Simple, repeatable processes with clear inputs/outputs.
-     - **Tier 2 (Methodology):** Domain-specific processes requiring expert knowledge and edge case handling.
-     - **Tier 3 (Enterprise):** Cross-functional, multi-stakeholder processes with compliance requirements.
-   - Review the AI's rationale card below.
+1. **Step 1 — Raw Process Dump**
+   - Dump your rough notes, email threads, or existing SOP here. Don't worry about formatting. The AI will distill it into a clean process and help you identify missing constraints.
+   - Click "Distill Process" to run the extraction.
    - 📖 *See Help & Context panel for detailed guidance*
+2. **Step 2 — Distilled Happy Path & Constraints**
+   - Review the AI-extracted "Happy Path".
+   - The AI identifies potential gaps in your process and generates highly relevant "What if...?" questions about edge cases and formatting restrictions. Answer them directly in the UI to strengthen your workflow.
+
+##### Level 5: Help & Context
+
+**What is Process Distillation?:** Don't overthink the initial step. Write the process as you would explain it to a colleague. The AI analyzes the intent and ensures you don't miss critical process elements like missing inputs or ambiguous deliverables.
+
+* **Chatbot Note:** Guide the WDE through process elicitation. Help identify missing inputs, edge cases, and quality controls.
+
+---
+
+### Level 3: Task 3 — CYAM Knowledge Integration
+
+#### Level 4: Steps
+
+1. **Step 1 — Automatic Dependency Scanner**
+   - Click "Suggest Integrations". The AI cross-references your process against the CYAM Data Dictionary.
+   - It suggests which CYAM Platform data structures (like Profiles, Metadata Library) are required. 
+   - Choose whether each dependency is a "Definite Requirement", "Optional", or "Do Not Include".
+   - 📖 *See Help & Context panel for detailed guidance*
+2. **Step 2 — Ad-hoc Context Requirements**
+   - Specify any additional raw files the End User will need to upload in Stage 3 (e.g., specific reports, meeting notes). We use plain Markdown files to prevent taxing the database with new schema creation.
+
+##### Level 5: Help & Context
+
+**Understanding CYAM Data Structures:** The CYAM Platform stores structured data in Google Sheets tables (Profiles, Plans, Metadata Library). When you select a structure here, you are telling the specification: *"This workflow needs this data."* The End User supplies the real data in Stage 3.
+
+**Definite vs Optional:** Mark a dependency as "Definite Requirement" only if the workflow **cannot function** without it. Mark as "Optional" if it improves output quality but isn't strictly required.
+
+* **Chatbot Note:** Help the WDE understand which CYAM data structures are relevant to their goal. Explain the `data_dictionary.csv`.
+
+---
+
+### Level 3: Task 4 — Workflow Tier Assessment
+
+#### Level 4: Steps
+
+1. **Step 1 — Evaluate Tier Assignment**
+   - The AI evaluates all gathered context (Goal, Distilled Process, and Knowledge Dependencies) and recommends an Organizational Scope Tier.
+   - Example Tiers:
+     - **Tier 1 (Standard):** Org-wide standards (brand voice, common templates).
+     - **Tier 2 (Methodology):** High-value domain expertise (Default).
+     - **Tier 3 (Personal):** Individual 'under-the-desk' automations.
 2. **Step 2 — Confirm or Override**
-   - Accept the suggested Tier, or override it with your own classification.
-   - If overriding, provide a brief justification (e.g., *"This is Tier 3 because it crosses compliance boundaries"*).
-   - 📖 *See Help & Context panel for detailed guidance*
+   - Accept the suggested Tier or select "Other / Override" to explain why the AI missed the mark.
 
 ##### Level 5: Help & Context
 
-**Step 1 — What Tier Means:** The Tier determines how the AI guides you through the remaining Workflows:
-- **Tier 1:** Mode A (Autonomous) works well. The AI can handle most decisions.
-- **Tier 2:** Mode B (Cyborg) strongly recommended for Workflows 2 & 3. Your domain expertise is critical.
-- **Tier 3:** Mode B is mandatory. Every decision requires human validation before the AI proceeds.
+**What Tier Means:** The Tier determines how the AI guides you through the remaining Workflows:
+- **Tier 1:** Autonomous scaling works well.
+- **Tier 2:** Domain expertise is critical. High-value.
+- **Tier 3:** Useful for specific users, but won't be pushed globally.
 
-**Step 2 — When to Override:** Override if you have domain knowledge the AI can't infer from your goal description. For example, a workflow that sounds simple ("send an email") may actually be Tier 3 if it involves regulated communications or multi-approval chains.
-
-* **Chatbot Note:** Help the WDE understand Tier implications for their specific workflow. Clarify Mode A vs Mode B recommendations and what "domain expertise" means in context.
-
----
-
-### Level 3: Task 3 — Current Mechanics & SOPs
-
-#### Level 4: Steps
-
-1. **Step 1 — Outline the Process**
-   - Describe the current manual process in the text area below. Focus on capturing the flow, not perfecting prose.
-   - The primary objective is to **outline the process** — not deliver a polished document.
-   - 📖 *See Help & Context panel for detailed guidance*
-2. **Step 2 — Upload Example SOP (Optional)**
-   - If you have an existing SOP or process document, upload it via the Google Drive Picker.
-   - This is a reference input — the AI uses it to inform the specification. It is not required.
-   - 📖 *See Help & Context panel for detailed guidance*
-3. **Step 3 — Guided Process Elicitation (If No SOP)**
-   - If no SOP exists, use the structured scaffolding form below:
-     - **Inputs:** What enters the process? (data, files, approvals)
-     - **Activities:** What transforms the inputs? (calculations, reviews, decisions)
-     - **Outputs:** What is produced? (reports, notifications, approvals)
-     - **Controls:** What ensures quality? (validation rules, approval gates, thresholds)
-   - 📖 *See Help & Context panel for detailed guidance*
-
-##### Level 5: Help & Context
-
-**Step 1 — Process Outline Tips:** Don't overthink it. Write the process as you would explain it to a colleague: *"First we receive X, then Y checks it, then Z approves it."* The AI will structure it formally later.
-
-**Step 2 — SOP as Reference:** An existing SOP helps the AI understand your domain vocabulary and edge cases. If you upload one, the AI extracts the logic — it doesn't copy the document wholesale.
-
-**Step 3 — ISO 9001 Thinking:** The Inputs → Activities → Outputs → Controls framework comes from ISO 9001 quality management. It ensures you don't miss critical process elements:
-- **Inputs:** Raw materials the process needs (data, documents, triggers).
-- **Activities:** The work that transforms inputs into outputs.
-- **Outputs:** The deliverables — what success looks like.
-- **Controls:** Quality gates ensuring outputs meet standards.
-
-* **Chatbot Note:** Guide the WDE through process elicitation using the ISO 9001 IAOC framework. Help identify missing inputs, edge cases, and quality controls.
-
----
-
-### Level 3: Task 4 — CYAM Knowledge Integration
-
-#### Level 4: Steps
-
-1. **Step 1 — Review AI-Suggested Dependencies**
-   - The AI reads the `data_dictionary.csv` and, based on your Goal from Task 1, suggests which CYAM Platform data structures are relevant for the workflow you are creating.
-   - Suggestions may include: Profile tables, Plan table, Metadata_Library, File_Library, System_FolderMap.
-   - Review the suggestion cards below. Confirm, remove, or add to the list.
-   - 📖 *See Help & Context panel for detailed guidance*
-2. **Step 2 — Classify as Definite or Optional**
-   - For each selected dependency, mark it as:
-     - **Definite** — The End User *must* provide this data in Stage 3.
-     - **Optional** — Recommended to optimise the workflow prompt.
-   - 📖 *See Help & Context panel for detailed guidance*
-3. **Step 3 — Define Additional Stage 3 Context Files**
-   - Beyond CYAM data structures, specify any additional raw files the End User will need to upload in Stage 3 (e.g., spreadsheets, PDFs, presentations).
-   - For each, describe the expected content and format.
-   - 📖 *See Help & Context panel for detailed guidance*
-4. **Step 4 — Define Conversion Rules**
-   - Specify how raw End User files will be converted into structured Markdown context files usable by the workflow's nodes.
-   - Optionally upload template Markdown files demonstrating the expected output structure.
-   - 📖 *See Help & Context panel for detailed guidance*
-
-##### Level 5: Help & Context
-
-**Step 1 — Understanding CYAM Data Structures:** The CYAM Platform stores structured data in Google Sheets tables (Profiles, Plans, Metadata Library) and in the Google Drive folder structure (File Library, System folders). When you select a structure here, you are telling the specification: *"This workflow needs this data."* The End User provides their own data in Stage 3.
-
-**Step 2 — Definite vs Optional:** Mark a dependency as "Definite" only if the workflow **cannot function** without it. Mark as "Optional" if it improves output quality but isn't strictly required. This helps End Users understand the minimum viable setup vs the optimised setup.
-
-**Steps 3-4 — Raw File Conversion:** Most workflows will need End Users to upload raw files (DOCX, PDF, Google Sheets) that aren't already in the CYAM data structures. The conversion rules you define here tell the workflow how to transform those raw files into structured Markdown that the AI can consume. Upload template examples showing the expected Markdown structure.
-
-* **Chatbot Note:** Help the WDE understand which CYAM data structures are relevant to their goal. Explain the `data_dictionary.csv` suggestions. Guide them in writing conversion rules and creating Markdown template examples.
+* **Chatbot Note:** Since the Chatbot is "Session-Aware", it has access to your actual Goal, Trigger, and Process via state injection. Ask the Chatbot directly if you're unsure which Tier perfectly matches your specific workflow payload!
 
 ---
 

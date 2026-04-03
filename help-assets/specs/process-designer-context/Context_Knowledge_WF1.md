@@ -55,27 +55,38 @@ At the end of WF1, the `gas-agent-prompt-architect` compiles all inputs into `WF
 ## Guardrails
 - Never pull or display live user data from the platform.
 - Never suggest writing code — this is a specification-gathering phase.
-- Always clarify the Bucket A vs Bucket B distinction if the WDE seems confused.
+- Always clarify the Bucket A (spec material) vs Bucket B (user upload) distinction if the WDE seems confused.
 - If the WDE cannot articulate a goal after 3 rounds, suggest they prepare a written brief and return.
 
-## Workflow Tier & Skill Categorization Framework
+## Workflow 1 Task Breakdown & Element Details
+You must understand exactly how the user interacts with the UI across the 4 core Tasks to effectively assist them.
 
-The Tier Assessment ensures compilation into the CYAM system correctly as agent-readable skills, not just one-off prompts. Tiers are defined by organizational scope, not complexity:
+### Task 1: Goal, Output & Trigger Ingestion
+**Purpose:** Establishes the foundational boundaries of the automation.
+*   **Primary Goal & Expected Output:** The user writes what they want the machine to do. A good goal is concrete (e.g., "Extract action items from meeting notes into a Markdown table") rather than vague (e.g., "Process notes").
+*   **Upstream Routing Table:** Determines how data arrives at this workflow. The CYAM platform uses centralized ingestors like the `Telegram /mtask Router`. Selecting it here tells the AI to build the correct webhook handshake logic later.
+*   **Bucket A (Spec-Writing Material):** Reference material uploaded via Google Drive (e.g., existing PDF manuals, company policies). The AI reads this *during* the spec-creation process to learn the rules.
+*   **Bucket B (End-User Requirements):** Structural requirements that the *final End User* must provide when they run the workflow (e.g., "A client brief", "A raw data CSV"). The WDE can optionally attach an "Exemplar Template" so the End User knows exactly what format to upload.
 
-*   **Tier 1 (Standard Skills):**
-    *   *Definition:* Organizational-wide standards that are consistent across the entire team.
-    *   *Examples:* Brand voice, formatting rules, common corporate templates.
-    *   *AI Action:* Defines standardization parameters.
+### Task 2: Process Distillation
+**Purpose:** Converts human messiness into strict machine-executable logic.
+*   **Raw Process Dump:** The WDE pastes their unstructured notes, email chains, or bullet points here.
+*   **Happy Path Distillation:** The AI reorganizes the raw dump into a strictly chronological, step-by-step Standard Operating Procedure (SOP).
+*   **Edge Cases & Constraint Identification:** This is the most critical step. The AI analyzes the Happy Path for vulnerabilities (e.g., "What happens if the End User uploads a corrupted file?") and asks the WDE explicit questions to codify fallback logic.
 
-*   **Tier 2 (Methodology Skills):**
-    *   *Definition:* High-value, domain-specific expertise or "craft" processes used by senior practitioners. These are the exact workflows you would teach a new hire to make them proficient.
-    *   *Examples:* Code review processes, financial analysis methodologies, specialized research workflows.
-    *   *AI Action:* Structures an agent-readable routing description, reasoning-based methodology, and highly defined output contract.
+### Task 3: CYAM Knowledge Integration
+**Purpose:** Maps the localized workflow to the overarching CYAM organization database.
+*   **Automatic Dependency Scanner:** The AI cross-references the Process against the global CYAM `data_dictionary.csv`. It suggests linking overarching tables like `Project_Profile` or `User_Profile`.
+*   **Definite vs Optional Variables:** The WDE restricts execution. If a table is marked "Definite", the final automation will hard-fail if the End User tries to run it without having that data populated.
+*   **Ad-hoc Markdown Referencing:** Allows attaching unique, non-database files (like a static "Company Brand Voice.md" guide) directly into the system prompt context.
 
-*   **Tier 3 (Personal Workflow Skills):**
-    *   *Definition:* Individual, task-specific, or "under-the-desk" automations that help with daily productivity but may not be standardized or required for the whole organization.
-    *   *Examples:* Automatically summarizing personal standup notes, organizing local files, personal email drafting styles.
-    *   *AI Action:* Defines a personal methodology and routing constraint.
+### Task 4: Workflow Tier Assessment
+**Purpose:** Calculates governance, security constraints, and storage architecture.
+*   **Tier 1 (Standard):** Organization-wide protocols. Highly restricted. Changes require Admin review.
+*   **Tier 2 (Methodology):** Domain-specific expertise tools (e.g., a specific coding standard, or financial methodology). Standard operating mode.
+*   **Tier 3 (Personal):** Fast, disjointed automations used by individuals. Very loose governance.
 
-**Skill Integration vs Creation:**
-The goal is "Compounding Advantage". Instead of making isolated one-off prompts, the AI determines if this new workflow should be merged into an existing skill file in the registry or if it deserves a brand new skill file, ensuring system memory compounds over time.
+### ⚠️ Critical Concept: Skill Storage Recommendation
+The CYAM platform does not use fragmented "Saved Prompts." It builds a unified, compounding **Agent Skills Registry**. At the end of Task 4, the user must define the *Skill Storage Recommendation*:
+*   **Create New Skill File:** Instructs the AI to mint a brand new `.md` Skill file for the ecosystem. This should only be used if the workflow solves a completely novel domain problem.
+*   **Integrate into Existing:** The absolute preferred path for organizational scaling. Instead of creating a new file, the AI intelligently merges this workflow's logic into an *existing* Skill file as a new internal capability. This prevents system bloat and allows AI agents to cross-reference related tasks natively.

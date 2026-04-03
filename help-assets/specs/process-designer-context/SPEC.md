@@ -51,19 +51,13 @@ category: "Agent & Workflow Designer"
 
 ##### Level 5: Help & Context
 
-**Step 1 — Writing a Strong Goal:** A well-defined goal is the most critical input. Be specific about the *end result* you want — not just the process. Example: *"Generate a branded quarterly report PDF from raw spreadsheet data, with executive summary and data visualizations"* is better than *"Automate reporting."*
+**Step 1 — Describe the Goal:** **What:** Define the primary objective of this process. **Why:** A well-defined goal limits the AI scope and ensures the automation has concrete boundaries. **How:** Formulate the objective and describe the current process being automated. Example: *"Generate a branded quarterly report PDF from raw spreadsheet data, with executive summary."* rather than *"Automate reporting."*
 
-**Step 2 — Understanding Triggers:** Triggers define how the workflow will be started by the End User:
-- **Webhook** — Triggered by an external system sending an HTTP request.
-- **Schedule** — Runs on a timer (daily, weekly, etc.).
-- **AppSheet Button** — Triggered from a mobile/tablet interface.
-- **Manual** — WDE or End User explicitly starts it from the Dashboard.
+**Step 2 — Selecting the Upstream Router:** **What:** Select the table/system that feeds minor tasks into this workflow. **Why:** The CYAM platform uses centralized routing (e.g. Telegram /mtask) to feed data. Connected upstream systems must be explicitly mapped here so the AI builds the correct ingestion webhooks. **How:** Select the relevant upstream sources from the checkboxes.
 
-**Steps 3-4 — Two Buckets of Uploads:** Your uploads serve two distinct purposes:
-- **Bucket A (Spec-Writing):** Material that helps the AI understand what you're building. Examples: your current manual process document, competitor workflow screenshots, domain-specific reference material.
-- **Bucket B (Stage 3 Requirements):** A specification of what the *End User* needs to provide later. You define the types and formats required. The End User supplies their own real data in Stage 3.
+**Steps 3-4 — Uploads (Bucket A vs. Bucket B):** **What:** Provide necessary context files to the system. **Why:** Bucket A files educate the AI while it writes the backend scripts, providing explicit examples of your logic. Bucket B files dictate exactly what End Users are forced to upload natively during the final deployed dashboard tool. **How:** Use the Drive Picker to select reference manuals for Bucket A. For Bucket B, type a structural requirement name and optionally attach an "Exemplar Template".
 
-* **Chatbot Note:** Assist the WDE with goal refinement, trigger selection, and understanding the distinction between Bucket A (spec-writing material) and Bucket B (End User requirements). Help clarify what constitutes a "definite" vs "optional" requirement.
+* **Chatbot Note:** Assist the WDE with goal refinement, trigger selection, and understanding the distinction between Bucket A and Bucket B.
 
 ---
 
@@ -81,7 +75,9 @@ category: "Agent & Workflow Designer"
 
 ##### Level 5: Help & Context
 
-**What is Process Distillation?:** Don't overthink the initial step. Write the process as you would explain it to a colleague. The AI analyzes the intent and ensures you don't miss critical process elements like missing inputs or ambiguous deliverables.
+**Step 1 — What is Process Distillation?:** **What:** Converting raw notes and emails into an architectural SOP constraint. **Why:** LLM logic execution relies on mathematically concrete step-by-step logic, not human ambiguity. Handing it a rough mess guarantees failure. **How:** Paste email chains, raw SOPs, and notes directly into the dump box, then press Distill to let the AI organize it chronologically into the "Happy Path".
+
+**Step 2 — Managing Edge Cases:** **What:** Systematically resolving vague failure modes before deployment. **Why:** If the edge cases are not codified into the backend, the workflow fails unexpectedly during runtime when users act randomly. **How:** Read the AI's "What if...?" questions generated below the Happy Path, and explicitly answer them. Your answers are dynamically compiled into the final specification architecture.
 
 * **Chatbot Note:** Guide the WDE through process elicitation. Help identify missing inputs, edge cases, and quality controls.
 
@@ -101,9 +97,9 @@ category: "Agent & Workflow Designer"
 
 ##### Level 5: Help & Context
 
-**Understanding CYAM Data Structures:** The CYAM Platform stores structured data in Google Sheets tables (Profiles, Plans, Metadata Library). When you select a structure here, you are telling the specification: *"This workflow needs this data."* The End User supplies the real data in Stage 3.
+**Step 1 — Suggest Integrations:** **What:** Identifying structured internal CYAM Platform data needed by the workflow. **Why:** Complex workflows require overarching relational variables like Active Project data, User Persona data, etc. Identifying them now builds them into the final AI code context. **How:** Press "Suggest Integrations". The AI queries the CYAM Data Dictionary and returns standard tables. Review each and logically mark them as Definite, Optional, or Do Not Include.
 
-**Definite vs Optional:** Mark a dependency as "Definite Requirement" only if the workflow **cannot function** without it. Mark as "Optional" if it improves output quality but isn't strictly required.
+**Step 2 — Ad-hoc Markdown Integrations:** **What:** Including specific textual reports as supplementary logic. **Why:** Sometimes a workflow needs a specific PDF report or meeting notes transcript without warranting a permanent, complex CYAM Database schema. **How:** Use the Drive Picker to select reference Markdown/Plain Text files that act as standard input definitions for the End User to replicate easily.
 
 * **Chatbot Note:** Help the WDE understand which CYAM data structures are relevant to their goal. Explain the `data_dictionary.csv`.
 
@@ -113,21 +109,22 @@ category: "Agent & Workflow Designer"
 
 #### Level 4: Steps
 
-1. **Step 1 — Evaluate Tier Assignment**
+1. **Step 1 — Generate Comprehensive Summary & Evaluate Tier**
+   - Click **Generate Comprehensive Summary & Evaluate Tier Assignment**.
    - The AI evaluates all gathered context (Goal, Distilled Process, and Knowledge Dependencies) and recommends an Organizational Scope Tier.
    - Example Tiers:
      - **Tier 1 (Standard):** Org-wide standards (brand voice, common templates).
      - **Tier 2 (Methodology):** High-value domain expertise (Default).
      - **Tier 3 (Personal):** Individual 'under-the-desk' automations.
 2. **Step 2 — Confirm or Override**
+   - Review the compiled **Comprehensive Summary** readout in the output box to confirm all logic was accurately aggregated.
    - Accept the suggested Tier or select "Other / Override" to explain why the AI missed the mark.
 
 ##### Level 5: Help & Context
 
-**What Tier Means:** The Tier determines how the AI guides you through the remaining Workflows:
-- **Tier 1:** Autonomous scaling works well.
-- **Tier 2:** Domain expertise is critical. High-value.
-- **Tier 3:** Useful for specific users, but won't be pushed globally.
+**Step 1 — Generate Summary & Viability:** **What:** Computing the final comprehensive prompt and deriving its hierarchical tier. **Why:** We must confirm that all your tasks (1, 2, and 3) were securely aggregated and that the logic maps cleanly to a strategic CYAM tier. **How:** Press the Generate button. The AI reads all input states, calculates the optimal Tier mathematically based on scale, and prints the raw data verbatim into the textarea so you can audit what it built.
+
+**Step 2 — Selecting the Tier:** **What:** Validating or overriding the automated categorization. **Why:** The AI's Tier dictates how strictly the created tool is safeguarded and deployed. Tier 1 implies rigid global distribution (High Quality), Tier 2 implies departmental execution, while Tier 3 gives maximum leniency to individual users. **How:** Review the evaluation payload. Assign the tier using the 4 options. **Note on Skill Storage Recommendation:** Here you define whether the AI creates a brand new Agent Skill (file) or intelligently merges this instruction payload into an *existing* Skill to prevent bloat. Choose "Integrate into Existing" if this supplements an existing process.
 
 * **Chatbot Note:** Since the Chatbot is "Session-Aware", it has access to your actual Goal, Trigger, and Process via state injection. Ask the Chatbot directly if you're unsure which Tier perfectly matches your specific workflow payload!
 

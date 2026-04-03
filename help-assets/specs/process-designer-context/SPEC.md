@@ -49,15 +49,11 @@ category: "Agent & Workflow Designer"
    - Optionally upload template examples showing the expected file format.
    - 📖 *See Help & Context panel for detailed guidance*
 
-##### Level 5: Help & Context
+**Step 1 — Describe the Goal:**<br>• **What:** Define the primary objective of this process.<br>• **Why:** A well-defined goal limits the AI scope and ensures the automation has concrete boundaries.<br>• **How:** Formulate the objective and describe the current process being automated. Example: *"Generate a branded quarterly report PDF from raw spreadsheet data, with executive summary."* rather than *"Automate reporting."*
 
-**Step 1 — Describe the Goal:** **What:** Define the primary objective of this process. **Why:** A well-defined goal limits the AI scope and ensures the automation has concrete boundaries. **How:** Formulate the objective and describe the current process being automated. Example: *"Generate a branded quarterly report PDF from raw spreadsheet data, with executive summary."* rather than *"Automate reporting."*
+**Step 2 — Selecting the Upstream Router:**<br>• **What:** Select the table/system that feeds minor tasks into this workflow.<br>• **Why:** The CYAM platform uses centralized routing (e.g. Telegram /mtask) to feed data. Connected upstream systems must be explicitly mapped here so the AI builds the correct ingestion webhooks.<br>• **How:** Select the relevant upstream sources from the checkboxes.
 
-**Step 2 — Selecting the Upstream Router:** **What:** Select the table/system that feeds minor tasks into this workflow. **Why:** The CYAM platform uses centralized routing (e.g. Telegram /mtask) to feed data. Connected upstream systems must be explicitly mapped here so the AI builds the correct ingestion webhooks. **How:** Select the relevant upstream sources from the checkboxes.
-
-**Steps 3-4 — Uploads (Bucket A vs. Bucket B):** **What:** Provide necessary context files to the system. **Why:** Bucket A files educate the AI while it writes the backend scripts, providing explicit examples of your logic. Bucket B files dictate exactly what End Users are forced to upload natively during the final deployed dashboard tool. **How:** Use the Drive Picker to select reference manuals for Bucket A. For Bucket B, type a structural requirement name and optionally attach an "Exemplar Template".
-
-* **Chatbot Note:** Assist the WDE with goal refinement, trigger selection, and understanding the distinction between Bucket A and Bucket B.
+**Steps 3-4 — Uploads (Bucket A vs. Bucket B):**<br>• **What:** Provide necessary context files to the system.<br>• **Why:** Bucket A files educate the AI while it writes the backend scripts, providing explicit examples of your logic. Bucket B files dictate exactly what End Users are forced to upload natively during the final deployed dashboard tool.<br>• **How:** Use the Drive Picker to select reference manuals for Bucket A. For Bucket B, type a structural requirement name and optionally attach an "Exemplar Template".
 
 ---
 
@@ -75,9 +71,9 @@ category: "Agent & Workflow Designer"
 
 ##### Level 5: Help & Context
 
-**Step 1 — What is Process Distillation?:** **What:** Converting raw notes and emails into an architectural SOP constraint. **Why:** LLM logic execution relies on mathematically concrete step-by-step logic, not human ambiguity. Handing it a rough mess guarantees failure. **How:** Paste email chains, raw SOPs, and notes directly into the dump box, then press Distill to let the AI organize it chronologically into the "Happy Path".
+**Step 1 — What is Process Distillation?:**<br>• **What:** Converting raw notes and emails into an architectural SOP constraint.<br>• **Why:** LLM logic execution relies on mathematically concrete step-by-step logic, not human ambiguity. Handing it a rough mess guarantees failure.<br>• **How:** Paste email chains, raw SOPs, and notes directly into the dump box, then press Distill to let the AI organize it chronologically into the "Happy Path".
 
-**Step 2 — Managing Edge Cases:** **What:** Systematically resolving vague failure modes before deployment. **Why:** If the edge cases are not codified into the backend, the workflow fails unexpectedly during runtime when users act randomly. **How:** Read the AI's "What if...?" questions generated below the Happy Path, and explicitly answer them. Your answers are dynamically compiled into the final specification architecture.
+**Step 2 — Managing Edge Cases:**<br>• **What:** Systematically resolving vague failure modes before deployment.<br>• **Why:** If the edge cases are not codified into the backend, the workflow fails unexpectedly during runtime when users act randomly.<br>• **How:** Read the AI's "What if...?" questions generated below the Happy Path, and explicitly answer them. Your answers are dynamically compiled into the final specification architecture.
 
 * **Chatbot Note:** Guide the WDE through process elicitation. Help identify missing inputs, edge cases, and quality controls.
 
@@ -97,9 +93,9 @@ category: "Agent & Workflow Designer"
 
 ##### Level 5: Help & Context
 
-**Step 1 — Suggest Integrations:** **What:** Identifying structured internal CYAM Platform data needed by the workflow. **Why:** Complex workflows require overarching relational variables like Active Project data, User Persona data, etc. Identifying them now builds them into the final AI code context. **How:** Press "Suggest Integrations". The AI queries the CYAM Data Dictionary and returns standard tables. Review each and logically mark them as Definite, Optional, or Do Not Include.
+**Step 1 — Suggest Integrations:**<br>• **What:** Identifying structured internal CYAM Platform data needed by the workflow.<br>• **Why:** Complex workflows require overarching relational variables like Active Project data, User Persona data, etc. Identifying them now builds them into the final AI code context.<br>• **How:** Press "Suggest Integrations". The AI queries the CYAM Data Dictionary and returns standard tables. Review each and logically mark them as Definite, Optional, or Do Not Include.
 
-**Step 2 — Ad-hoc Markdown Integrations:** **What:** Including specific textual reports as supplementary logic. **Why:** Sometimes a workflow needs a specific PDF report or meeting notes transcript without warranting a permanent, complex CYAM Database schema. **How:** Use the Drive Picker to select reference Markdown/Plain Text files that act as standard input definitions for the End User to replicate easily.
+**Step 2 — Ad-hoc Markdown Integrations:**<br>• **What:** Including specific textual reports as supplementary logic.<br>• **Why:** Sometimes a workflow needs a specific PDF report or meeting notes transcript without warranting a permanent, complex CYAM Database schema.<br>• **How:** Use the Drive Picker to select reference Markdown/Plain Text files that act as standard input definitions for the End User to replicate easily.
 
 * **Chatbot Note:** Help the WDE understand which CYAM data structures are relevant to their goal. Explain the `data_dictionary.csv`.
 
@@ -122,18 +118,10 @@ category: "Agent & Workflow Designer"
 
 ##### Level 5: Help & Context
 
-**Step 1 — Generate Summary & Viability:** **What:** Computing the final comprehensive prompt and deriving its hierarchical tier. **Why:** We must confirm that all your tasks (1, 2, and 3) were securely aggregated and that the logic maps cleanly to a strategic CYAM tier. **How:** Press the Generate button. The AI reads all input states, calculates the optimal Tier mathematically based on scale, and prints the raw data verbatim into the textarea so you can audit what it built.
+**Step 1 — Generate Summary & Viability:**<br>• **What:** Computing the final comprehensive prompt and deriving its hierarchical tier.<br>• **Why:** We must confirm that all your tasks (1, 2, and 3) were securely aggregated and that the logic maps cleanly to a strategic CYAM tier.<br>• **How:** Press the Generate button. The AI reads all input states, calculates the optimal Tier mathematically based on scale, and prints the raw data verbatim into the textarea so you can audit what it built.
 
-**Step 2 — Selecting the Tier:** **What:** Validating or overriding the automated categorization. **Why:** The AI's Tier dictates how strictly the created tool is safeguarded and deployed. Tier 1 implies rigid global distribution (High Quality), Tier 2 implies departmental execution, while Tier 3 gives maximum leniency to individual users. **How:** Review the evaluation payload. Assign the tier using the 4 options. **Note on Skill Storage Recommendation:** Here you define whether the AI creates a brand new Agent Skill (file) or intelligently merges this instruction payload into an *existing* Skill to prevent bloat. Choose "Integrate into Existing" if this supplements an existing process.
+**Step 2 — Selecting the Tier:**<br>• **What:** Validating or overriding the automated categorization.<br>• **Why:** The AI's Tier dictates how strictly the created tool is safeguarded and deployed. Tier 1 implies rigid global distribution (High Quality), Tier 2 implies departmental execution, while Tier 3 gives maximum leniency to individual users.<br>• **How:** Review the evaluation payload. Assign the tier using the 4 options. 
+
+**Step 3 — Skill Storage Recommendation:**<br>• **What:** Defining whether the AI saves this instruction block into a brand new `.md` file, or embeds it into an existing one.<br>• **Why:** To prevent systemic prompt bloat. If you create a hundred new skill files, the AI chokes. We want compounding skills.<br>• **How:** Select "Integrate into Existing" to intelligently mutate a current standard, or "Create New Skill File" if this isolates a brand new domain capability.
 
 * **Chatbot Note:** Since the Chatbot is "Session-Aware", it has access to your actual Goal, Trigger, and Process via state injection. Ask the Chatbot directly if you're unsure which Tier perfectly matches your specific workflow payload!
-
----
-
-## Context & Chatbot Delivery Summary
-
-| Field | Value |
-|---|---|
-| `INSTALL_CHATBOT` | `true` |
-| `chatbot_context_file` | `Context_Knowledge_WF1.md` |
-| Context URLs | Listed in `metadata.json` |

@@ -30,7 +30,6 @@ category: "Agent & Workflow Designer"
 
 ##### Level 5: Help & Context
 
-**Step Guidance — Operating Modes (A vs B):**<br><br>**What:** Mode A (Auto) vs. Mode B (Cyborg)<br><br>**Mode A (Auto):** The AI operates completely autonomously, making decisions without any human intervention. You trust the logic completely.<br><br>**Mode B (Cyborg):** The AI pauses at critical decision gates and requests explicit human approval before proceeding. Useful for high-risk or subjective actions.<br><br>**How:** Toggle the Operating Mode at the top right of the page to focus your brain/hands node mapping on the chosen operational style.
 
 **Step 1 — Review AI Extractions (Process Nodes):**<br><br>**Understanding the Fields:**<br><br>**Node Objective:** The raw text representing your goal exactly as interpreted from Workflow 1.<br><br>**Node Type:** Defines if the step requires AI evaluation (*Brain*) or mechanical automation (*Hands*).<br><br>**Node Technical Specification:** The strict, machine-readable logic block generated via the Socratic Interview. Ensure you generate a spec for every step!<br><br>**Workflow Node Label:** Your concise, human-readable title that will appear inside the boxes on the Visual Flowchart canvas. 
 

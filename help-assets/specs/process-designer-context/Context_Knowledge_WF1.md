@@ -46,8 +46,8 @@ The CYAM Platform contains these data structures the WDE can specify as dependen
 
 When the WDE selects a structure, they are recording a **specification dependency** — the End User provides their own data in Stage 3.
 
-### `data_dictionary.csv`
-The AI should reference `data_dictionary.csv` to suggest which tabs, columns, and rows are relevant based on the WDE's stated goal. The WDE confirms, removes, or adds to the suggestions.
+### `Data_Dictionary` Sheet
+The AI should reference the live `Data_Dictionary` sheet (seeded from `docs/data_dictionary.csv`) to suggest which tables, columns, and rows are relevant based on the WDE's stated goal. Each column is classified by `SHARPV_Category` (`State`, `Metric`, `Tag`, `Content`, `None`) which determines how the AI injects the variable into prompts. The WDE confirms, removes, or adds to the suggestions.
 
 ## Handoff
 At the end of WF1, the `gas-agent-prompt-architect` compiles all inputs into `WF1_CONTEXT_PAYLOAD` (saved to `PropertiesService`). This feeds into WF2 for intent mapping and tool selection.
@@ -76,7 +76,7 @@ You must understand exactly how the user interacts with the UI across the 4 core
 
 ### Task 3: CYAM Knowledge Integration
 **Purpose:** Maps the localized workflow to the overarching CYAM organization database.
-*   **Automatic Dependency Scanner:** The AI cross-references the Process against the global CYAM `data_dictionary.csv`. It suggests linking overarching tables like `Project_Profile` or `User_Profile`.
+*   **Automatic Dependency Scanner:** The AI cross-references the Process against the `Data_Dictionary` sheet (with SHARPV categories). It suggests linking overarching tables like `Project_Profile` or `User_Profile`, with each variable classified by its SHARPV category.
 *   **Definite vs Optional Variables:** The WDE restricts execution. If a table is marked "Definite", the final automation will hard-fail if the End User tries to run it without having that data populated.
 *   **Ad-hoc Markdown Referencing:** Allows attaching unique, non-database files (like a static "Company Brand Voice.md" guide) directly into the system prompt context.
 

@@ -26,18 +26,15 @@ category: "Agent & Workflow Designer"
 
 #### Level 4: Steps
 1. **Step 1 — Identify Brain Steps (Thinking)**
-2. **Step 2 — Identify Hands Steps (Doing)**
-3. **Step 3 — Attach Training Documents**
+2. **Step 2 — Attach Training Documents**
 
 ##### Level 5: Help & Context
 
 **Step Guidance — Operating Modes (A vs B):**<br><br>**What:** Mode A (Auto) vs. Mode B (Cyborg)<br><br>**Mode A (Auto):** The AI operates completely autonomously, making decisions without any human intervention. You trust the logic completely.<br><br>**Mode B (Cyborg):** The AI pauses at critical decision gates and requests explicit human approval before proceeding. Useful for high-risk or subjective actions.<br><br>**How:** Toggle the Operating Mode at the top right of the page to focus your brain/hands node mapping on the chosen operational style.
 
-**Step 1 — Identify Brain Steps (Thinking):**<br><br>**What:** Brain steps are tasks that require human-like judgment, such as reading an email to understand the sender's tone or comparing a lead against a complex rubric.<br><br>**Why:** The AI needs explicit instructions on exactly what subjective decisions it is responsible for. If it doesn't know it's supposed to evaluate something, it will just follow blindly.<br><br>**How:** Write down each decision clearly. For example, "1. Read the incoming email and determine if the customer is angry or happy."
+**Step 1 — Review AI Extractions (Process Nodes):**<br><br>**Understanding the Fields:**<br><br>**Node Objective:** The raw text representing your goal exactly as interpreted from Workflow 1.<br><br>**Node Type:** Defines if the step requires AI evaluation (*Brain*) or mechanical automation (*Hands*).<br><br>**Node Technical Specification:** The strict, machine-readable logic block generated via the Socratic Interview. Ensure you generate a spec for every step!<br><br>**Workflow Node Label:** Your concise, human-readable title that will appear inside the boxes on the Visual Flowchart canvas. 
 
-**Step 2 — Identify Hands Steps (Doing):**<br><br>**What:** Hands steps are mechanical actions like fetching data from a database, searching the web, or sending an email.<br><br>**Why:** The system must map out every third-party integration required. This ensures the workflow is granted the correct security permissions and API keys.<br><br>**How:** List out the mechanical steps in order. For example, "1. Fetch the CRM record from HubSpot. 2. Draft an email in Gmail. 3. Create a Jira ticket."
-
-**Step 3 — Attach Training Documents:**<br><br>**What:** This is where you upload grading rubrics, brand guidelines, or standard operating procedures.<br><br>**Why:** The AI uses these documents as the undisputed source of truth to execute the "Brain" steps you defined earlier without making mistakes.<br><br>**How:** Click 'Attach Reference Document' and select a Google Doc, Spreadsheet, or PDF that contains the specific rules for the AI to follow.<br><br>* **Chatbot Note:** Need help determining if a node is "Brain" or "Hands"? Ask the Chatbot to analyze your raw SOP!
+**Step 2 — Attach Training Documents:**<br><br>**What:** This is where you upload grading rubrics, brand guidelines, or standard operating procedures.<br><br>**Why:** The AI uses these documents as the undisputed source of truth to execute the "Brain" steps you defined earlier without making mistakes.<br><br>**How:** Click 'Attach Reference Document' and select a Google Doc, Spreadsheet, or PDF that contains the specific rules for the AI to follow.<br><br>* **Chatbot Note:** Need help determining if a node is "Brain" or "Hands"? Ask the Chatbot to analyze your raw SOP!
 
 ---
 
@@ -49,8 +46,6 @@ category: "Agent & Workflow Designer"
 3. **Step 3 — Run Feasibility Matrix**
 
 ##### Level 5: Help & Context
-
-**Step Guidance — Operating Modes (A vs B):**<br><br>**What:** How Modes affect Tool Selection<br><br>**Why:** If you select Mode B (Cyborg) in the previous step, your primary engine MUST support human-in-the-loop interactions (e.g. Slack approvals, Telegram Webhooks). Mode A workflows can run entirely in background cron jobs (e.g. Google Apps Script time-driven triggers).<br><br>**How:** Keep your intended Operating Mode in mind when selecting your primary engine and secondary tools. Ensure you include a communication tool like Slack or Telegram if doing Cyborg validation.
 
 **Step 1 — Main Engine Selection:**<br><br>**What:** The main engine is the "brain base" that holds the workflow together. Options include Google Apps Script, Opal, or Google AI Studio.<br><br>**Why:** Different engines have different strengths. For example, Google Apps Script is free and works perfectly with Google tools, while Opal is great for multi-step AI reasoning.<br><br>**How:** Click the dropdown box to view your options. If you aren't sure which one is best, select "Let the AI Interview Me", and a chatbot panel will help you decide.
 

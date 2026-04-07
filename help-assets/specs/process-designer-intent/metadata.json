@@ -1,4 +1,28 @@
 {
+    "category": "Agent & Workflow Designer",
+    "workflow_description": "Process Designer — Intent Mapping & Tool Assessment. Build a rigid boundary around the AI by mapping human domain expertise into constrained execution logic.",
+    "task_summary": "Map process topology strings onto executable nodes, definitively declare specific backend operational constraints via third-party limits, and execute automated Feasibility tests based on target APIs.",
+    "overview_description": "Instead of letting the AI guess execution models, explicitly constrain the architecture (Primary & Alternative Plan B Platforms, App Scopes, and Execution modes) preventing unachievable logic paths.",
+    "ui_instructions": [
+        "Task 1, Step 1: WDE reviews the baseline visual extraction strings.",
+        "Task 1, Step 2: WDE runs the Visual Node Mapping topology.",
+        "Task 2, Step 1: End User selects exactly ONE Primary Engine and one Fallback Engine.",
+        "Task 2, Step 2: End User determines advanced execution constraints (Local Agent Control, Caching).",
+        "Task 2, Step 3: End User declares Third Party tools exactly mapped to APIs.",
+        "Task 2, Step 4: Feasibility engine matrix generates output bounds.",
+        "Task 3, Step 1: User verifies constraints and classifies node AI Intent mapping.",
+        "Task 3, Step 2: WDE checks for existing CYAM templates matching intent.",
+        "Task 3, Step 3: Architecture generates the specific Output Blueprint."
+    ],
+    "carousel_items": [],
+    "relevant_links": [
+        {
+            "title": "CYAM Blueprint Matrix Configuration",
+            "url": "file:///Users/imac/dev/CYAM-Platform/docs/KB_Tool_Selection.md"
+        }
+    ],
     "INSTALL_CHATBOT": true,
-    "carousel_items": []
+    "chatbot_context_urls": [],
+    "chatbot_context_file": "Context_Knowledge_WF2.md",
+    "chatbot_prompt_context": "You are the Phase 2: Intent Mapping & Tool Assessment Specialist. If asked to support the user in selecting a Workflow Platform, you MUST use the gas-agent-prompt-architect skill to filter the active user matching User_Profile.USER_EMAIL. Read the user's USER_EDUCATION_LEVEL, USER_EDUCATION_FIELD, and USER_EXPERIENCE_SUMMARY. Cross-reference this profile and the Output generated from the WF2 forms against the constraints of the 5 target platforms (Google Apps Script, Opal, Workspace Studio Flows, Workspace Studio CLI, and AI Studio) detailed in Context_Knowledge_WF2.md to defensively recommend the most optimal Primary and Alternative platforms."
 }

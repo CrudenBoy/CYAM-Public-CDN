@@ -39,17 +39,20 @@ category: "Agent & Workflow Designer"
 ### Level 3: Task 2 — Unified Tool Assessment
 
 #### Level 4: Steps
-1. **Step 1 — Main Engine Selection**
-2. **Step 2 — Third-Party Tools**
-3. **Step 3 — Run Feasibility Matrix**
+1. **Step 1 — Platform Selection**
+2. **Step 2 — Advanced Requirements**
+3. **Step 3 — Third-Party Tools**
+4. **Step 4 — Automated Feasibility Check**
 
 ##### Level 5: Help & Context
 
-**Step 1 — Main Engine Selection:**<br><br>**What:** The main engine is the "brain base" that holds the workflow together. Options include Google Apps Script, Opal, or Google AI Studio.<br><br>**Why:** Different engines have different strengths. For example, Google Apps Script is free and works perfectly with Google tools, while Opal is great for multi-step AI reasoning.<br><br>**How:** Click the dropdown box to view your options. If you aren't sure which one is best, select "Let the AI Interview Me", and a chatbot panel will help you decide.
+**Step 1 — Platform Selection:**<br><br>**What:** Instead of letting the AI guess where your workflow should run, you must select the Primary Platform (your first choice) and an Alternative Platform (Plan B).<br><br>**Why:** This is how you build an iron-clad "fence" around the AI. By explicitly constraining the architecture here, you physically prevent the AI from hallucinating impossible code during code generation. If the AI realizes your Primary choice has rigid timeout limits or lacks required functionality, it will scrap the design and route execution to the Alternative platform instead.<br><br>**How:** First, select your Primary Platform. Then, select a mandatory Backup. If you don't know which Workflow platform to choose, click the Help Bot at the bottom right. The bot will reference your User_Profile to seamlessly guide your decision.
 
-**Step 2 — Third-Party Tools:**<br><br>**What:** These are the external platforms where the AI will fetch data from or send data to, such as Slack, HubSpot, or Gmail.<br><br>**Why:** The workflow needs specific connection protocols and security keys for every single tool it touches. Listing them early ensures the system can connect securely.<br><br>**How:** Review the provided list of tools and check the boxes for the ones you need. If your tool isn't listed, click "Add Custom Tool" at the bottom.
+**Step 2 — Advanced Requirements:**<br><br>**What:** Specific system capabilities your workflow relies on, such as creating files in Google Drive, caching context memory, utilizing visual nodes, or local agent execution.<br><br>**Why:** Identifying hard technical requirements early helps filter out incompatible platforms before writing any code.<br><br>**How:** Select the checkboxes that accurately reflect what your process specifically requires to function.
 
-**Step 3 — Run Feasibility Matrix:**<br><br>**What:** The automated matrix checks if your selected Main Engine can natively integrate with your selected Third-Party Tools.<br><br>**Why:** Certain engines have blind spots. Identifying these incompatibilities early saves hours of debugging by proactively suggesting workarounds like Python worker scripts.<br><br>**How:** Click the "Run Automated Feasibility Check" button. The system will print an analysis of any potential roadblocks below the button.<br><br>* **Chatbot Note:** Unsure which framework fulfills your workflow requirements? Chat with the bot and invoke the `/RGDD` Google Developer Knowledge MCP to answer technical capability questions.
+**Step 3 — Third-Party Tools:**<br><br>**What:** External platforms where the AI will fetch data from or send data to, such as Slack, HubSpot, or Gmail.<br><br>**Why:** The workflow needs specific connection protocols and security keys for every single tool it touches. Listing them early ensures the system can connect securely and guarantees your chosen platforms are technically capable of integrating with them.<br><br>**How:** Review the provided list of apps and check the boxes for the ones you need. If your tool isn't listed, click "Add Custom Tool" at the bottom.
+
+**Step 4 — Automated Feasibility Check:**<br><br>**What:** The system runs a validation matrix to verify that the Primary and Alternative platforms can support your chosen constraints and tools.<br><br>**Why:** Certain platforms have intentional blind spots. Catching these early saves hours of debugging by warning you ahead of time.<br><br>**How:** Click "Run Automated Feasibility Check". Then, finalize the blueprint by saving your choices. The CYAM Platform's Admin Console contains detailed workflows (Google AntiGravity Installation Guide, Developer CLI Setup) to help you instantly install any missing dependencies later.
 
 
 ---

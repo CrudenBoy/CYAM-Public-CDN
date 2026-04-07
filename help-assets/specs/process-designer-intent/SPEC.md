@@ -50,3 +50,21 @@ category: "Agent & Workflow Designer"
 **Step 2 — Third-Party Tools:**<br><br>**What:** These are the external platforms where the AI will fetch data from or send data to, such as Slack, HubSpot, or Gmail.<br><br>**Why:** The workflow needs specific connection protocols and security keys for every single tool it touches. Listing them early ensures the system can connect securely.<br><br>**How:** Review the provided list of tools and check the boxes for the ones you need. If your tool isn't listed, click "Add Custom Tool" at the bottom.
 
 **Step 3 — Run Feasibility Matrix:**<br><br>**What:** The automated matrix checks if your selected Main Engine can natively integrate with your selected Third-Party Tools.<br><br>**Why:** Certain engines have blind spots. Identifying these incompatibilities early saves hours of debugging by proactively suggesting workarounds like Python worker scripts.<br><br>**How:** Click the "Run Automated Feasibility Check" button. The system will print an analysis of any potential roadblocks below the button.<br><br>* **Chatbot Note:** Unsure which framework fulfills your workflow requirements? Chat with the bot and invoke the `/RGDD` Google Developer Knowledge MCP to answer technical capability questions.
+
+
+---
+
+### Level 3: Task 3 — Intent Mapping & Discovery
+
+#### Level 4: Steps
+1. **Step 1 — Complexity Classification**
+2. **Step 2 — Skill & Template Discovery**
+3. **Step 3 — Validation Gate**
+
+##### Level 5: Help & Context
+
+**Step 1 — Complexity Classification:**<br><br>**Overview:** Analyze the selected process node and decide if it is straightforward or requires complex AI evaluation.
+
+**Step 2 — Skill & Template Discovery:**<br><br>**Overview:** Search the SKILL.md registry and CYAM Templates to find validated logic that matches your intent.
+
+**Step 3 — Validation Gate:**<br><br>**Overview:** Confirm compliance with CASA limits and execution timeouts before locking the skill to the node.

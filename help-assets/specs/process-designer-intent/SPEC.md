@@ -25,15 +25,14 @@ category: "Agent & Workflow Designer"
 ### Level 3: Task 1 — Map the Process (Brain vs. Hands)
 
 #### Level 4: Steps
-1. **Step 1 — Identify Brain Steps (Thinking)**
-2. **Step 2 — Attach Training Documents**
+1. **Step 1 — Review AI Extractions (Process Nodes)**
+2. **Step 2 — Visual Node Mapping**
 
 ##### Level 5: Help & Context
 
+**Step 1 — Review AI Extractions (Process Nodes):**<br><br>**Overview:** Step 1 and Step 2 work together to build your workflow blueprint. In Step 1, you design the logic and structure of every node. Then in Step 2, you generate a visual map to check your routing.<br><br>**Node Building Blocks:** The raw text steps extracted from Workflow 1. Add manual steps, delete unnecessary ones, or drag the ⠿ handle up and down to logically reorder the workflow sequence.<br><br>**Node Type:** Defines how the system executes a node. A **Decision** node requires the AI to evaluate logic (e.g., classify an email). An **Action** node runs mechanical APIs (e.g., save to Google Drive).<br><br>**AI Business Analyst:** This opens a chatbot that interrogates you to write a strict, machine-readable logic block (Technical Spec). You must generate a spec for every step to identify the exact data sources required.<br><br>**Intelligent Routing:** This tells the process where to go next. For **Decision** nodes, you set conditional branching (If TRUE / If FALSE). For **Action** nodes, you select the sequential next step or choose STOP to terminate the path.<br><br>**Reference Documents:** Click **Attach Document** to link a Google Doc or Spreadsheet. This acts as the undisputed source of truth and prevents hallucination during execution.
 
-**Step 1 — Review AI Extractions (Process Nodes):**<br><br>**Understanding the Fields:**<br><br>**Node Objective:** The raw text representing your goal exactly as interpreted from Workflow 1.<br><br>**Node Type:** Defines if the step requires AI evaluation (*Brain*) or mechanical automation (*Hands*).<br><br>**Node Technical Specification:** The strict, machine-readable logic block generated via the Socratic Interview. Ensure you generate a spec for every step!<br><br>**Workflow Node Label:** Your concise, human-readable title that will appear inside the boxes on the Visual Flowchart canvas. 
-
-**Step 2 — Attach Training Documents:**<br><br>**What:** This is where you upload grading rubrics, brand guidelines, or standard operating procedures.<br><br>**Why:** The AI uses these documents as the undisputed source of truth to execute the "Brain" steps you defined earlier without making mistakes.<br><br>**How:** Click 'Attach Reference Document' and select a Google Doc, Spreadsheet, or PDF that contains the specific rules for the AI to follow.<br><br>* **Chatbot Note:** Need help determining if a node is "Brain" or "Hands"? Ask the Chatbot to analyze your raw SOP!
+**Step 2 — Visual Node Mapping:**<br><br>**Overview:** Generates a real-time topology map to verify your architecture visually.<br><br>**Read-Only Canvas:** This visual flowchart is precisely a **read-only mirror** of the routing rules you defined in Step 1. You cannot edit node contents or routing connections directly on the canvas.<br><br>**Interactive Position:** While you cannot change the underlying logic on the map, you can drag the nodes around to arrange them visually.<br><br>**Making Changes:** To add, remove, or edit nodes, or modify routing rules, you must close the canvas, update the specific Nodes under Step 1, and press Generate Visual Map again.
 
 ---
 
